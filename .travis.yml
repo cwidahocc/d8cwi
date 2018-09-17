@@ -3,70 +3,45 @@ php:
 - '7.0'
 services:
 - docker
-
-# Install lando
 before_install:
-  - sudo apt-get -y update || true
-  - sudo apt-get -y install cgroup-bin curl
-  - curl -fsSL -o /tmp/lando-latest.deb http://installer.kalabox.io/lando-latest-dev.deb
-  - sudo dpkg -i /tmp/lando-latest.deb
-  - lando version
-
-# Do the lando magic
+- sudo apt-get -y update || true
+- sudo apt-get -y install cgroup-bin curl
+- curl -fsSL -o /tmp/lando-latest.deb http://installer.kalabox.io/lando-latest-dev.deb
+- sudo dpkg -i /tmp/lando-latest.deb
+- lando version
 script:
-
-  # Get our built out lando site running on travis
-  - lando start -- -v
-  - lando composer install
-  # Do needed things to get this repo transformed to what pantheon expects
-  - lando composer prepare-for-pantheon
-
-  # Run non-db required tests eg linting/code standards/unit tests
-  # Lint the codez
-  - lando phplint
-
-  # Check code standards
-  # - lando phpcs --config-set installed_paths /app/vendor/drupal/coder/coder_sniffer
-  # - lando phpcs -n --report=full --standard=Drupal --ignore=*.tpl.php --extensions=install,module,php,inc web/modules web/themes web/profiles
-
-  # Run unit tests.
-  # - lando composer drupal-unit-tests
-
-  # Get the DB for more advanced things
-  - lando terminus auth:login --machine-token=$PANTHEON_MACHINE_TOKEN
-  - lando pull --code=none --database=dev --files=dev --rsync
-
-  # Check if we can bootstrap the site.
-  - cd web
-  - lando drush cr | grep "rebuild complete."
-  - cd ..
-
-  # Run Behat tests.
-  - lando behat --config=/app/tests/behat-pantheon.yml
-
-  # Do the multidev as needed
-  - |
-    if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-      BRANCH=$(echo $TRAVIS_PULL_REQUEST_BRANCH | grep -v '^\(master\|[0-9]\+.x\)$')
-      PR_ENV=${BRANCH:+pr-$BRANCH}
-      DEFAULT_ENV=$(echo ${PR_ENV:-$TRAVIS_PULL_REQUEST_BRANCH} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')
-      if ! lando terminus multidev:list $PANTHEON_SITE_NAME --field id | grep "$DEFAULT_ENV"; then
-        lando terminus multidev:create $PANTHEON_SITE_NAME.dev $DEFAULT_ENV
-      fi
-      lando ssh -c "cd /tmp && git clone -b $DEFAULT_ENV ssh://codeserver.dev.\${PANTHEON_SITE}@codeserver.dev.\${PANTHEON_SITE}.drush.in:2222/~/repository.git pantheon_build"
-      lando ssh -u root -c "rm -rf /tmp/pantheon_build/*"
-      lando ssh -c "cp -rf /app/ /tmp/pantheon_build/"
-      lando ssh -c "git -C /tmp/pantheon_build add -A"
-      lando ssh -c "git -C /tmp/pantheon_build commit -m '$TRAVIS_COMMIT_MESSAGE'"
-      lando ssh -c "git -C /tmp/pantheon_build push origin $DEFAULT_ENV"
+- lando start -- -v
+- lando composer install
+- lando composer prepare-for-pantheon
+- lando phplint
+- lando terminus auth:login --machine-token=$PANTHEON_MACHINE_TOKEN
+- lando pull --code=none --database=dev --files=dev --rsync
+- cd web
+- lando drush cr | grep "rebuild complete."
+- cd ..
+- lando behat --config=/app/tests/behat-pantheon.yml
+- |
+  if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    BRANCH=$(echo $TRAVIS_PULL_REQUEST_BRANCH | grep -v '^\(master\|[0-9]\+.x\)$')
+    PR_ENV=${BRANCH:+pr-$BRANCH}
+    DEFAULT_ENV=$(echo ${PR_ENV:-$TRAVIS_PULL_REQUEST_BRANCH} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')
+    if ! lando terminus multidev:list $PANTHEON_SITE_NAME --field id | grep "$DEFAULT_ENV"; then
+      lando terminus multidev:create $PANTHEON_SITE_NAME.dev $DEFAULT_ENV
     fi
-
-  # Clean up posted SSH key
-  - lando terminus ssh-key:remove $(ssh-keygen -l -f ~/.lando/keys/pantheon.lando.id_rsa.pub | awk -F' ' '{print $2}' | sed 's/://g')
-
-# Merge into master via deploy script
+    lando ssh -c "cd /tmp && git clone -b $DEFAULT_ENV ssh://codeserver.dev.\${PANTHEON_SITE}@codeserver.dev.\${PANTHEON_SITE}.drush.in:2222/~/repository.git pantheon_build"
+    lando ssh -u root -c "rm -rf /tmp/pantheon_build/*"
+    lando ssh -c "cp -rf /app/ /tmp/pantheon_build/"
+    lando ssh -c "git -C /tmp/pantheon_build add -A"
+    lando ssh -c "git -C /tmp/pantheon_build commit -m '$TRAVIS_COMMIT_MESSAGE'"
+    lando ssh -c "git -C /tmp/pantheon_build push origin $DEFAULT_ENV"
+  fi
+- lando terminus ssh-key:remove $(ssh-keygen -l -f ~/.lando/keys/pantheon.lando.id_rsa.pub
+  | awk -F' ' '{print $2}' | sed 's/://g')
 deploy:
   provider: script
   script: scripts/travis/deploy.sh $DEFAULT_ENV
   on:
     branch: master
+env:
+  global:
+    secure: YMh59fQAFWfBWYHBkToWIuXi1hYpi7sXJrJ1Vc41vUoXtj+r+dKvrQYL6Sm2w8Ciqz4g0Bo6EIl2fxOfABEKdcadfCyVYC2hkkKQ/KTw/HqTyakmn1txhg6pqoNN/L4QhOzV1Nqm2F+OUChTpvWJxMP5LJr/nY5RjM51I1chnEUFqp0cluOMB2RfxZiG4U0SGd+BT/nSC9C71fCmyjUaiD80/WP5t0w7G756PqWMcETt9szc03WjDzWhOeCAA+q6Zc14ykH8T+n/zB+QuTavIVrIpRxMP/AV0GipW4ZVeL5u2Z2JkqwaJIDlfFFP0yER0KUO33ZdAyEd23INF3vKkrBQLK0nGkTP1G9u2k1Z4Tz67N7RIkA6zP660A7deyPTbzfZxCjzSrAsqL6Sva9mZKTGKcN/qzAZPH1qFYG1/8TVRXOpSMlCEBHUshJ9nR0ucXMygPPj0dtl9QhW+k6bb8mwf7fdzMnfBeK1oW2iDrR88ngXqB6wqItNx4ETzte52qDb13QZfMPHww6Lxi2hQS89fhka35TYNFcaZ4B8rFoNQodVUrflkO53NLBL6n8nWyjz2p4fZRbULzVDA2KGAtldgYdMIxatS2ldDhcmaWJhsfIenDNEtyUAZjMElschCHmLIMjH8WmsGVngZdpq8GBz1JglQK6eRDracEV+nK0=
