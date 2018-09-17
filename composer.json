@@ -11,7 +11,6 @@
   ],
     "require": {
     "composer/installers": "^1.0.20",
-    "cweagans/composer-patches": "^1.0",
     "drupal-composer/drupal-scaffold": "^2.0.1",
     "drupal/coder": "dev-8.x-2.x",
     "drupal/config_direct_save": "^1.0",
