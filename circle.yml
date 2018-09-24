@@ -1,80 +1,137 @@
-# https://circleci.com/docs/configuration#machine
-machine:
-  timezone:
-    America/Chicago
-  php:
-    # https://circleci.com/docs/build-image-trusty/#php
-    version: 7.0.11
-  environment:
-    # In addition to the environment variables defined in this file, also
-    # add the following variables in the Circle CI UI.
-    #
-    # See: https://circleci.com/docs/1.0/environment-variables/
-    #
-    # TERMINUS_SITE:  Name of the Pantheon site to run tests on, e.g. my_site
-    # TERMINUS_TOKEN: The Pantheon machine token
-    # GITHUB_TOKEN:   The GitHub personal access token
-    # GIT_EMAIL:      The email address to use when making commits
-    #
-    # TEST_SITE_NAME: The name of the test site to provide when installing.
-    # ADMIN_PASSWORD: The admin password to use when installing.
-    # ADMIN_EMAIL:    The email address to give the admin when installing.
-    #
-    # The variables below usually do not need to be modified.
-    BRANCH: $(echo $CIRCLE_BRANCH | grep -v '^\(master\|[0-9]\+.x\)$')
-    PR_ENV: ${BRANCH:+pr-$BRANCH}
-    CIRCLE_ENV: ci-$CIRCLE_BUILD_NUM
-    DEFAULT_ENV: $(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')
-    TERMINUS_ENV: ${TERMINUS_ENV:-$DEFAULT_ENV}
-    NOTIFY: 'scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}'
-    PATH: $PATH:~/bin:tests/scripts
-    BUILD_TOOLS_VERSION: '^1'
-
-dependencies:
-  cache_directories:
-    - ~/.composer/cache
-  pre:
-    - echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
-    - |
-      if [ -n "$GITHUB_TOKEN" ] ; then
-        composer -n config --global github-oauth.github.com $GITHUB_TOKEN
-      fi
-    - git config --global user.email "$GIT_EMAIL"
-    - git config --global user.name "Circle CI"
-    - git config --global core.fileMode false
-  override:
-    - composer -n global require -n "hirak/prestissimo:^0.3"
-    - /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^1"
-    - terminus -n --version
-    - /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^8"
-    - mkdir -p ~/.terminus/plugins
-    - composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:$BUILD_TOOLS_VERSION
-    - composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-secrets-plugin:^1
-  post:
-    - terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
-    - terminus -n build:env:delete:ci "$TERMINUS_SITE" --keep=2 --yes
-    - composer -n build-assets
-    - terminus -n env:wake "$TERMINUS_SITE.dev"
-    - terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content --db-only --notify="$NOTIFY"
-    - terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
-    - |
-      [ ! -f "config/system.site.yml" ] || terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
-      # Optional: replace lines above with lines below to re-install Drupal for every test.
-      # - terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --notify="$NOTIFY"
-      # - terminus -n build:env:install "$TERMINUS_SITE.$TERMINUS_ENV" --site-name="$TEST_SITE_NAME" --account-mail="$ADMIN_EMAIL" --account-pass="$ADMIN_PASSWORD"
-
-test:
-  override:
-    - run-behat
-  post:
-    - terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
-
-deployment:
-  build-assets:
-    branch: master
-    commands:
-      - terminus -n build:env:merge "$TERMINUS_SITE.$TERMINUS_ENV" --yes
-      - terminus -n drush $TERMINUS_SITE.dev -- updatedb --yes
-      - |
-        [ ! -f "config/system.site.yml" ] || terminus -n drush "$TERMINUS_SITE.dev" -- config-import --yes
-      - terminus -n build:env:delete:pr "$TERMINUS_SITE" --yes
+# This configuration was automatically generated from a CircleCI 1.0 config.
+# It should include any build commands you had along with commands that CircleCI
+# inferred from your project structure. We strongly recommend you read all the
+# comments in this file to understand the structure of CircleCI 2.0, as the idiom
+# for configuration has changed substantially in 2.0 to allow arbitrary jobs rather
+# than the prescribed lifecycle of 1.0. In general, we recommend using this generated
+# configuration as a reference rather than using it in production, though in most
+# cases it should duplicate the execution of your original 1.0 config.
+version: 2
+jobs:
+  build:
+    working_directory: ~/cwidahocc/d8cwi
+    parallelism: 1
+    shell: /bin/bash --login
+    # CircleCI 2.0 does not support environment variables that refer to each other the same way as 1.0 did.
+    # If any of these refer to each other, rewrite them so that they don't or see https://circleci.com/docs/2.0/env-vars/#interpolating-environment-variables-to-set-other-environment-variables .
+    environment:
+      BUILD_TOOLS_VERSION: ^1
+      CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
+      BRANCH: $(echo $CIRCLE_BRANCH | grep -v '^\(master\|[0-9]\+.x\)$')
+      PATH: $PATH:~/bin:tests/scripts
+      CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
+      PR_ENV: ${BRANCH:+pr-$BRANCH}
+      NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
+      CIRCLE_ENV: ci-$CIRCLE_BUILD_NUM
+      DEFAULT_ENV: $(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')
+      TERMINUS_ENV: ${TERMINUS_ENV:-$DEFAULT_ENV}
+    # In CircleCI 1.0 we used a pre-configured image with a large number of languages and other packages.
+    # In CircleCI 2.0 you can now specify your own image, or use one of our pre-configured images.
+    # The following configuration line tells CircleCI to use the specified docker image as the runtime environment for you job.
+    # We have selected a pre-built image that mirrors the build environment we use on
+    # the 1.0 platform, but we recommend you choose an image more tailored to the needs
+    # of each job. For more information on choosing an image (or alternatively using a
+    # VM instead of a container) see https://circleci.com/docs/2.0/executor-types/
+    # To see the list of pre-built images that CircleCI provides for most common languages see
+    # https://circleci.com/docs/2.0/circleci-images/
+    # https://github.com/pantheon-systems/drops-8/blob/default/.circleci/config.yml
+    docker:
+    - image: quay.io/pantheon-public/build-tools-ci:2.x
+      command: /sbin/init
+    steps:
+    # Machine Setup
+    #   If you break your build into multiple jobs with workflows, you will probably want to do the parts of this that are relevant in each
+    # The following `checkout` command checks out your code to your working directory. In 1.0 we did this implicitly. In 2.0 you can choose where in the course of a job your code should be checked out.
+    - checkout
+    # Prepare for artifact and test results  collection equivalent to how it was done on 1.0.
+    # In many cases you can simplify this from what is generated here.
+    # 'See docs on artifact collection here https://circleci.com/docs/2.0/artifacts/'
+    - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
+    # This is based on your 1.0 configuration file or project settings
+    - run:
+        working_directory: ~/cwidahocc/d8cwi
+        command: 'echo ''America/Boise'' | sudo tee -a /etc/timezone; sudo dpkg-reconfigure
+          -f noninteractive tzdata; sudo service mysql restart; sudo service postgresql
+          restart; '
+    - run:
+        working_directory: ~/cwidahocc/d8cwi
+        command: |-
+          ln -fs << $HOME/.phpenv/versions/7.0.11/libexec/apache2/libphp5.so/usr/lib/apache2/modules/libphp5.so;
+          phpenv global 7.0.11 2>/dev/null
+    # Dependencies
+    #   This would typically go in either a build or a build-and-test job when using workflows
+    # Restore the dependency cache
+    - restore_cache:
+        keys:
+        # This branch if available
+        - v1-dep-{{ .Branch }}-
+        # Default branch if not
+        - v1-dep-master-
+        # Any branch if there are none on the default branch - this should be unnecessary if you have your default branch configured correctly
+        - v1-dep-
+    # This is based on your 1.0 configuration file or project settings
+    - run: echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
+    - run: |
+        if [ -n "$GITHUB_TOKEN" ] ; then
+          composer -n config --global github-oauth.github.com $GITHUB_TOKEN
+        fi
+    - run: git config --global user.email "$GIT_EMAIL"
+    - run: git config --global user.name "Circle CI"
+    - run: git config --global core.fileMode false
+    # This is based on your 1.0 configuration file or project settings
+    - run: composer -n global require -n "hirak/prestissimo:^0.3"
+    - run: /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^1"
+    - run: terminus -n --version
+    - run: /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^8"
+    - run: mkdir -p ~/.terminus/plugins
+    - run: composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:$BUILD_TOOLS_VERSION
+    - run: composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-secrets-plugin:^1
+    # This is based on your 1.0 configuration file or project settings
+    - run: terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+    - run: terminus -n build:env:delete:ci "$TERMINUS_SITE" --keep=2 --yes
+    - run: composer -n build-assets
+    - run: terminus -n env:wake "$TERMINUS_SITE.dev"
+    - run: terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content --db-only --notify="$NOTIFY"
+    - run: terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
+    - run: |
+        [ ! -f "config/system.site.yml" ] || terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
+        # Optional: replace lines above with lines below to re-install Drupal for every test.
+        # - terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --notify="$NOTIFY"
+        # - terminus -n build:env:install "$TERMINUS_SITE.$TERMINUS_ENV" --site-name="$TEST_SITE_NAME" --account-mail="$ADMIN_EMAIL" --account-pass="$ADMIN_PASSWORD"
+    # Save dependency cache
+    - save_cache:
+        key: v1-dep-{{ .Branch }}-{{ epoch }}
+        paths:
+        # This is a broad list of cache paths to include many possible development environments
+        # You can probably delete some of these entries
+        - vendor/bundle
+        - ~/virtualenvs
+        - ~/.m2
+        - ~/.ivy2
+        - ~/.bundle
+        - ~/.go_workspace
+        - ~/.gradle
+        - ~/.cache/bower
+        # These cache paths were specified in the 1.0 config
+        - ~/.composer/cache
+    # Test
+    #   This would typically be a build job when using workflows, possibly combined with build
+    # This is based on your 1.0 configuration file or project settings
+    - run: run-behat
+    # This is based on your 1.0 configuration file or project settings
+    - run: terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
+    # Deployment
+    # Your existing circle.yml file contains deployment steps.
+    # The config translation tool does not support translating deployment steps
+    # since deployment in CircleCI 2.0 are better handled through workflows.
+    # See the documentation for more information https://circleci.com/docs/2.0/workflows/
+    # Teardown
+    #   If you break your build into multiple jobs with workflows, you will probably want to do the parts of this that are relevant in each
+    # Save test results
+    - store_test_results:
+        path: /tmp/circleci-test-results
+    # Save artifacts
+    - store_artifacts:
+        path: /tmp/circleci-artifacts
+    - store_artifacts:
+        path: /tmp/circleci-test-results
