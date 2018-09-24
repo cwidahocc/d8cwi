@@ -1,0 +1,22 @@
+# Define Particle theme's library CSS and JS assets along with dependencies
+core:
+  css:
+    theme:
+      /themes/particle/dist/assets/app-drupal.styles.css:
+        preprocess: true
+  js:
+    /themes/particle/dist/assets/app-drupal.js:
+      preprocess: true
+  # see all in Drupal's `core/core.libraries.yml`
+  dependencies:
+    - particle/jquery
+    - core/drupal
+    - core/drupalSettings
+
+# Create custom jQuery libraries
+# that'll override the Drupal core jQuery libraries
+# See `libraries-override` in particle.info.yml
+jquery:
+  js:
+    /themes/particle/dist/assets/drupal-jquery.js:
+      { minified: true, weight: -20 }

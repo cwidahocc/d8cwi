@@ -1,0 +1,16 @@
+// The non-printing variables, functions, and mixins of 00-protons/variables
+// are provided to this file via:
+// particle.js: sass-loader.data|includePaths
+
+// To change default bootstrap navbar variables,
+// copy from ~bootstrap/scss/variables to here
+
+$navbar-brand-font-size: $font-size-lg;
+
+@import '~bootstrap/scss/navbar';
+
+// Add custom code here
+
+.navbar {
+  flex-shrink: 0;
+}

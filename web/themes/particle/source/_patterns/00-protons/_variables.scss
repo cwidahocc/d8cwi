@@ -1,0 +1,47 @@
+//
+// Global VARIABLES and HELPERS
+//
+// Place global config here like Bootstrap's _variables.scss.
+// This kind of config is often required prior to importing any libraries
+// (ie Bootstrap Sass), and does not produce any CSS, just variables and maps.
+//
+// This file is provided AUTOMATICALLY to every .scss file on the dependency
+// chain via the configuration of the sass-loader within particle.js.
+// In other words, every .scss within Particle has `@import 00-protons/variables`
+// silently injected into the first line.
+//
+// As long as everything within this files DOES NOT PRINT CSS, there will be
+// no duplicated output. Again, for the people in the back:
+//
+// THIS FILE CONTAINS ONLY NON-PRINTING SASS, LIKE VARIABLES, MIXINS, & FUNCTIONS
+//
+
+// Custom non-printing tools
+@import 'non-printing/functions';
+@import 'non-printing/colors';
+@import 'non-printing/mixins';
+
+// (Other non-printing .scss), ie font families, spacing, etc
+$spacing: (
+  s: 5px,
+  m: 25px,
+  l: 50px,
+);
+
+// This is a good place to globally override bootstrap variables that aren't
+// just overridden in a component later on.
+
+// Bootstrap non-printing tools
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+// import anything else non-printing that may depend on variables in this file!
+// @import 'non-printing/project-specific-mixins'
+
+// Generated SVG icons and sprite mixins
+@import '01-atoms/svgicon/scss/_icons-generated';
+
+// Font Awesome tools
+@import '~font-awesome/scss/variables';
+@import '~font-awesome/scss/mixins';
