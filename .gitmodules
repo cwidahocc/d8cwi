@@ -1,0 +1,3 @@
+[submodule "web/themes/particle"]
+	path = web/themes/particle
+	url = https://github.com/phase2/particle.git
