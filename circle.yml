@@ -37,7 +37,7 @@ jobs:
     # https://github.com/pantheon-systems/drops-8/blob/default/.circleci/config.yml
     docker:
     - image: quay.io/pantheon-public/build-tools-ci:2.x
-      command: /sbin/init
+      ##command: /sbin/init
     steps:
     # Machine Setup
     #   If you break your build into multiple jobs with workflows, you will probably want to do the parts of this that are relevant in each
