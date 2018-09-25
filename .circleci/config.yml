@@ -41,7 +41,6 @@ jobs:
       - run:
           name: Git Setup 
           command: |
-            echo "Token - $GITHUB_TOKEN / EMail $GIT_EMAIL"
             if [ -n "$GITHUB_TOKEN" ] ; then
               composer -n config --global github-oauth.github.com $GITHUB_TOKEN
             fi
@@ -82,3 +81,7 @@ jobs:
             # Optional: replace lines above with lines below to re-install Drupal for every test.
             # - terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --notify="$NOTIFY"
             # - terminus -n build:env:install "$TERMINUS_SITE.$TERMINUS_ENV" --site-name="$TEST_SITE_NAME" --account-mail="$ADMIN_EMAIL" --account-pass="$ADMIN_PASSWORD"
+      - run: 
+          name: beta
+          command: run-behat
+      - run: terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
