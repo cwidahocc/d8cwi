@@ -13,3 +13,4 @@ jobs:
     steps:
       - checkout
       - run: echo "hello world"
+      - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
