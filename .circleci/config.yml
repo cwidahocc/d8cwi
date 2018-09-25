@@ -23,4 +23,4 @@ jobs:
       - run: 
           name: PHP Set
           command: |- 
-             ln -fs << $HOME/.phpenv/versions/7.0.11/libexec/apache2/libphp5.so/usr/lib/apache2/modules/libphp5.so; phpenv global 7.0.11 2>/dev/null
+             ln -fs << $HOME/.phpenv/versions/7.0.11/libexec/apache2/libphp5.so /usr/lib/apache2/modules/libphp5.so; phpenv global 7.0.11 2>/dev/null
