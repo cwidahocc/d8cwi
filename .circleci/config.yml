@@ -31,7 +31,11 @@ jobs:
             ln -fs << $HOME/.phpenv/versions/7.0.11/libexec/apache2/libphp5.so /usr/lib/apache2/modules/libphp5.so; 
             phpenv global 7.0.11 2>/dev/null;
       - run: echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
+      - run: echo "Token - $GITHUB_TOKEN / EMail $GIT_EMAIL"
       - run: |
-        if [ -n "$CIRCLE_SHA1" ] ; then
-          composer -n config --global github-oauth.github.com $CIRCLE_SHA1
+        if [ -n "$GITHUB_TOKEN ] ; then
+          composer -n config --global github-oauth.github.com $GITHUB_TOKEN;
         fi
+      - run: git config --global user.email "$GIT_EMAIL"
+      - run: git config --global user.name "Circle CI"
+      - run: git config --global core.fileMode false
