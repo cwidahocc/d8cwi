@@ -19,4 +19,4 @@ jobs:
       - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
       - run: 
           name: TimeZone and Sudo
-          command: echo ''America/Boise'' | sudo tee -a /etc/timezone; sudo dpkg-reconfigure -f noninteractive tzdata; sudo service mysql restart; sudo service postgresql restart; 
+          command: echo ''America/Boise'' | tee -a /etc/timezone; dpkg-reconfigure -f noninteractive tzdata; service mysql restart; service postgresql restart; 
