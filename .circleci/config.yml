@@ -7,6 +7,7 @@ jobs:
     environment:
       TZ: "/usr/share/zoneinfo/America/Los_Angeles"
       TERM: dumb
+      BUILD_TOOLS_VERSION: ^1
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
 
@@ -32,17 +33,25 @@ jobs:
             phpenv global 7.0.11 2>/dev/null;
       - run: echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
       - run: echo "Token - $GITHUB_TOKEN / EMail $GIT_EMAIL"
-      - run: |
-          if [ -n "$GITHUB_TOKEN" ] ; then
-            composer -n config --global github-oauth.github.com $GITHUB_TOKEN
-          fi
-      - run: git config --global user.email "$GIT_EMAIL"
-      - run: git config --global user.name "Circle CI"
-      - run: git config --global core.fileMode false
-      - run: composer -n global require -n "hirak/prestissimo:^0.3"
-      - run: /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^1"
-      - run: terminus -n --version
-      - run: /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^8"
-      - run: mkdir -p ~/.terminus/plugins
-      - run: composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:$BUILD_TOOLS_VERSION
-      - run: composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-secrets-plugin:^1
+      - run:
+          name: Git Setup 
+          command: |
+            if [ -n "$GITHUB_TOKEN" ] ; then
+              composer -n config --global github-oauth.github.com $GITHUB_TOKEN
+            fi
+            git config --global user.email "$GIT_EMAIL"
+            git config --global user.name "Circle CI"
+            git config --global core.fileMode false
+      - run:
+          name: Composer Dependancies
+          command: |
+            composer -n global require -n "hirak/prestissimo:^0.3"
+      - run:
+          name: Terminus Setup
+          command: |
+            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^1"
+            terminus -n --version
+            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^8"
+            mkdir -p ~/.terminus/plugins
+            composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:$BUILD_TOOLS_VERSION
+            composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-secrets-plugin:^1
