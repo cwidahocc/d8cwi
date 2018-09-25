@@ -1,7 +1,7 @@
 test-defaults: &test-defaults
   docker:
-    - image: circleci/node:4.8.2-jessie
-  working_directory: ~/work/d7
+    - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+  working_directory: ~/cwidahocc/d8cwi
   environment:
     TZ: "/usr/share/zoneinfo/America/Los_Angeles"
     TERM: dumb
