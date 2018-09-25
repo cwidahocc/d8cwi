@@ -1,21 +1,18 @@
-test-defaults: &test-defaults
-  docker:
-    - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
-  working_directory: ~/cwidahocc/d8cwi
-  environment:
-    TZ: "/usr/share/zoneinfo/America/Los_Angeles"
-    TERM: dumb
-    CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
-    CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
-    CIRCLE_ENV: ci-$CIRCLE_BUILD_NUM
-    PR_ENV: ${BRANCH:+pr-$BRANCH}
-    DEFAULT_ENV: $(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')
-    TERMINUS_ENV: ${TERMINUS_ENV:-$DEFAULT_ENV}
-
 version: 2
 jobs:
   build:
-    <<: *test-defaults
+    docker:
+      - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+    working_directory: ~/cwidahocc/d8cwi
+    environment:
+      TZ: "/usr/share/zoneinfo/America/Los_Angeles"
+      TERM: dumb
+      CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
+      CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
+      CIRCLE_ENV: ci-$CIRCLE_BUILD_NUM
+      PR_ENV: ${BRANCH:+pr-$BRANCH}
+      DEFAULT_ENV: $(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')
+      TERMINUS_ENV: ${TERMINUS_ENV:-$DEFAULT_ENV}
     shell: /bin/bash --login
     steps:
       - checkout
