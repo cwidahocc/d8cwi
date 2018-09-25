@@ -22,4 +22,5 @@ jobs:
           command: echo ''America/Boise'' | sudo tee -a /etc/timezone; sudo dpkg-reconfigure -f noninteractive tzdata; sudo service mysql restart; sudo service postgresql restart; 
       - run: 
           name: PHP Set
-          command: |- ln -fs << $HOME/.phpenv/versions/7.0.11/libexec/apache2/libphp5.so/usr/lib/apache2/modules/libphp5.so; phpenv global 7.0.11 2>/dev/null
+          command: |- 
+             ln -fs << $HOME/.phpenv/versions/7.0.11/libexec/apache2/libphp5.so/usr/lib/apache2/modules/libphp5.so; phpenv global 7.0.11 2>/dev/null
