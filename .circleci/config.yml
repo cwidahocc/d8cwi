@@ -1,6 +1,9 @@
 version: 2
 jobs:
   build:
+    working_directory: ~/cwidahocc/d8cwi
+    parallelism: 1
+    shell: /bin/bash --login
     docker:
       - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
     steps:
