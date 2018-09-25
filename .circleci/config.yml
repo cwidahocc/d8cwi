@@ -39,3 +39,10 @@ jobs:
       - run: git config --global user.email "$GIT_EMAIL"
       - run: git config --global user.name "Circle CI"
       - run: git config --global core.fileMode false
+      - run: composer -n global require -n "hirak/prestissimo:^0.3"
+      - run: /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^1"
+      - run: terminus -n --version
+      - run: /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^8"
+      - run: mkdir -p ~/.terminus/plugins
+      - run: composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:$BUILD_TOOLS_VERSION
+      - run: composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-secrets-plugin:^1
