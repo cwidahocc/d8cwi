@@ -5,6 +5,8 @@ test-defaults: &test-defaults
   environment:
     TZ: "/usr/share/zoneinfo/America/Los_Angeles"
     TERM: dumb
+    CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
+    CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
 
 version: 2
 jobs:
