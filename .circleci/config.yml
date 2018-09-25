@@ -19,7 +19,7 @@ jobs:
           name: Setup interpolating environment variables
           command: 
             echo 'export CIRCLE_ENV="ci-$CIRCLE_BUILD_NUM"' >> $BASH_ENV;
-            echo 'export PR_ENV="${BRANCH:+pr-$CIRCLE_BRANCH}"' >> $BASH_ENV;
+            echo 'export PR_ENV="${CIRCLE_BRANCH:+pr-$CIRCLE_BRANCH}"' >> $BASH_ENV;
             echo 'export DEFAULT_ENV="$(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')"' >> $BASH_ENV;
             echo 'export TERMINUS_ENV="${TERMINUS_ENV:-$DEFAULT_ENV}"' >> $BASH_ENV;
       - run: 
