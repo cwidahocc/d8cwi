@@ -1,14 +1,15 @@
+test-defaults: &test-defaults
+  docker:
+    - image: quay.io/pantheon-public/build-tools-ci:2.x
+  working_directory: ~/work/d7
+  environment:
+    TZ: "/usr/share/zoneinfo/America/Los_Angeles"
+    TERM: dumb
+
 version: 2
 jobs:
   build:
-    working_directory: ~/cwidahocc/d8cwi
-    parallelism: 1
-    shell: /bin/bash --login
-    environment:
-      BUILD_TOOLS_VERSION: ^1
-
-    docker:
-      - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+    <<: *test-defaults
     steps:
       - checkout
       - run: echo "hello world"
