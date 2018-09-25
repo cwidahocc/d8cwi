@@ -69,6 +69,12 @@ jobs:
       - run: 
           name: Composer Build
           command: composer -n build-assets
+      - run:
+          name: Particle Build
+          command: |
+            cd web/themes/particle
+            npm install
+
       - run: 
           name: Pantheon environment Build
           command: |
