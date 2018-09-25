@@ -8,6 +8,7 @@ jobs:
       TZ: "/usr/share/zoneinfo/America/Los_Angeles"
       TERM: dumb
       BUILD_TOOLS_VERSION: ^1
+      NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
 
@@ -32,10 +33,10 @@ jobs:
             ln -fs << $HOME/.phpenv/versions/7.0.11/libexec/apache2/libphp5.so /usr/lib/apache2/modules/libphp5.so; 
             phpenv global 7.0.11 2>/dev/null;
       - run: echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
-      - run: echo "Token - $GITHUB_TOKEN / EMail $GIT_EMAIL"
       - run:
           name: Git Setup 
           command: |
+            echo "Token - $GITHUB_TOKEN / EMail $GIT_EMAIL"
             if [ -n "$GITHUB_TOKEN" ] ; then
               composer -n config --global github-oauth.github.com $GITHUB_TOKEN
             fi
@@ -55,3 +56,24 @@ jobs:
             mkdir -p ~/.terminus/plugins
             composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:$BUILD_TOOLS_VERSION
             composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-secrets-plugin:^1
+      - run:
+          name: Terminus authorization
+          command: |
+            terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+            terminus -n build:env:delete:ci "$TERMINUS_SITE" --keep=2 --yes
+      - run: 
+          name: Composer Build
+          command: composer -n build-assets
+      - run: 
+          name: Pantheon environment Build
+          command: |
+            terminus -n env:wake "$TERMINUS_SITE.dev"
+            terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content --db-only --notify="$NOTIFY"
+            terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
+      - run: 
+          name: Pantheon Import
+          command: |
+            [ ! -f "config/system.site.yml" ] || terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
+            # Optional: replace lines above with lines below to re-install Drupal for every test.
+            # - terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --notify="$NOTIFY"
+            # - terminus -n build:env:install "$TERMINUS_SITE.$TERMINUS_ENV" --site-name="$TEST_SITE_NAME" --account-mail="$ADMIN_EMAIL" --account-pass="$ADMIN_PASSWORD"
