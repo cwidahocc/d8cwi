@@ -4,6 +4,18 @@ jobs:
     working_directory: ~/cwidahocc/d8cwi
     parallelism: 1
     shell: /bin/bash --login
+    environment:
+      BUILD_TOOLS_VERSION: ^1
+      CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
+      BRANCH: $(echo $CIRCLE_BRANCH | grep -v '^\(master\|[0-9]\+.x\)$')
+      PATH: $PATH:~/bin:tests/scripts
+      CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
+      PR_ENV: ${BRANCH:+pr-$BRANCH}
+      NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
+      CIRCLE_ENV: ci-$CIRCLE_BUILD_NUM
+      DEFAULT_ENV: $(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')
+      TERMINUS_ENV: ${TERMINUS_ENV:-$DEFAULT_ENV}
+
     docker:
       - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
     steps:
