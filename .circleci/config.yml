@@ -32,7 +32,12 @@ jobs:
           command: |-
             ln -fs << $HOME/.phpenv/versions/7.0.11/libexec/apache2/libphp5.so /usr/lib/apache2/modules/libphp5.so; 
             phpenv global 7.0.11 2>/dev/null;
-      - run: echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
+
+      - run: 
+          name: Echo stuff
+          command: |
+            php -v
+            echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
       - run:
           name: Git Setup 
           command: |
