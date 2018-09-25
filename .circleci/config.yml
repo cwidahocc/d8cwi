@@ -24,6 +24,7 @@ jobs:
             echo 'export PR_ENV="${CIRCLE_BRANCH:+pr-$CIRCLE_BRANCH}"' >> $BASH_ENV;
             echo 'export DEFAULT_ENV="$(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')"' >> $BASH_ENV;
             echo 'export TERMINUS_ENV="${TERMINUS_ENV:-$DEFAULT_ENV}"' >> $BASH_ENV;
+            echo 'export PATH="$PATH:~/bin:tests/scripts"' >> $BASH_ENV
       - run: 
           name: TimeZone and Sudo
           command: echo ''America/Boise'' | sudo tee -a /etc/timezone; sudo dpkg-reconfigure -f noninteractive tzdata; sudo service mysql restart; sudo service postgresql restart; 
@@ -82,6 +83,6 @@ jobs:
             # - terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --notify="$NOTIFY"
             # - terminus -n build:env:install "$TERMINUS_SITE.$TERMINUS_ENV" --site-name="$TEST_SITE_NAME" --account-mail="$ADMIN_EMAIL" --account-pass="$ADMIN_PASSWORD"
       - run: 
-          name: beta
-          command: run-behat
+          name: behat
+          command: ##run-behat
       - run: terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
