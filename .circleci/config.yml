@@ -33,11 +33,10 @@ jobs:
           command: |
             sudo ln -fs $HOME/.phpenv/versions/7.0.11/libexec/apache2/libphp5.so /usr/lib/apache2/modules/libphp5.so
             phpenv global 7.0.11 2>/dev/null
-
+            php -v
       - run: 
           name: Echo stuff
           command: |
-            php -v
             echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
       - run:
           name: Git Setup 
@@ -72,9 +71,12 @@ jobs:
       - run:
           name: Particle Build
           command: |
-            cd web/themes/particle
-            npm install
-
+            cd ~/cwidahocc/d8cwi/web/themes/particle
+            npm install -g yo@latest
+            npm install -g npm
+            ##npm install
+            ##npm run setup
+            ##npm run build:drupal
       - run: 
           name: Pantheon environment Build
           command: |
