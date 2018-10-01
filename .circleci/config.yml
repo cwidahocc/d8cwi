@@ -16,11 +16,6 @@ jobs:
     shell: /bin/bash --login
     steps:
       - checkout
-      - run:
-          name: Checking Versions
-          command: |
-            node --version
-            npm --version
       - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
       - run:
           name: Setup interpolating environment variables
@@ -30,6 +25,11 @@ jobs:
             echo 'export DEFAULT_ENV="$(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')"' >> $BASH_ENV;
             echo 'export TERMINUS_ENV="${TERMINUS_ENV:-$DEFAULT_ENV}"' >> $BASH_ENV;
             echo 'export PATH="/opt/circleci/nodejs/v6.1.0/bin:$PATH:~/bin:tests/scripts"' >> $BASH_ENV;
+      - run:
+          name: Checking Versions
+          command: |
+            node --version
+            npm --version
       - run: 
           name: TimeZone and Sudo
           command: echo ''America/Boise'' | sudo tee -a /etc/timezone; sudo dpkg-reconfigure -f noninteractive tzdata; sudo service mysql restart; sudo service postgresql restart; 
@@ -78,9 +78,9 @@ jobs:
           command: |
             npm -v
             echo $PATH
-            echo 'export PATH="/opt/circleci/nodejs/v6.1.0/bin:$PATH:~/bin:tests/scripts"' >> $BASH_ENV;
-            echo $PATH
-            npm -v
+            ##echo 'export PATH="/opt/circleci/nodejs/v6.1.0/bin:$PATH:~/bin:tests/scripts"' >> $BASH_ENV;
+            ##echo $PATH
+            ##npm -v
       - run:
           name: Particle Build
           command: |
@@ -88,6 +88,7 @@ jobs:
             npm install
             npm run setup
             npm run build:drupal
+            npm run build:pl
       - run: 
           name: Pantheon environment Build
           command: |
