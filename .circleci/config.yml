@@ -69,18 +69,17 @@ jobs:
           name: Composer Build
           command: composer -n build-assets
       - run:
+          name: Set NODE to v6.1.0
+          command: |
+            PATH=/opt/circleci/nodejs/v6.1.0/bin:$PATH
+            npm -v
+      - run:
           name: Particle Build
           command: |
             cd ~/cwidahocc/d8cwi/web/themes/particle
-            npm -v
-            ##curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-            ##sudo apt-get install -y nodejs
-            ##npm -v
-            ##npm install -g npm
-            ##npm install -g yo@latest
-            ##npm install
-            ##npm run setup
-            ##npm run build:drupal
+            npm install
+            npm run setup
+            npm run build:drupal
       - run: 
           name: Pantheon environment Build
           command: |
