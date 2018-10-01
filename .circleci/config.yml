@@ -72,8 +72,9 @@ jobs:
           name: Particle Build
           command: |
             cd ~/cwidahocc/d8cwi/web/themes/particle
-            sudo npm install -g yo@latest
-            sudo npm install -g npm
+            echo "npm -v"
+            #sudo npm install -g yo@latest
+            #sudo npm install -g npm
             npm install
             npm run setup
             npm run build:drupal
