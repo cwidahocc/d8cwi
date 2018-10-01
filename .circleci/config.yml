@@ -73,8 +73,11 @@ jobs:
           command: |
             cd ~/cwidahocc/d8cwi/web/themes/particle
             npm -v
-            npm install -g npm
-            npm install -g yo@latest
+            curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+            npm -v
+            ##npm install -g npm
+            ##npm install -g yo@latest
             npm install
             npm run setup
             npm run build:drupal
