@@ -74,9 +74,9 @@ jobs:
             cd ~/cwidahocc/d8cwi/web/themes/particle
             npm install -g yo@latest
             npm install -g npm
-            ##npm install
-            ##npm run setup
-            ##npm run build:drupal
+            npm install
+            npm run setup
+            npm run build:drupal
       - run: 
           name: Pantheon environment Build
           command: |
