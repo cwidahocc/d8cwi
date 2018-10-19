@@ -1,12 +1,9 @@
-version: 2.1
-executors:
-  pantheon-node:
+version: 2
+jobs:
+  build:
     docker:
     - image: quay.io/pantheon-public/build-tools-ci:nodejs
     ##- image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
-jobs:
-  build:
-    executor: pantheon-node
     branches:
       ignore:
       - master
@@ -25,7 +22,7 @@ jobs:
       - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
       - run:
           name: Setup interpolating environment variables
-          command: 
+          command: |
             echo 'export CIRCLE_ENV="ci-$CIRCLE_BUILD_NUM"' >> $BASH_ENV;
             echo 'export PR_ENV="${CIRCLE_BRANCH:+pr-$CIRCLE_BRANCH}"' >> $BASH_ENV;
             echo 'export DEFAULT_ENV="$(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')"' >> $BASH_ENV;
@@ -123,3 +120,42 @@ jobs:
           name: behat
           command: run-behat
       - run: terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
+  deploy:
+    docker:
+    - image: quay.io/pantheon-public/build-tools-ci:nodejs
+    working_directory: ~/cwidahocc/d8cwi
+    environment:
+      TZ: "/usr/share/zoneinfo/America/Boise"
+      TERM: dumb
+      BUILD_TOOLS_VERSION: ^1
+      NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
+      CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
+      CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
+
+    shell: /bin/bash --login
+    steps:
+    - checkout
+    - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
+    - run:
+        name: Setup interpolating environment variables
+        command: |
+          echo 'export CIRCLE_ENV="ci-$CIRCLE_BUILD_NUM"' >> $BASH_ENV;
+          echo 'export PR_ENV="${CIRCLE_BRANCH:+pr-$CIRCLE_BRANCH}"' >> $BASH_ENV;
+          echo 'export DEFAULT_ENV="$(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')"' >> $BASH_ENV;
+          echo 'export TERMINUS_ENV="${TERMINUS_ENV:-$DEFAULT_ENV}"' >> $BASH_ENV;
+          echo 'export PATH="$PATH:~/bin:tests/scripts"' >> $BASH_ENV;
+    - run:
+        name: Deploy it to dev!
+        command: |
+          echo "Word";
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
