@@ -6,6 +6,8 @@ jobs:
       ##- image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
       ##- image: node:8.0
     working_directory: ~/cwidahocc/d8cwi
+    ssh_known_hosts:
+      - drush.in
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
       TERM: dumb
@@ -13,8 +15,7 @@ jobs:
       NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
-    ssh_known_hosts:
-      - drush.in
+
 
     shell: /bin/bash --login
     steps:
