@@ -13,6 +13,8 @@ jobs:
       NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
+    ssh_known_hosts:
+      - *.drush.in
 
     shell: /bin/bash --login
     steps:
