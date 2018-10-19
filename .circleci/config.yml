@@ -4,9 +4,6 @@ jobs:
     docker:
     - image: quay.io/pantheon-public/build-tools-ci:nodejs
     ##- image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
-    branches:
-      ignore:
-      - master
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -156,3 +153,6 @@ workflows:
       - deploy:
           requires:
             - build
+          filters:
+            branches:
+              only: master
