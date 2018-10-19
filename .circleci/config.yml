@@ -169,6 +169,11 @@ jobs:
         - composer-cache
         - terminus-install
     - run:
+        name: Known Hosts
+        command: |
+          echo "Host *.drush.in" >> /etc/ssh/ssh_config
+          echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+    - run:
         name: Terminus authorization
         command: |
           terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
