@@ -89,11 +89,11 @@ jobs:
       - run:
           name: Particle Build
           command: |
-            cd ~/cwidahocc/d8cwi/web/themes/particle
-            npm install
-            npm run setup
-            npm run build:drupal
-            npm run build:pl
+            #cd ~/cwidahocc/d8cwi/web/themes/particle
+            #npm install
+            #npm run setup
+            #npm run build:drupal
+            #npm run build:pl
       - run: 
           name: Pantheon environment Build
           command: |
