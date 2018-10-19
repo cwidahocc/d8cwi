@@ -1,4 +1,6 @@
 version: 2
+ssh_known_hosts:
+- drush.in
 jobs:
   build:
     docker:
@@ -6,8 +8,6 @@ jobs:
       ##- image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
       ##- image: node:8.0
     working_directory: ~/cwidahocc/d8cwi
-    ssh_known_hosts:
-      - drush.in
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
       TERM: dumb
