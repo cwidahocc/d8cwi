@@ -1,9 +1,15 @@
-version: 2
+version: 2.1
+executors:
+  pantheon-node:
+    docker:
+    - image: quay.io/pantheon-public/build-tools-ci:nodejs
+    ##- image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
 jobs:
   build:
-    docker:
-      - image: quay.io/pantheon-public/build-tools-ci:nodejs
-      ##- image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+    branches:
+      ignore:
+      - master
+    executor: pantheon-node
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
