@@ -4,7 +4,6 @@ jobs:
     docker:
       - image: quay.io/pantheon-public/build-tools-ci:nodejs
       ##- image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
-      ##- image: node:8.0
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -26,7 +25,8 @@ jobs:
             echo 'export PR_ENV="${CIRCLE_BRANCH:+pr-$CIRCLE_BRANCH}"' >> $BASH_ENV;
             echo 'export DEFAULT_ENV="$(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')"' >> $BASH_ENV;
             echo 'export TERMINUS_ENV="${TERMINUS_ENV:-$DEFAULT_ENV}"' >> $BASH_ENV;
-            echo 'export PATH="/opt/circleci/nodejs/v6.1.0/bin:$PATH:~/bin:tests/scripts"' >> $BASH_ENV;
+            echo 'export PATH="$PATH:~/bin:tests/scripts"' >> $BASH_ENV;
+            ##echo 'export PATH="/opt/circleci/nodejs/v6.1.0/bin:$PATH:~/bin:tests/scripts"' >> $BASH_ENV; ##use with full Ubuntu VM
       - run:
           name: Checking Versions
           command: |
