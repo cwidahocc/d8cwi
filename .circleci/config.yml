@@ -14,7 +14,7 @@ jobs:
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
     ssh_known_hosts:
-      - *.drush.in
+      - drush.in
 
     shell: /bin/bash --login
     steps:
