@@ -1,6 +1,6 @@
 version: 2
 ssh_known_hosts:
-- *.drush.in
+  - *.drush.in
 jobs:
   build:
     docker:
