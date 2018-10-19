@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: quay.io/pantheon-public/build-tools-ci:2.x
+      - image: quay.io/pantheon-public/build-tools-ci:3.x
       ##- image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
       ##- image: node:8.0
     working_directory: ~/cwidahocc/d8cwi
