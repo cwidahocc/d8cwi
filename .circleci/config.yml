@@ -63,6 +63,10 @@ jobs:
             git config --global user.email "$GIT_EMAIL"
             git config --global user.name "Circle CI"
             git config --global core.fileMode false
+      - restore_cache:
+          keys:
+          - composer-cache
+          - terminus-install
       - run:
           name: Composer Dependancies
           command: |
@@ -100,6 +104,17 @@ jobs:
             npm run setup
             npm run build:drupal
             npm run build:pl
+
+      - save_cache:
+          key: composer-cache
+          paths:
+          - $HOME/.composer/cache
+
+      - save_cache:
+          key: terminus-install
+          paths:
+          - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
+
       - run: 
           name: Pantheon environment Build
           command: |
@@ -149,6 +164,11 @@ jobs:
         name: Deploy it to dev!
         command: |
           echo "Word";
+    - run:
+        name: Terminus authorization
+        command: |
+          terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+          terminus -n build:env:delete:ci "$TERMINUS_SITE" --keep=2 --yes
     - run:
         name: Pantheon Merge
         command: |
