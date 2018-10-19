@@ -6,10 +6,10 @@ executors:
     ##- image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
 jobs:
   build:
+    executor: pantheon-node
     branches:
       ignore:
       - master
-    executor: pantheon-node
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -18,7 +18,6 @@ jobs:
       NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
-
 
     shell: /bin/bash --login
     steps:
