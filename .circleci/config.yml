@@ -1,5 +1,5 @@
 version: 2
-ssh_known_hosts: .drush.in
+##ssh_known_hosts: .drush.in
 jobs:
   build:
     docker:
@@ -33,6 +33,11 @@ jobs:
           command: |
             node --version
             npm --version
+      - run:
+          name: Known Hosts
+          command: |
+            echo "Host *.drush.in" >> /etc/ssh/ssh_config
+            echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
       - run: 
           name: TimeZone and Sudo
           command: |
