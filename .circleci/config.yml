@@ -1,5 +1,4 @@
 version: 2
-##ssh_known_hosts: .drush.in
 jobs:
   build:
     docker:
@@ -38,6 +37,7 @@ jobs:
           command: |
             echo "Host *.drush.in" >> /etc/ssh/ssh_config
             echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+          ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
       - run: 
           name: TimeZone and Sudo
           command: |
@@ -96,11 +96,11 @@ jobs:
       - run:
           name: Particle Build
           command: |
-            #cd ~/cwidahocc/d8cwi/web/themes/particle
-            #npm install
-            #npm run setup
-            #npm run build:drupal
-            #npm run build:pl
+            cd ~/cwidahocc/d8cwi/web/themes/particle
+            npm install
+            npm run setup
+            npm run build:drupal
+            npm run build:pl
       - run: 
           name: Pantheon environment Build
           command: |
