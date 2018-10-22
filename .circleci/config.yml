@@ -84,7 +84,7 @@ jobs:
           name: Terminus authorization
           command: |
             terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
-            terminus -n build:env:delete:ci "$TERMINUS_SITE" --keep=2 --yes
+            terminus -n build:env:delete:pr "$TERMINUS_SITE" --keep=2 --yes
       - run: 
           name: Composer Build
           command: composer -n build-assets
@@ -177,7 +177,7 @@ jobs:
         name: Terminus authorization
         command: |
           terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
-          #terminus -n build:env:delete:pr "$TERMINUS_SITE" --keep=2 --yes
+          #terminus -n build:env:delete:pr "$TERMINUS_SITE" --yes
     - run:
         name: Pantheon Merge
         command: |
