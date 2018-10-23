@@ -65,7 +65,7 @@ jobs:
             git config --global core.fileMode false
       - restore_cache:
           keys:
-          - composer-cache
+          - composer-cache-{{ checksum "composer.lock" }}
           - terminus-install
       - run:
           name: Composer Dependancies
@@ -106,7 +106,8 @@ jobs:
             npm run build:pl
 
       - save_cache:
-          key: composer-cache
+          key:
+            - composer-cache-{{ checksum "composer.lock" }}
           paths:
           - $HOME/.composer/cache
 
@@ -258,25 +259,25 @@ jobs:
             terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content --db-only --notify="$NOTIFY"
             terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
       - run:
-        name: Pantheon Merges
-        command: |
-          echo "$TERMINUS_SITE.$TERMINUS_ENV";
-          terminus -n env:wake "$TERMINUS_SITE.dev"
+          name: Pantheon Merges
+          command: |
+            echo "$TERMINUS_SITE.$TERMINUS_ENV";
+            terminus -n env:wake "$TERMINUS_SITE.dev"
 
-          # Merge the multidev for the PR into the dev environment
-          terminus -n build:env:merge "$TERMINUS_SITE.$TERMINUS_ENV" --yes
+            # Merge the multidev for the PR into the dev environment
+            terminus -n build:env:merge "$TERMINUS_SITE.$TERMINUS_ENV" --yes
 
-          # Run updatedb on the dev environment
-          terminus -n drush $TERMINUS_SITE.dev -- updatedb --yes
+            # Run updatedb on the dev environment
+            terminus -n drush $TERMINUS_SITE.dev -- updatedb --yes
 
-          # If there are any exported configuration files, then import them
-          if [ -f "config/system.site.yml" ] ; then
-            terminus -n drush "$TERMINUS_SITE.dev" -- config-import --yes
-          fi
+            # If there are any exported configuration files, then import them
+            if [ -f "config/system.site.yml" ] ; then
+              terminus -n drush "$TERMINUS_SITE.dev" -- config-import --yes
+            fi
 
-          # Delete old multidev environments associated with a PR that has been
-          # merged or closed.
-          terminus -n build:env:delete:pr "$TERMINUS_SITE" --yes
+            # Delete old multidev environments associated with a PR that has been
+            # merged or closed.
+            terminus -n build:env:delete:pr "$TERMINUS_SITE" --yes
 workflows:
   version: 2
   build_and_deploy:
