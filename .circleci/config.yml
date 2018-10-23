@@ -65,8 +65,8 @@ jobs:
             git config --global core.fileMode false
       - restore_cache:
           keys:
-          - composer-cache-{{ checksum "composer.lock" }}
-          - terminus-install
+            - composer-cache-{{ checksum "composer.lock" }}
+            - terminus-install
       - run:
           name: Composer Dependancies
           command: |
@@ -202,8 +202,8 @@ jobs:
             git config --global core.fileMode false
       - restore_cache:
           keys:
-          - composer-cache
-          - terminus-install
+            - composer-cache
+            - terminus-install
       - run:
           name: Composer Dependancies
           command: |
