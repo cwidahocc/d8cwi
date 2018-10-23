@@ -69,7 +69,7 @@ jobs:
             - composer-cache-{{ checksum "composer.lock" }}
       - restore_cache:
           keys:
-            - terminus-install
+            - terminus-install-1.8.0
       - restore_cache:
           keys:
             - particle-cache-{{ checksum "web/themes/particle/package-lock.json" }}
@@ -119,10 +119,10 @@ jobs:
       - save_cache:
           key: particle-cache-{{ checksum "web/themes/particle/package-lock.json" }}
           paths:
-          - $HOME/$CIRCLE_USERNAME/$CIRCLE_PROJECT_REPONAME/web/themes/particle/node_modules
+          - web/themes/particle/node_modules
 
       - save_cache:
-          key: terminus-install
+          key: terminus-install-1.8.0
           paths:
           - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
 
