@@ -139,6 +139,7 @@ jobs:
   deploy:
     docker:
     - image: quay.io/pantheon-public/build-tools-ci:nodejs
+    ##- image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -150,43 +151,119 @@ jobs:
 
     shell: /bin/bash --login
     steps:
-    - checkout
-    - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
-    - run:
-        name: Setup interpolating environment variables
-        command: |
-          echo 'export CIRCLE_ENV="ci-$CIRCLE_BUILD_NUM"' >> $BASH_ENV;
-          echo 'export PR_ENV="${CIRCLE_BRANCH:+pr-$CIRCLE_BRANCH}"' >> $BASH_ENV;
-          echo 'export DEFAULT_ENV="$(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')"' >> $BASH_ENV;
-          echo 'export TERMINUS_ENV="${TERMINUS_ENV:-$DEFAULT_ENV}"' >> $BASH_ENV;
-          echo 'export PATH="$PATH:~/bin:tests/scripts"' >> $BASH_ENV;
-    - run:
-        name: Deploy it to dev!
-        command: |
-          echo "Word";
-    - restore_cache:
-        keys:
-        - composer-cache
-        - terminus-install
-    - run:
-        name: Known Hosts
-        command: |
-          echo "Host *.drush.in" >> /etc/ssh/ssh_config
-          echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
-    - run:
-        name: Echo stuff
-        command: |
-          echo "Begin Merge for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
-    - run:
-        name: Terminus authorization
-        command: |
-          terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
-          #terminus -n build:env:delete:pr "$TERMINUS_SITE" --yes
-    - run:
+      - checkout
+      - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
+      - run:
+          name: Setup interpolating environment variables
+          command: |
+            echo 'export CIRCLE_ENV="ci-$CIRCLE_BUILD_NUM"' >> $BASH_ENV;
+            echo 'export PR_ENV="${CIRCLE_BRANCH:+pr-$CIRCLE_BRANCH}"' >> $BASH_ENV;
+            echo 'export DEFAULT_ENV="$(echo ${PR_ENV:-$CIRCLE_ENV} | tr '[:upper:]' '[:lower:]' | sed 's/[^0-9a-z-]//g' | cut -c -11 | sed 's/-$//')"' >> $BASH_ENV;
+            echo 'export TERMINUS_ENV="${TERMINUS_ENV:-$DEFAULT_ENV}"' >> $BASH_ENV;
+            echo 'export PATH="$PATH:~/bin:tests/scripts"' >> $BASH_ENV;
+            ##echo 'export PATH="/opt/circleci/nodejs/v6.1.0/bin:$PATH:~/bin:tests/scripts"' >> $BASH_ENV; ##use with full Ubuntu VM
+      - run:
+          name: Checking Versions
+          command: |
+            node --version
+            npm --version
+      - run:
+          name: Known Hosts
+          command: |
+            echo "Host *.drush.in" >> /etc/ssh/ssh_config
+            echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+          ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
+      - run:
+          name: TimeZone and Sudo
+          command: |
+            echo ''America/Boise'' | sudo tee -a /etc/timezone;
+            sudo dpkg-reconfigure -f noninteractive tzdata;
+            ##sudo service mysql restart;
+            ##sudo service postgresql restart;
+      - run:
+          name: PHP Set
+          command: |
+            ##sudo ln -fs $HOME/.phpenv/versions/7.0.11/libexec/apache2/libphp5.so /usr/lib/apache2/modules/libphp5.so
+            ## phpenv global 7.0.11 2>/dev/null
+            php -v
+      - run:
+          name: Echo stuff
+          command: |
+            echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
+      - run:
+          name: Git Setup
+          command: |
+            if [ -n "$GITHUB_TOKEN" ] ; then
+              composer -n config --global github-oauth.github.com $GITHUB_TOKEN
+            fi
+            git config --global user.email "$GIT_EMAIL"
+            git config --global user.name "Circle CI"
+            git config --global core.fileMode false
+      - restore_cache:
+          keys:
+          - composer-cache
+          - terminus-install
+      - run:
+          name: Composer Dependancies
+          command: |
+            composer -n global require -n "hirak/prestissimo:^0.3"
+      - run:
+          name: Terminus Setup
+          command: |
+            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^1"
+            terminus -n --version
+            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^8"
+            mkdir -p ~/.terminus/plugins
+            composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:$BUILD_TOOLS_VERSION
+            composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-secrets-plugin:^1
+      - run:
+          name: Terminus authorization
+          command: |
+            terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
+            terminus -n build:env:delete:pr "$TERMINUS_SITE" --yes
+      - run:
+          name: Composer Build
+          command: composer -n build-assets
+      - run:
+          name: NODE Version - Double Check
+          command: |
+            npm -v
+            echo $PATH
+            ##echo 'export PATH="/opt/circleci/nodejs/v6.1.0/bin:$PATH:~/bin:tests/scripts"' >> $BASH_ENV;
+            ##echo $PATH
+            ##npm -v
+      - run:
+          name: Particle Build
+          command: |
+            cd ~/cwidahocc/d8cwi/web/themes/particle
+            npm install
+            npm run setup
+            npm run build:drupal
+            npm run build:pl
+
+      - save_cache:
+          key: composer-cache
+          paths:
+          - $HOME/.composer/cache
+
+      - save_cache:
+          key: terminus-install
+          paths:
+          - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
+
+      - run:
+          name: Pantheon environment Build
+          command: |
+            terminus -n env:wake "$TERMINUS_SITE.dev"
+            terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content --db-only --notify="$NOTIFY"
+            terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
+      - run:
         name: Pantheon Merges
         command: |
-          # Merge the multidev for the PR into the dev environment
           echo "$TERMINUS_SITE.$TERMINUS_ENV";
+          #terminus -n env:wake "$TERMINUS_SITE.dev"
+
+          # Merge the multidev for the PR into the dev environment
           #terminus -n build:env:merge "$TERMINUS_SITE.$TERMINUS_ENV" --yes
 
           # Run updatedb on the dev environment
