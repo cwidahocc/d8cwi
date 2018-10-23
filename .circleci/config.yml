@@ -65,7 +65,7 @@ jobs:
             git config --global core.fileMode false
       - restore_cache:
           keys:
-            - composer-cache
+            - composer-cache-{{ checksum "composer.lock" }}
             - terminus-install
       - run:
           name: Composer Dependancies
@@ -106,8 +106,7 @@ jobs:
             npm run build:pl
 
       - save_cache:
-          key:
-            - composer-cache-{{ checksum "composer.lock" }}
+          key: composer-cache-{{ checksum "composer.lock" }}
           paths:
           - $HOME/.composer/cache
 
