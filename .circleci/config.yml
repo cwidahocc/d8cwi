@@ -64,7 +64,7 @@ jobs:
             git config --global user.name "Circle CI"
             git config --global core.fileMode false
       - restore_cache:
-          keys:
+          keys: |
             - composer-cache-{{ checksum "composer.lock" }}
             - terminus-install
       - run:
