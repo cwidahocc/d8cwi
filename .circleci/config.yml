@@ -72,7 +72,7 @@ jobs:
             - terminus-install-1.8.0
       - restore_cache:
           keys:
-            - particle-cache-{{ checksum "web/themes/particle/package-lock.json" }}
+            - particle-cache-{{ checksum "web/themes/particle/package.json" }}
       - run:
           name: Composer Dependancies
           command: |
@@ -105,11 +105,11 @@ jobs:
       - run:
           name: Particle Build
           command: |
-            #cd ~/cwidahocc/d8cwi/web/themes/particle
-            #npm install
-            #npm run setup
-            #npm run build:drupal
-            #npm run build:pl
+            cd ~/cwidahocc/d8cwi/web/themes/particle
+            npm install
+            npm run setup
+            npm run build:drupal
+            npm run build:pl
 
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
@@ -117,7 +117,7 @@ jobs:
           - $HOME/.composer/cache
 
       - save_cache:
-          key: particle-cache-{{ checksum "web/themes/particle/package-lock.json" }}
+          key: particle-cache-{{ checksum "web/themes/particle/package.json" }}
           paths:
           - web/themes/particle/node_modules
 
