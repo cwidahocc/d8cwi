@@ -110,10 +110,7 @@ jobs:
             npm run setup
             npm run build:drupal
             npm run build:pl
-      - run:
-          name: Particle Checksum
-          command: ls -laR cwidahocc/d8cwi/web/themes/particle/node_modules > particle_checksum
-
+      
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
           paths:
