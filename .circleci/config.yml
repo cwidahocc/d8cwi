@@ -95,14 +95,6 @@ jobs:
           name: Composer Build
           command: composer -n build-assets
       - run:
-          name: NODE Version - Double Check
-          command: |
-            npm -v
-            echo $PATH
-            ##echo 'export PATH="/opt/circleci/nodejs/v6.1.0/bin:$PATH:~/bin:tests/scripts"' >> $BASH_ENV;
-            ##echo $PATH
-            ##npm -v
-      - run:
           name: Particle Build
           command: |
             cd ~/cwidahocc/d8cwi/web/themes/particle
