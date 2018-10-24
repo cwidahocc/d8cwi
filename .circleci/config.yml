@@ -64,6 +64,10 @@ jobs:
             git config --global user.email "$GIT_EMAIL"
             git config --global user.name "Circle CI"
             git config --global core.fileMode false
+      - run:
+          name: Particle App Checksum Before
+          command: ls -laR ./web/themes/particle/source > particle_app_checksum_before
+
       - restore_cache:
           keys:
             - composer-cache-{{ checksum "composer.lock" }}
@@ -73,6 +77,9 @@ jobs:
       - restore_cache:
           keys:
             - particle-cache-{{ checksum "web/themes/particle/package.json" }}
+      - restore_cache:
+          keys:
+            - particle-app-cache-{{ checksum "particle_app_checksum_before" }}
       - run:
           name: Composer Dependancies
           command: |
@@ -102,6 +109,9 @@ jobs:
             npm run setup
             npm run build:drupal
             npm run build:pl
+      - run:
+          name: Particle App Checksum After
+          command: ls -laR ./web/themes/particle/source > particle_app_checksum_after
 
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
@@ -112,6 +122,13 @@ jobs:
           key: particle-cache-{{ checksum "web/themes/particle/package.json" }}
           paths:
           - web/themes/particle/node_modules
+
+      - save_cache:
+          key: particle-app-cache-{{ checksum "particle_app_checksum_after" }}
+          paths:
+          - web/themes/particle/dist
+          - web/themes/particle/apps/drupal
+          - web/themes/particle/apps/pl
 
       - save_cache:
           key: terminus-install-1.8.0
