@@ -267,9 +267,6 @@ jobs:
             # Delete old multidev environments associated with a PR that has been
             # merged or closed.
             terminus -n build:env:delete:pr "$TERMINUS_SITE" --yes
-      - run:
-          name: Set Terminus Secret
-          command: terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
 workflows:
   version: 2
   build_and_deploy:
