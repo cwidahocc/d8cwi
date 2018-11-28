@@ -19,13 +19,6 @@ services:
             "root":  "/app/web" }}}}
     conf:
       config: config/php/php.ini
-  database6:
-    type: mariadb:10.0
-    portforward: true
-    creds:
-      user: mysql
-      password: mysql
-      database: mysql
 tooling:
   phplint:
     service: appserver
@@ -39,3 +32,5 @@ tooling:
   behat:
     service: appserver
     cmd: /app/vendor/bin/behat
+  drush:
+    cmd: /app/vendor/bin/drush
