@@ -5,7 +5,7 @@ config:
   env: dev
   site: d8cwi
   id: f3a5f3c2-9f22-48ac-b6b3-99d9f384a163
-  php: "7.1"
+  php: 7.1
   drush: global:8.1.16
 events:
   post-db-import:
@@ -19,8 +19,8 @@ services:
             {"extensions" : {"Behat\\MinkExtension" : {"base_url" :
             "http://nginx/"}, "Drupal\\DrupalExtension" : {"drush" :   {
             "root":  "/app/web" }}}}
-    conf:
-      config: config/php/php.ini
+    config:
+      conf: config/php/php.ini
 tooling:
   phplint:
     service: appserver
@@ -34,3 +34,6 @@ tooling:
   behat:
     service: appserver
     cmd: /app/vendor/bin/behat
+  drush:
+    cmd:
+      - "drush --root=/app/web"
