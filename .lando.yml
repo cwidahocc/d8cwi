@@ -5,6 +5,8 @@ config:
   env: dev
   site: d8cwi
   id: f3a5f3c2-9f22-48ac-b6b3-99d9f384a163
+  php: "7.1"
+  drush: global:8.1.16
 events:
   post-db-import:
     - appserver: cd $LANDO_MOUNT && composer install
@@ -32,5 +34,3 @@ tooling:
   behat:
     service: appserver
     cmd: /app/vendor/bin/behat
-  drush:
-    cmd: /app/vendor/bin/drush
