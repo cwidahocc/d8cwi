@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: quay.io/pantheon-public/build-tools-ci:1.x
+      - image: quay.io/pantheon-public/build-tools-ci:nodejs
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -93,10 +93,10 @@ jobs:
           name: Particle Build
           command: |
             cd ~/cwidahocc/d8cwi/web/themes/particle
-            #npm install
-            #npm run setup
-            #npm run build:drupal
-            #npm run build:pl
+            npm install
+            npm run setup
+            npm run build:drupal
+            npm run build:pl
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
           paths:
