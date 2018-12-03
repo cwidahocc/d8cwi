@@ -29,7 +29,7 @@
     "drupal/config_direct_save": "^1.0",
     "drupal/config_installer": "^1.0",
     "drupal/console": "^1.0.0-rc8",
-    "drupal/core": "~8",
+    "drupal/core": "^8",
     "drupal/crazyegg": "^1.1",
     "drupal/devel": "^1.2",
     "drupal/linkit": "^5.0",
@@ -130,9 +130,6 @@
   "config": {
     "optimize-autoloader": true,
     "preferred-install": "dist",
-    "sort-packages": true,
-    "platform": {
-      "php": "7.1"
-    }
+    "sort-packages": true
   }
 }
