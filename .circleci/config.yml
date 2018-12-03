@@ -114,7 +114,7 @@ jobs:
           command: |
             terminus -n env:wake "$TERMINUS_SITE.dev"
             terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content --db-only --notify="$NOTIFY"
-            #terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
+            terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
       - run:
           name: Pantheon Config Import
           command: |
