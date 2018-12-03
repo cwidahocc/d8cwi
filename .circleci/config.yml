@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-    - image: quay.io/pantheon-public/build-tools-ci:nodejs
+      - image: quay.io/pantheon-public/build-tools-ci:nodejs
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -41,12 +41,12 @@ jobs:
             echo "Host *.drush.in" >> /etc/ssh/ssh_config
             echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
           ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
-      - run: 
+      - run:
           name: TimeZone
           command: |
             echo ''America/Boise'' | sudo tee -a /etc/timezone;
             sudo dpkg-reconfigure -f noninteractive tzdata;
-      - run: 
+      - run:
           name: Echo with Parameters
           command: |
             echo "Begin build for $CIRCLE_ENV${PR_ENV:+ for }$PR_ENV. Pantheon test environment is $TERMINUS_SITE.$TERMINUS_ENV"
@@ -59,9 +59,9 @@ jobs:
             git config --global user.email "$GIT_EMAIL"
             git config --global user.name "Circle CI"
             git config --global core.fileMode false
-      - restore_cache:
-          keys:
-            - composer-cache-{{ checksum "composer.lock" }}
+          #keys:
+          #- composer-cache-{{ checksum "composer.lock" }}
+      #- restore_cache:
       - restore_cache:
           keys:
             - terminus-install-1.8.0
@@ -86,7 +86,7 @@ jobs:
           command: |
             terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
             terminus -n build:env:delete:pr "$TERMINUS_SITE" --yes
-      - run: 
+      - run:
           name: Composer Build
           command: composer -n build-assets
       - run:
@@ -100,22 +100,22 @@ jobs:
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
           paths:
-          - $HOME/.composer/cache
+            - $HOME/.composer/cache
       - save_cache:
           key: particle-cache-{{ checksum "web/themes/particle/package.json" }}
           paths:
-          - web/themes/particle/node_modules
+            - web/themes/particle/node_modules
       - save_cache:
           key: terminus-install-1.8.0
           paths:
-          - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
-      - run: 
+            - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
+      - run:
           name: Pantheon Environment Build MultiDev
           command: |
             terminus -n env:wake "$TERMINUS_SITE.dev"
             terminus -n build:env:create "$TERMINUS_SITE.dev" "$TERMINUS_ENV" --yes --clone-content --db-only --notify="$NOTIFY"
             terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- updatedb -y
-      - run: 
+      - run:
           name: Pantheon Config Import
           command: |
             [ ! -f "config/system.site.yml" ] || terminus -n drush "$TERMINUS_SITE.$TERMINUS_ENV" -- config-import --yes
@@ -134,7 +134,7 @@ jobs:
           command: terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
   deploy:
     docker:
-    - image: quay.io/pantheon-public/build-tools-ci:nodejs
+      - image: quay.io/pantheon-public/build-tools-ci:nodejs
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -193,13 +193,13 @@ jobs:
             git config --global core.fileMode false
       - restore_cache:
           keys:
-          - composer-cache-{{ checksum "composer.lock" }}
+            - composer-cache-{{ checksum "composer.lock" }}
       - restore_cache:
           keys:
-          - terminus-install-1.8.0
+            - terminus-install-1.8.0
       - restore_cache:
           keys:
-          - particle-cache-{{ checksum "web/themes/particle/package.json" }}
+            - particle-cache-{{ checksum "web/themes/particle/package.json" }}
       - run:
           name: Composer Dependancies
           command: |
@@ -232,15 +232,15 @@ jobs:
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
           paths:
-          - $HOME/.composer/cache
+            - $HOME/.composer/cache
       - save_cache:
           key: particle-cache-{{ checksum "web/themes/particle/package.json" }}
           paths:
-          - web/themes/particle/node_modules
+            - web/themes/particle/node_modules
       - save_cache:
           key: terminus-install-1.8.0
           paths:
-          - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
+            - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
       - run:
           name: Pantheon Environment Build MultiDev
           command: |
