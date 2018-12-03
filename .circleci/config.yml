@@ -59,9 +59,9 @@ jobs:
             git config --global user.email "$GIT_EMAIL"
             git config --global user.name "Circle CI"
             git config --global core.fileMode false
-      - restore_cache:
-          keys:
-            #- composer-cache-{{ checksum "composer.lock" }}
+          #keys:
+          #- composer-cache-{{ checksum "composer.lock" }}
+      #- restore_cache:
       - restore_cache:
           keys:
             - terminus-install-1.8.0
