@@ -85,7 +85,9 @@ jobs:
           name: Terminus Authorization and Previous MultiDev Site Removal
           command: |
             terminus -n auth:login --machine-token="$TERMINUS_TOKEN"
-            terminus -n build:env:delete:pr "$TERMINUS_SITE" --yes
+            #terminus -n build:env:delete:pr "$TERMINUS_SITE" --yes
+            echo "Delete $TERMINUS_ENV environment"
+            terminus -n build:env:delete:"$TERMINUS_ENV" "$TERMINUS_SITE" --yes
       - run:
           name: Composer Build
           command: composer -n build-assets
