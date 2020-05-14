@@ -5,19 +5,18 @@ config:
   env: dev
   site: d8cwi
   id: f3a5f3c2-9f22-48ac-b6b3-99d9f384a163
-  drush: global:8.1.16
+  drush: 9.7.2
 events:
   post-db-import:
     - appserver: cd $LANDO_MOUNT && composer install
 services:
   appserver:
     overrides:
-      services:
-        environment:
-          BEHAT_PARAMS: >-
-            {"extensions" : {"Behat\\MinkExtension" : {"base_url" :
-            "http://nginx/"}, "Drupal\\DrupalExtension" : {"drush" :   {
-            "root":  "/app/web" }}}}
+      environment:
+        BEHAT_PARAMS: >-
+          {"extensions" : {"Behat\\MinkExtension" : {"base_url" :
+          "http://nginx/"}, "Drupal\\DrupalExtension" : {"drush" :   {
+          "root":  "/app/web" }}}}
     config:
       conf: config/php/php.ini
 tooling:

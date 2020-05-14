@@ -127,9 +127,9 @@ jobs:
             #if [ -f "config/system.site.yml" ] ; then
             #  terminus -n drush "$TERMINUS_SITE.dev" -- config-import --yes
             #fi
-      - run:
-          name: Run behat Tests
-          command: run-behat
+      #- run:
+      #    name: Run behat Tests
+      #    command: run-behat
       - run:
           name: Set Terminus Secret
           command: terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
