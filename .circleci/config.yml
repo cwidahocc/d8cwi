@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: quay.io/pantheon-public/build-tools-ci:nodejs
+      - image: quay.io/pantheon-public/build-tools-ci:6.x
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -65,7 +65,7 @@ jobs:
           #- composer-cache-{{ checksum "composer.lock" }}
       - restore_cache:
           keys:
-            - terminus-install-1.8.0
+            - terminus-install-2.0.0
       - restore_cache:
           keys:
             - particle-cache-{{ checksum "web/themes/particle/package.json" }}
@@ -108,7 +108,7 @@ jobs:
           paths:
             - web/themes/particle/node_modules
       - save_cache:
-          key: terminus-install-1.8.0
+          key: terminus-install-2.0.0
           paths:
             - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
       - run:
@@ -136,7 +136,7 @@ jobs:
           command: terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
   deploy:
     docker:
-      - image: quay.io/pantheon-public/build-tools-ci:nodejs
+      - image: quay.io/pantheon-public/build-tools-ci:6.x
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -198,7 +198,7 @@ jobs:
             - composer-cache-{{ checksum "composer.lock" }}
       - restore_cache:
           keys:
-            - terminus-install-1.8.0
+            - terminus-install-2.0.0
       - restore_cache:
           keys:
             - particle-cache-{{ checksum "web/themes/particle/package.json" }}
@@ -240,7 +240,7 @@ jobs:
           paths:
             - web/themes/particle/node_modules
       - save_cache:
-          key: terminus-install-1.8.0
+          key: terminus-install-2.0.0
           paths:
             - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
       - run:
