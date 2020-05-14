@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: quay.io/pantheon-public/build-tools-ci:6.x
+      - image: quay.io/pantheon-public/build-tools-ci:nodejs
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -35,11 +35,11 @@ jobs:
             npm --version
             echo "PHP Version"
             php -v
-      #- run:
-          #name: Set Known Hosts exceptions
-          #command: |
-            #echo "Host *.drush.in" >> /etc/ssh/ssh_config
-            #echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+      - run:
+          name: Set Known Hosts exceptions
+          command: |
+            echo "Host *.drush.in" >> /etc/ssh/ssh_config
+            echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
           ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
       - run:
           name: TimeZone
@@ -136,7 +136,7 @@ jobs:
           command: terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
   deploy:
     docker:
-      - image: quay.io/pantheon-public/build-tools-ci:6.x
+      - image: quay.io/pantheon-public/build-tools-ci:nodejs
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
@@ -169,11 +169,11 @@ jobs:
             npm --version
             echo "PHP Version"
             php -v
-      #- run:
-          #name: Set Known Hosts exceptions
-          #command: |
-            #echo "Host *.drush.in" >> /etc/ssh/ssh_config
-            #echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+      - run:
+          name: Set Known Hosts exceptions
+          command: |
+            echo "Host *.drush.in" >> /etc/ssh/ssh_config
+            echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
           ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
       - run:
           name: TimeZone
