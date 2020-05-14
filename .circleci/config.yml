@@ -7,7 +7,7 @@ jobs:
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
       TERM: dumb
-      BUILD_TOOLS_VERSION: ^1
+      BUILD_TOOLS_VERSION: ^2.0.0-beta17
       NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
@@ -59,9 +59,10 @@ jobs:
             git config --global user.email "$GIT_EMAIL"
             git config --global user.name "Circle CI"
             git config --global core.fileMode false
-          #keys:
-          #- composer-cache-{{ checksum "composer.lock" }}
+
       #- restore_cache:
+        - #keys:
+        #- composer-cache-{{ checksum "composer.lock" }}
       - restore_cache:
           keys:
             - terminus-install-1.8.0
@@ -75,7 +76,7 @@ jobs:
       - run:
           name: Terminus Setup
           command: |
-            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^1"
+            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "$BUILD_TOOLS_VERSION"
             terminus -n --version
             /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^8"
             mkdir -p ~/.terminus/plugins
@@ -140,7 +141,7 @@ jobs:
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
       TERM: dumb
-      BUILD_TOOLS_VERSION: ^1
+      BUILD_TOOLS_VERSION: ^2.0.0-beta17
       NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
@@ -208,7 +209,7 @@ jobs:
       - run:
           name: Terminus Setup
           command: |
-            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^1"
+            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "$BUILD_TOOLS_VERSION"
             terminus -n --version
             /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^8"
             mkdir -p ~/.terminus/plugins
