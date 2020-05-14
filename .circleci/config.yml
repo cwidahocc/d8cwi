@@ -37,9 +37,9 @@ jobs:
             php -v
       - run:
           name: Set Known Hosts exceptions
-          command: |
-            echo "Host *.drush.in" >> /etc/ssh/ssh_config
-            echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+          #command: |
+            #echo "Host *.drush.in" >> /etc/ssh/ssh_config
+            #echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
           ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
       - run:
           name: TimeZone
