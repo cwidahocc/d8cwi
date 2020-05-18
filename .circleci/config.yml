@@ -92,14 +92,15 @@ jobs:
       - run:
           name: Composer Build
           command: composer -n build-assets
-      - run:
-          name: Particle Build
-          command: |
-            cd ~/cwidahocc/d8cwi/web/themes/particle
-            npm install
-            npm run setup
-            npm run build:drupal
-            npm run build:pl
+      # use to run particle - requires Nodejs in Docker image
+      #- run:
+      #    name: Particle Build
+      #    command: |
+      #      cd ~/cwidahocc/d8cwi/web/themes/particle
+      #      npm install
+      #      npm run setup
+      #      npm run build:drupal
+      #      npm run build:pl
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
           paths:
@@ -224,14 +225,14 @@ jobs:
       - run:
           name: Composer Build
           command: composer -n build-assets
-      - run:
-          name: Particle Build
-          command: |
-            cd ~/cwidahocc/d8cwi/web/themes/particle
-            npm install
-            npm run setup
-            npm run build:drupal
-            npm run build:pl
+      #- run:
+      #    name: Particle Build
+      #    command: |
+      #      cd ~/cwidahocc/d8cwi/web/themes/particle
+      #      npm install
+      #      npm run setup
+      #      npm run build:drupal
+      #      npm run build:pl
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
           paths:
