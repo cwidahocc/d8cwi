@@ -42,11 +42,11 @@ jobs:
       #      echo "Host *.drush.in" >> /etc/ssh/ssh_config
       #      echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
           ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
-      - run:
-          name: TimeZone
-          command: |
-            echo ''America/Boise'' | sudo tee -a /etc/timezone;
-            sudo dpkg-reconfigure -f noninteractive tzdata;
+      #- run:
+      #    name: TimeZone
+      #    command: |
+      #      echo ''America/Boise'' | sudo tee -a /etc/timezone;
+      #      sudo dpkg-reconfigure -f noninteractive tzdata;
       - run:
           name: Echo with Parameters
           command: |
@@ -176,11 +176,11 @@ jobs:
       #      echo "Host *.drush.in" >> /etc/ssh/ssh_config
       #      echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
           ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
-      - run:
-          name: TimeZone
-          command: |
-            echo ''America/Boise'' | sudo tee -a /etc/timezone;
-            sudo dpkg-reconfigure -f noninteractive tzdata;
+      #- run:
+      #    name: TimeZone
+      #    command: |
+      #      echo ''America/Boise'' | sudo tee -a /etc/timezone;
+      #      sudo dpkg-reconfigure -f noninteractive tzdata;
       - run:
           name: Echo with Parameters
           command: |
