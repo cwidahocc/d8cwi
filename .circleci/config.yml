@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: quay.io/pantheon-public/build-tools-ci:nodejs
+      - image: quay.io/pantheon-public/build-tools-ci:5.x
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
