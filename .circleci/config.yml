@@ -35,11 +35,12 @@ jobs:
             npm --version
             echo "PHP Version"
             php -v
-      - run:
-          name: Set Known Hosts exceptions
-          command: |
-            echo "Host *.drush.in" >> /etc/ssh/ssh_config
-            echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+      # use when running the Nodejs docker image
+      #- run:
+      #    name: Set Known Hosts exceptions
+      #    command: |
+      #      echo "Host *.drush.in" >> /etc/ssh/ssh_config
+      #      echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
           ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
       - run:
           name: TimeZone
@@ -169,11 +170,11 @@ jobs:
             npm --version
             echo "PHP Version"
             php -v
-      - run:
-          name: Set Known Hosts exceptions
-          command: |
-            echo "Host *.drush.in" >> /etc/ssh/ssh_config
-            echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+      #- run:
+      #    name: Set Known Hosts exceptions
+      #    command: |
+      #      echo "Host *.drush.in" >> /etc/ssh/ssh_config
+      #      echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
           ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
       - run:
           name: TimeZone
