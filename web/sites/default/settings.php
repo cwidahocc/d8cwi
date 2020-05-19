@@ -16,14 +16,25 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
  */
 include __DIR__ . "/settings.pantheon.php";
 
+
+// Lando settings.
+if (file_exists($app_root . '/' . $site_path . '/settings.lando.php')) {
+  include $app_root . '/' . $site_path . '/settings.lando.php';
+}
+
 /**
  * Place the config directory outside of the Drupal root.
  */
+/* Not Compatible with D9 https://www.drupal.org/node/3018145 */
+/*
 $config_directories = array(
   CONFIG_SYNC_DIRECTORY => dirname(DRUPAL_ROOT) . '/config',
 );
+*/
+/* Compatible with D9 https://www.drupal.org/node/3018145 */
+$settings['config_sync_directory'] = '../config/sync';
 
-/**
+  /**
  * If there is a local settings file, then include it
  */
 $local_settings = __DIR__ . "/settings.local.php";
