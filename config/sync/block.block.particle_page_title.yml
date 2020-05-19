@@ -1,0 +1,20 @@
+uuid: 0166ac7f-6799-4875-8699-be36c07b35cd
+langcode: en
+status: true
+dependencies:
+  theme:
+    - particle
+_core:
+  default_config_hash: jkqjilOr2YkpyI-tLTc9Z1jys5PFI4_CD7uEAPqOBBU
+id: particle_page_title
+theme: particle
+region: content
+weight: -50
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }
