@@ -6,6 +6,7 @@ config:
   site: d8cwi
   id: f3a5f3c2-9f22-48ac-b6b3-99d9f384a163
   drush: 9.7.2
+  php: '7.3'
 events:
   post-db-import:
     - appserver: cd $LANDO_MOUNT && composer install
@@ -19,6 +20,13 @@ services:
           "root":  "/app/web" }}}}
     config:
       conf: config/php/php.ini
+  d7db:
+    type: mariadb
+    creds:
+      user: drupal7db
+      password: drupal7db
+      database: drupal7db
+    portforward: true
 tooling:
   phplint:
     service: appserver

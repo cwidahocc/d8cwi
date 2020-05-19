@@ -2,12 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: quay.io/pantheon-public/build-tools-ci:nodejs
+      - image: quay.io/pantheon-public/build-tools-ci:6.x
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
       TERM: dumb
-      BUILD_TOOLS_VERSION: ^1
+      BUILD_TOOLS_VERSION: ^2.0.0-beta17
       NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
@@ -35,17 +35,18 @@ jobs:
             npm --version
             echo "PHP Version"
             php -v
-      - run:
-          name: Set Known Hosts exceptions
-          command: |
-            echo "Host *.drush.in" >> /etc/ssh/ssh_config
-            echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+      # use when running the Nodejs docker image
+      #- run:
+      #    name: Set Known Hosts exceptions
+      #    command: |
+      #      echo "Host *.drush.in" >> /etc/ssh/ssh_config
+      #      echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
           ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
-      - run:
-          name: TimeZone
-          command: |
-            echo ''America/Boise'' | sudo tee -a /etc/timezone;
-            sudo dpkg-reconfigure -f noninteractive tzdata;
+      #- run:
+      #    name: TimeZone
+      #    command: |
+      #      echo ''America/Boise'' | sudo tee -a /etc/timezone;
+      #      sudo dpkg-reconfigure -f noninteractive tzdata;
       - run:
           name: Echo with Parameters
           command: |
@@ -59,15 +60,16 @@ jobs:
             git config --global user.email "$GIT_EMAIL"
             git config --global user.name "Circle CI"
             git config --global core.fileMode false
-          #keys:
+
+      #- restore_cache:
+        #keys:
           #- composer-cache-{{ checksum "composer.lock" }}
       #- restore_cache:
-      - restore_cache:
-          keys:
-            - terminus-install-1.8.0
-      - restore_cache:
-          keys:
-            - particle-cache-{{ checksum "web/themes/particle/package.json" }}
+          #keys:
+            #- terminus-install-2.0.0
+      #- restore_cache:
+      #    keys:
+      #      - particle-cache-{{ checksum "web/themes/particle/package.json" }}
       - run:
           name: Composer Dependancies
           command: |
@@ -75,9 +77,9 @@ jobs:
       - run:
           name: Terminus Setup
           command: |
-            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^1"
+            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "$BUILD_TOOLS_VERSION"
             terminus -n --version
-            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^8"
+            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^9"
             mkdir -p ~/.terminus/plugins
             composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:$BUILD_TOOLS_VERSION
             composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-secrets-plugin:^1
@@ -90,14 +92,15 @@ jobs:
       - run:
           name: Composer Build
           command: composer -n build-assets
-      - run:
-          name: Particle Build
-          command: |
-            cd ~/cwidahocc/d8cwi/web/themes/particle
-            npm install
-            npm run setup
-            npm run build:drupal
-            npm run build:pl
+      # use to run particle - requires Nodejs in Docker image
+      #- run:
+      #    name: Particle Build
+      #    command: |
+      #      cd ~/cwidahocc/d8cwi/web/themes/particle
+      #      npm install
+      #      npm run setup
+      #      npm run build:drupal
+      #      npm run build:pl
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
           paths:
@@ -106,10 +109,10 @@ jobs:
           key: particle-cache-{{ checksum "web/themes/particle/package.json" }}
           paths:
             - web/themes/particle/node_modules
-      - save_cache:
-          key: terminus-install-1.8.0
-          paths:
-            - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
+      #- save_cache:
+          #key: terminus-install-2.0.0
+          #paths:
+            #- $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
       - run:
           name: Pantheon Environment Build MultiDev
           command: |
@@ -135,12 +138,12 @@ jobs:
           command: terminus -n secrets:set "$TERMINUS_SITE.$TERMINUS_ENV" token "$GITHUB_TOKEN" --file='github-secrets.json' --clear --skip-if-empty
   deploy:
     docker:
-      - image: quay.io/pantheon-public/build-tools-ci:nodejs
+      - image: quay.io/pantheon-public/build-tools-ci:6.x
     working_directory: ~/cwidahocc/d8cwi
     environment:
       TZ: "/usr/share/zoneinfo/America/Boise"
       TERM: dumb
-      BUILD_TOOLS_VERSION: ^1
+      BUILD_TOOLS_VERSION: ^2.0.0-beta17
       NOTIFY: scripts/github/add-commit-comment {project} {sha} "Created multidev environment [{site}#{env}]({dashboard-url})." {site-url}
       CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
       CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
@@ -168,17 +171,17 @@ jobs:
             npm --version
             echo "PHP Version"
             php -v
-      - run:
-          name: Set Known Hosts exceptions
-          command: |
-            echo "Host *.drush.in" >> /etc/ssh/ssh_config
-            echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+      #- run:
+      #    name: Set Known Hosts exceptions
+      #    command: |
+      #      echo "Host *.drush.in" >> /etc/ssh/ssh_config
+      #      echo "  StrictHostKeyChecking no" >> /etc/ssh/ssh_config
           ## Remove this once ssh_known_hosts: *.drush.in will work with the wildcard
-      - run:
-          name: TimeZone
-          command: |
-            echo ''America/Boise'' | sudo tee -a /etc/timezone;
-            sudo dpkg-reconfigure -f noninteractive tzdata;
+      #- run:
+      #    name: TimeZone
+      #    command: |
+      #      echo ''America/Boise'' | sudo tee -a /etc/timezone;
+      #      sudo dpkg-reconfigure -f noninteractive tzdata;
       - run:
           name: Echo with Parameters
           command: |
@@ -192,15 +195,15 @@ jobs:
             git config --global user.email "$GIT_EMAIL"
             git config --global user.name "Circle CI"
             git config --global core.fileMode false
-      - restore_cache:
-          keys:
-            - composer-cache-{{ checksum "composer.lock" }}
-      - restore_cache:
-          keys:
-            - terminus-install-1.8.0
-      - restore_cache:
-          keys:
-            - particle-cache-{{ checksum "web/themes/particle/package.json" }}
+      #- restore_cache:
+      #    keys:
+      #      - composer-cache-{{ checksum "composer.lock" }}
+      #- restore_cache:
+          #keys:
+            #- terminus-install-2.0.0
+      #- restore_cache:
+      #    keys:
+      #      - particle-cache-{{ checksum "web/themes/particle/package.json" }}
       - run:
           name: Composer Dependancies
           command: |
@@ -208,9 +211,9 @@ jobs:
       - run:
           name: Terminus Setup
           command: |
-            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^1"
+            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require pantheon-systems/terminus "^2.0.0-beta17"
             terminus -n --version
-            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^8"
+            /usr/bin/env COMPOSER_BIN_DIR=$HOME/bin composer -n --working-dir=$HOME require drush/drush "^9"
             mkdir -p ~/.terminus/plugins
             composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-build-tools-plugin:$BUILD_TOOLS_VERSION
             composer -n create-project -d ~/.terminus/plugins pantheon-systems/terminus-secrets-plugin:^1
@@ -222,14 +225,14 @@ jobs:
       - run:
           name: Composer Build
           command: composer -n build-assets
-      - run:
-          name: Particle Build
-          command: |
-            cd ~/cwidahocc/d8cwi/web/themes/particle
-            npm install
-            npm run setup
-            npm run build:drupal
-            npm run build:pl
+      #- run:
+      #    name: Particle Build
+      #    command: |
+      #      cd ~/cwidahocc/d8cwi/web/themes/particle
+      #      npm install
+      #      npm run setup
+      #      npm run build:drupal
+      #      npm run build:pl
       - save_cache:
           key: composer-cache-{{ checksum "composer.lock" }}
           paths:
@@ -238,10 +241,10 @@ jobs:
           key: particle-cache-{{ checksum "web/themes/particle/package.json" }}
           paths:
             - web/themes/particle/node_modules
-      - save_cache:
-          key: terminus-install-1.8.0
-          paths:
-            - $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
+      #- save_cache:
+          #key: terminus-install-2.0.0
+          #paths:
+            #- $(TERMINUS_PLUGINS_DIR:-~/.terminus/plugins)
       - run:
           name: Pantheon Environment Build MultiDev
           command: |
