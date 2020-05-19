@@ -1,0 +1,284 @@
+uuid: 95e6948a-2bf1-46e2-a797-1c2cb7d5f293
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_program
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldInstanceMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Nodes (Program)'
+source:
+  plugin: d7_node
+  node_type: program
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  comment_node_program/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_page_headerimg:
+    -
+      plugin: sub_process
+      source: field_page_headerimg
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_program_advising:
+    -
+      plugin: get
+      source: field_program_advising
+  field_program_age:
+    -
+      plugin: get
+      source: field_program_age
+  field_program_aid:
+    -
+      plugin: get
+      source: field_program_aid
+  field_program_career_info:
+    -
+      plugin: get
+      source: field_program_career_info
+  field_program_mission:
+    -
+      plugin: get
+      source: field_program_mission
+  field_program_opportunities:
+    -
+      plugin: get
+      source: field_program_opportunities
+  field_program_transfer_info:
+    -
+      plugin: get
+      source: field_program_transfer_info
+  field_program_transferable:
+    -
+      plugin: get
+      source: field_program_transferable
+  field_program_why:
+    -
+      plugin: get
+      source: field_program_why
+  field_video:
+    -
+      plugin: sub_process
+      source: field_video
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_program_announcements:
+    -
+      plugin: get
+      source: field_program_announcements
+  field_program_career_tax:
+    -
+      plugin: sub_process
+      source: field_program_career_tax
+      process:
+        target_id: tid
+  field_program_image_slide:
+    -
+      plugin: sub_process
+      source: field_program_image_slide
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_program_learntodo_tax:
+    -
+      plugin: sub_process
+      source: field_program_learntodo_tax
+      process:
+        target_id: tid
+  field_program_redirect:
+    -
+      plugin: field_link
+      source: field_program_redirect
+  field_program_skills_tax:
+    -
+      plugin: sub_process
+      source: field_program_skills_tax
+      process:
+        target_id: tid
+  field_program_tag_computed:
+    -
+      plugin: get
+      source: field_program_tag_computed
+  field_testimonial:
+    -
+      plugin: get
+      source: field_testimonial
+  field_academic_dates_show:
+    -
+      plugin: get
+      source: field_academic_dates_show
+  field_resource:
+    -
+      plugin: get
+      source: field_resource
+  field_academic_dates_er:
+    -
+      plugin: get
+      source: field_academic_dates_er
+  field_board_member_name:
+    -
+      plugin: get
+      source: field_board_member_name
+  field_department_er:
+    -
+      plugin: get
+      source: field_department_er
+  field_location_er:
+    -
+      plugin: get
+      source: field_location_er
+  field_page_contact_person:
+    -
+      plugin: get
+      source: field_page_contact_person
+  field_page_icon:
+    -
+      plugin: sub_process
+      source: field_page_icon
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_clubs_er:
+    -
+      plugin: get
+      source: field_clubs_er
+  field_degree_ref:
+    -
+      plugin: get
+      source: field_degree_ref
+  field_radioactivity:
+    -
+      plugin: get
+      source: field_radioactivity
+  field_program_next_step:
+    -
+      plugin: field_link
+      source: field_program_next_step
+  field_related_programs:
+    -
+      plugin: get
+      source: field_related_programs
+  field_division:
+    -
+      plugin: sub_process
+      source: field_division
+      process:
+        target_id: tid
+  field_program_cost_info:
+    -
+      plugin: get
+      source: field_program_cost_info
+  field_program_flyer:
+    -
+      plugin: field_link
+      source: field_program_flyer
+  field_request_more_emails:
+    -
+      plugin: get
+      source: field_request_more_emails
+  field_program_new:
+    -
+      plugin: get
+      source: field_program_new
+  field_program_faq_category:
+    -
+      plugin: sub_process
+      source: field_program_faq_category
+      process:
+        target_id: tid
+  field_program_faq_questions:
+    -
+      plugin: get
+      source: field_program_faq_questions
+  field_program_coming_cta:
+    -
+      plugin: get
+      source: field_program_coming_cta
+  field_program_coming_soon:
+    -
+      plugin: get
+      source: field_program_coming_soon
+destination:
+  plugin: 'entity:node'
+  default_bundle: program
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_comment_field_instance

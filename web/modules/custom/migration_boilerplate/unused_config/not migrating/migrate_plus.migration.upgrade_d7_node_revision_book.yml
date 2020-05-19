@@ -1,0 +1,177 @@
+uuid: fe6f5c63-ea11-4d50-975d-cf2e86b27587
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_revision_book
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldFormatterMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node revisions (Policies and Handbooks)'
+source:
+  plugin: d7_node_revision
+  node_type: book
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  comment_node_book/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_book_definition:
+    -
+      plugin: get
+      source: field_book_definition
+  field_book_department:
+    -
+      plugin: sub_process
+      source: field_book_department
+      process:
+        target_id: tid
+  field_book_effective:
+    -
+      plugin: sub_process
+      source: field_book_effective
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d\TH:i:s'
+          to_format: Y-m-d
+          source: value
+  field_book_file:
+    -
+      plugin: sub_process
+      source: field_book_file
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_book_forms:
+    -
+      plugin: field_link
+      source: field_book_forms
+  field_book_name:
+    -
+      plugin: get
+      source: field_book_name
+  field_book_number:
+    -
+      plugin: get
+      source: field_book_number
+  field_book_page_type:
+    -
+      plugin: get
+      source: field_book_page_type
+  field_book_policy_body:
+    -
+      plugin: get
+      source: field_book_policy_body
+  field_book_revision:
+    -
+      plugin: sub_process
+      source: field_book_revision
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d\TH:i:s'
+          to_format: Y-m-d
+          source: value
+  field_book_scope:
+    -
+      plugin: get
+      source: field_book_scope
+  field_radioactivity:
+    -
+      plugin: get
+      source: field_radioactivity
+  field_search_keywords:
+    -
+      plugin: get
+      source: field_search_keywords
+destination:
+  plugin: 'entity_revision:node'
+  default_bundle: book
+migration_dependencies:
+  required:
+    - upgrade_d7_node_academic_date
+    - upgrade_d7_node_announcement
+    - upgrade_d7_node_blog
+    - upgrade_d7_node_book
+    - upgrade_d7_node_club
+    - upgrade_d7_node_contact_us
+    - upgrade_d7_node_cwi_newsletter
+    - upgrade_d7_node_degree
+    - upgrade_d7_node_department
+    - upgrade_d7_node_faq
+    - upgrade_d7_node_file
+    - upgrade_d7_node_hero
+    - upgrade_d7_node_homepage_slide_collection
+    - upgrade_d7_node_location
+    - upgrade_d7_node_news
+    - upgrade_d7_node_occasion
+    - upgrade_d7_node_page
+    - upgrade_d7_node_person
+    - upgrade_d7_node_program
+    - upgrade_d7_node_social
+    - upgrade_d7_node_spotlight
+    - upgrade_d7_node_upgrade_ad
+    - upgrade_d7_node_webform
+  optional: {  }

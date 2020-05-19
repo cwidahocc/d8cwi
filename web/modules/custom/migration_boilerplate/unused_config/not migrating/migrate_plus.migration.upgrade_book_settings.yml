@@ -1,0 +1,40 @@
+uuid: 197650d0-ebb3-4de8-859f-3aa84a39c326
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_book_settings
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 6'
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Book configuration'
+source:
+  plugin: variable
+  variables:
+    - book_child_type
+    - book_block_mode
+    - book_allowed_types
+  source_module: book
+process:
+  child_type:
+    -
+      plugin: get
+      source: book_child_type
+  block/navigation/mode:
+    -
+      plugin: get
+      source: book_block_mode
+  allowed_types:
+    -
+      plugin: get
+      source: book_allowed_types
+destination:
+  plugin: config
+  config_name: book.settings
+migration_dependencies:
+  required: {  }
+  optional: {  }

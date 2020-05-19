@@ -1,0 +1,108 @@
+uuid: 47c49314-8ea9-4fc1-82d9-791e63c42d6c
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_degree
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldInstanceMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Nodes (Program - Degree)'
+source:
+  plugin: d7_node
+  node_type: degree
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  comment_node_degree/0/status:
+    -
+      plugin: get
+      source: comment
+  field_degree_format:
+    -
+      plugin: sub_process
+      source: field_degree_format
+      process:
+        target_id: tid
+  field_degree_length:
+    -
+      plugin: get
+      source: field_degree_length
+  field_degree_tax:
+    -
+      plugin: sub_process
+      source: field_degree_tax
+      process:
+        target_id: tid
+  field_link:
+    -
+      plugin: field_link
+      source: field_link
+  field_degree_advising:
+    -
+      plugin: field_link
+      source: field_degree_advising
+destination:
+  plugin: 'entity:node'
+  default_bundle: degree
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_comment_field_instance

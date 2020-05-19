@@ -1,0 +1,168 @@
+uuid: 0294da49-8d37-42b0-9765-389a803bed71
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_news
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldInstanceMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Nodes (News)'
+source:
+  plugin: d7_node
+  node_type: news
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  comment_node_news/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_type_of_news:
+    -
+      plugin: sub_process
+      source: field_type_of_news
+      process:
+        target_id: tid
+  field_news_hero:
+    -
+      plugin: sub_process
+      source: field_news_hero
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_news_date:
+    -
+      plugin: sub_process
+      source: field_news_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: 'Y-m-d\TH:i:s'
+          source: value
+  field_image_gallery:
+    -
+      plugin: sub_process
+      source: field_image_gallery
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_news_tags:
+    -
+      plugin: sub_process
+      source: field_news_tags
+      process:
+        target_id: tid
+  field_radioactivity:
+    -
+      plugin: get
+      source: field_radioactivity
+  field_organizations:
+    -
+      plugin: get
+      source: field_organizations
+  field_file_file:
+    -
+      plugin: sub_process
+      source: field_file_file
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_news_boiler_plate:
+    -
+      plugin: get
+      source: field_news_boiler_plate
+  field_video:
+    -
+      plugin: sub_process
+      source: field_video
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_news_expire_date:
+    -
+      plugin: sub_process
+      source: field_news_expire_date
+      process:
+        value:
+          plugin: format_date
+          from_format: 'Y-m-d H:i:s'
+          to_format: Y-m-d
+          source: value
+destination:
+  plugin: 'entity:node'
+  default_bundle: news
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_comment_field_instance
