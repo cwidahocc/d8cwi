@@ -1,0 +1,38 @@
+uuid: 55ecde20-c507-4004-8fd5-7e8a487fee39
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_headerimg
+    - node.type.club
+  module:
+    - image
+id: node.club.field_page_headerimg
+field_name: field_page_headerimg
+entity_type: node
+bundle: club
+label: 'Header image'
+description: 'This image will appear behind the page title and will get cropped as the browser window resizes. Required size is 880x200 use Crop to adjust your image.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: true
+  alt_field_required: true
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: club_ct/header
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: 880x200
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

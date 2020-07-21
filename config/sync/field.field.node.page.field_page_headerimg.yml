@@ -1,0 +1,38 @@
+uuid: 2fbf2e0a-ec7a-4d68-bec5-af63bfd3cf1d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_headerimg
+    - node.type.page
+  module:
+    - image
+id: node.page.field_page_headerimg
+field_name: field_page_headerimg
+entity_type: node
+bundle: page
+label: 'Header image'
+description: 'This image will appear behind the page title and will get cropped as the browser window resizes.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: page_contenttype/header
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: 880x200
+  alt_field: true
+  title_field: false
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  alt_field_required: true
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

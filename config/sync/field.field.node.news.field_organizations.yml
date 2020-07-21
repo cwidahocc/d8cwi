@@ -1,0 +1,34 @@
+uuid: 2cb71c0f-ab5d-44e9-a779-89312ab4720b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_organizations
+    - node.type.club
+    - node.type.department
+    - node.type.news
+    - node.type.program
+id: node.news.field_organizations
+field_name: field_organizations
+entity_type: node
+bundle: news
+label: 'Related Group(s)'
+description: 'Link to Programs, Departments and Clubs.  The reference will be display on the blog article itself and will display to that organizations feed, like on our programs pages.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      club: club
+      department: department
+      program: program
+field_type: entity_reference

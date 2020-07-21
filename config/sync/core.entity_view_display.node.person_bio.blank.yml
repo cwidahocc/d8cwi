@@ -1,0 +1,34 @@
+uuid: 52ffeead-8c37-4a97-af4e-dc919dd40ca4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.person_bio.body
+    - field.field.node.person_bio.field_person_bio_additional
+    - field.field.node.person_bio.field_person_bio_headshot
+    - field.field.node.person_bio.field_person_bio_location_ref
+    - field.field.node.person_bio.field_person_bio_reference
+    - field.field.node.person_bio.field_person_bio_room
+    - field.field.node.person_bio.field_person_bio_url
+    - node.type.person_bio
+  module:
+    - user
+id: node.person_bio.blank
+targetEntityType: node
+bundle: person_bio
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_person_bio_additional: true
+  field_person_bio_headshot: true
+  field_person_bio_location_ref: true
+  field_person_bio_reference: true
+  field_person_bio_room: true
+  field_person_bio_url: true

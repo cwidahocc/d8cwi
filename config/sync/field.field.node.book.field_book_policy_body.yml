@@ -1,0 +1,21 @@
+uuid: daf019f2-0187-4e7e-b09c-55c950b9a248
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_policy_body
+    - node.type.book
+  module:
+    - text
+id: node.book.field_book_policy_body
+field_name: field_book_policy_body
+entity_type: node
+bundle: book
+label: 'Policy Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

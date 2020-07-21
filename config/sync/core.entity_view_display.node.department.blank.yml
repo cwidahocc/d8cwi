@@ -1,0 +1,34 @@
+uuid: 35961fa3-c406-4634-b253-dc8ec91e5a77
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.department.body
+    - field.field.node.department.field_department_er
+    - field.field.node.department.field_department_taxonomy
+    - field.field.node.department.field_department_type
+    - field.field.node.department.field_page_contact_person
+    - field.field.node.department.field_page_headerimg
+    - field.field.node.department.field_page_icon
+    - node.type.department
+  module:
+    - user
+id: node.department.blank
+targetEntityType: node
+bundle: department
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_department_er: true
+  field_department_taxonomy: true
+  field_department_type: true
+  field_page_contact_person: true
+  field_page_headerimg: true
+  field_page_icon: true

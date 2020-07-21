@@ -1,0 +1,108 @@
+uuid: c702fbfe-33a5-4d2c-9bae-2d3b302f20c2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.hero.body
+    - field.field.node.hero.field_hero_display
+    - field.field.node.hero.field_hero_image
+    - field.field.node.hero.field_hero_layout
+    - field.field.node.hero.field_hero_link
+    - field.field.node.hero.field_hero_title
+    - field.field.node.hero.field_hero_type
+    - field.field.node.hero.field_hero_video
+    - field.field.node.hero.field_hero_video_placeholder
+    - node.type.hero
+  module:
+    - file
+    - image
+    - link
+    - options
+    - text
+    - user
+id: node.hero.default
+targetEntityType: node
+bundle: hero
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hero_display:
+    label: above
+    weight: 8
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_hero_image:
+    label: above
+    weight: 3
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_hero_layout:
+    label: above
+    weight: 4
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hero_link:
+    label: above
+    weight: 7
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_hero_title:
+    label: above
+    weight: 5
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_hero_type:
+    label: above
+    weight: 0
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_hero_video:
+    label: above
+    weight: 1
+    type: file_default
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    region: content
+  field_hero_video_placeholder:
+    label: above
+    weight: 2
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

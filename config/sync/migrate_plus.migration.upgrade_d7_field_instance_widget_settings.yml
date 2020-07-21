@@ -32,12 +32,19 @@ process:
       plugin: skip_on_empty
       method: row
   bundle:
-    -
+    0:
       plugin: static_map
       source: bundle
       bypass: true
       map:
         comment_node_forum: comment_forum
+    paragraphs:
+      plugin: paragraphs_process_on_value
+      source_value: entity_type
+      expected_value: field_collection_item
+      process:
+        plugin: substr
+        start: 6
   form_mode:
     -
       plugin: get
@@ -47,9 +54,15 @@ process:
       plugin: get
       source: field_name
   entity_type:
-    -
+    0:
       plugin: get
       source: entity_type
+    paragraphs:
+      plugin: static_map
+      map:
+        field_collection_item: paragraph
+        paragraphs_item: paragraph
+      bypass: true
   options/weight:
     -
       plugin: get
@@ -77,15 +90,20 @@ process:
         entityreference_autocomplete_tags: entity_reference_autocomplete_tags
         taxonomy_autocomplete: entity_reference_autocomplete
         d7_text: d7_text_default
+        field_collection_embed: entity_reference_paragraphs
+        field_collection: field_collection_default
         entityreference: entityreference_default
         image: image_default
         taxonomy_term_reference: taxonomy_term_reference_default
         list: list_default
         filefield_widget: file_generic
+        paragraphs_embed: entity_reference_paragraphs
+        paragraphs: paragraphs_default
         date: datetime_default
         datetime: datetime_default
         datestamp: datetime_timestamp
         number_default: number_default_default
+        taxonomy_tag_order_autocomplete: entity_reference_autocomplete
   options/settings:
     -
       plugin: field_instance_widget_settings
@@ -96,10 +114,44 @@ process:
     -
       plugin: get
       source: constants/third_party_settings
+  options/settings/title:
+    paragraphs:
+      plugin: paragraphs_process_on_value
+      source_value: type
+      expected_value: paragraphs
+      process:
+        plugin: get
+        source: settings/title
+  options/settings/title_plural:
+    paragraphs:
+      plugin: paragraphs_process_on_value
+      source_value: type
+      expected_value: paragraphs
+      process:
+        plugin: get
+        source: settings/title_multiple
+  options/settings/edit_mode:
+    paragraphs:
+      plugin: paragraphs_process_on_value
+      source_value: type
+      expected_value: paragraphs
+      process:
+        plugin: get
+        source: settings/default_edit_mode
+  options/settings/add_mode:
+    paragraphs:
+      plugin: paragraphs_process_on_value
+      source_value: type
+      expected_value: paragraphs
+      process:
+        plugin: get
+        source: settings/add_mode
 destination:
   plugin: component_entity_form_display
 migration_dependencies:
   required:
     - upgrade_d7_field_instance
   optional:
+    - upgrade_d7_field_collection_type
+    - upgrade_d7_paragraphs_type
     - upgrade_d7_field

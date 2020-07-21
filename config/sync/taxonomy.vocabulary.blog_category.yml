@@ -1,0 +1,8 @@
+uuid: 57785435-2dea-4f71-b29d-f7c8df98c96f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blog Category'
+vid: blog_category
+description: 'Used with Blog posts to separate them into logical categories'
+weight: 0

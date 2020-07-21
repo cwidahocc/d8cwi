@@ -1,0 +1,23 @@
+uuid: f2532696-f05a-48f8-9463-592394fc24ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_gallery_include
+    - node.type.page
+  module:
+    - options
+id: node.page.field_page_gallery_include
+field_name: field_page_gallery_include
+entity_type: node
+bundle: page
+label: 'Include this page on automatically generated gallery lists?'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '0'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

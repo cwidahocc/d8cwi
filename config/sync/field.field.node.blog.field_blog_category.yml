@@ -1,0 +1,26 @@
+uuid: 16608964-9f53-4b64-8cfc-e478f5b25d58
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blog_category
+    - node.type.blog
+    - taxonomy.vocabulary.blog_category
+id: node.blog.field_blog_category
+field_name: field_blog_category
+entity_type: node
+bundle: blog
+label: 'Blog Category'
+description: 'Groups blogs into categories for display in the main newsroom.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      blog_category: blog_category
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

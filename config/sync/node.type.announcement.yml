@@ -1,0 +1,16 @@
+uuid: 780370b9-133c-4454-922c-a692bb42b7df
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main-menu:0:'
+name: Announcement
+type: announcement
+description: 'Build slides for web based slideshows and TV Displays around campus.'
+help: "<strong>Announcement are used across the college on TV Screens and Web Page slideshows.</strong> <br/>For Instructions on how to make the best use please refer to our <a target=\"_blank\" href=\"http://dev-cwidaho-toolkit.pantheonsite.io/announcement\">Announcement Toolkit</a>. Be sure to fill out all applicable fields and review your slide before submitting for review.  When setting the draft to needs review be sure to include specific start and end dates in the moderation notes.  A moderator will review the submission and set a schedule and slide order for you.  <br/>We recommend using old slides for similar content, you can reuse old slides by visiting the <a href=\"/admin/content/announcement\">Announcement tab</a> in Find content and searching for unpublished slides or review current slides that show on specific TV / Web pages's.<br/><br/>\r\n<strong>Common mistakes when creating Announcements</strong>\r\n<br/><br/>CWI colors and fonts:<br/>\r\n<ul>\r\n<li>Colors, see the <a href=\"/brand\">Brand Style Guide</a> page 13</li>\r\n<li>Fonts, see the <a href=\"/brand\">Brand Style Guide</a> page 24</li>\r\n</ul>\r\n<br/><br/>CWI Campus Locations:<br/>\r\n<ul><li>Use official campus names, see <a href=\"https://mycwi.cc/fac_staff_resources/comm_marketing/resources/Writing%20Guides/WritingGuide_September2014.pdf\">Writing Style Guide</a> page 1</li></ul>\r\n<br/><br/>Dates:<br/>\r\n<ul><li>Abbreviate dates, see the <a href=\"https://mycwi.cc/fac_staff_resources/comm_marketing/resources/Writing%20Guides/WritingGuide_September2014.pdf\">Writing Style Guide</a> page 2</li>\r\n<li>Rules on a.m. and p.m. see the <a href=\"https://mycwi.cc/fac_staff_resources/comm_marketing/resources/Writing%20Guides/WritingGuide_September2014.pdf\">Writing Style Guide</a> page 3</li>\r\n<li>Months see the <a href=\"https://mycwi.cc/fac_staff_resources/comm_marketing/resources/Writing%20Guides/WritingGuide_September2014.pdf\">Writing Style Guide</a> page 8</li></ul>"
+new_revision: true
+preview_mode: 1
+display_submitted: false

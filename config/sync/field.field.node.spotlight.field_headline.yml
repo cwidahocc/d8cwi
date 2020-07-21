@@ -1,0 +1,21 @@
+uuid: fa970209-8eb5-4147-a4ee-27d173aaee36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_headline
+    - node.type.spotlight
+id: node.spotlight.field_headline
+field_name: field_headline
+entity_type: node
+bundle: spotlight
+label: Headline
+description: 'This text will appear as a Heading for this Spotlights. It will also be added with the Date to make-up the Title of Spotlight.'
+required: true
+translatable: false
+default_value:
+  -
+    value: Spotlight
+default_value_callback: ''
+settings: {  }
+field_type: string

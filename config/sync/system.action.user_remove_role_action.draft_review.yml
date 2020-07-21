@@ -1,0 +1,14 @@
+uuid: a2ffa3df-7dae-42ec-9721-a9f3e22bc461
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.draft_review
+  module:
+    - user
+id: user_remove_role_action.draft_review
+label: 'Remove the Draft Review role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: draft_review

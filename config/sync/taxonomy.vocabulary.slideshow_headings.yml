@@ -1,0 +1,8 @@
+uuid: 90eaabb6-de80-41e4-8813-937c1e349f60
+langcode: en
+status: true
+dependencies: {  }
+name: 'Slideshow Headings'
+vid: slideshow_headings
+description: 'Headings for slideshow photos'
+weight: 6

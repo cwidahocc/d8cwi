@@ -4,8 +4,39 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_attachmentgroup
+    - field.field.node.page.field_board_member_name
+    - field.field.node.page.field_c2a_directional_url
+    - field.field.node.page.field_c2a_text_content
+    - field.field.node.page.field_contact_us
+    - field.field.node.page.field_meta_desc
+    - field.field.node.page.field_overview_field
+    - field.field.node.page.field_page_audience
+    - field.field.node.page.field_page_contact_person
+    - field.field.node.page.field_page_display_menu
+    - field.field.node.page.field_page_faq_category
+    - field.field.node.page.field_page_faq_questions
+    - field.field.node.page.field_page_gallery_include
+    - field.field.node.page.field_page_headerimg
+    - field.field.node.page.field_page_icon
+    - field.field.node.page.field_page_paragraph
+    - field.field.node.page.field_page_secondary_sections
+    - field.field.node.page.field_page_section_group
+    - field.field.node.page.field_page_slideshow
+    - field.field.node.page.field_page_term_sitesection
+    - field.field.node.page.field_related_link_collection
+    - field.field.node.page.field_related_pages
+    - field.field.node.page.field_right_site_callout
+    - field.field.node.page.field_rollover
+    - field.field.node.page.field_short_url
+    - field.field.node.page.field_video
+    - image.style.thumbnail
     - node.type.page
   module:
+    - file
+    - image
+    - link
+    - paragraphs
     - path
     - text
 _core:
@@ -31,6 +62,237 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_attachmentgroup:
+    weight: 6
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_board_member_name:
+    weight: 23
+    type: entity_reference_autocomplete
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_c2a_directional_url:
+    weight: 18
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  field_c2a_text_content:
+    weight: 17
+    type: text_textarea
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_contact_us:
+    weight: 6
+    type: entity_reference_autocomplete
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_meta_desc:
+    weight: 8
+    type: string_textarea
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_overview_field:
+    weight: 18
+    type: text_textarea
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_page_audience:
+    weight: 9
+    type: options_buttons
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_page_contact_person:
+    weight: 5
+    type: entity_reference_autocomplete
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_page_display_menu:
+    weight: 7
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_page_faq_category:
+    weight: 7
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_page_faq_questions:
+    weight: 8
+    type: entity_reference_autocomplete
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_page_gallery_include:
+    weight: 8
+    type: options_buttons
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_page_headerimg:
+    weight: 14
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  field_page_icon:
+    weight: 15
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  field_page_paragraph:
+    weight: 11
+    type: entity_reference_paragraphs
+    settings:
+      title: Panel
+      title_plural: Panels
+      edit_mode: preview
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_page_secondary_sections:
+    weight: 6
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_page_section_group:
+    weight: 32
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_page_slideshow:
+    weight: 22
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  field_page_term_sitesection:
+    weight: 10
+    type: options_buttons
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_related_link_collection:
+    weight: 3
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_related_pages:
+    weight: 4
+    type: entity_reference_autocomplete
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_right_site_callout:
+    weight: 19
+    type: text_textarea
+    settings:
+      rows: 12
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_rollover:
+    weight: 23
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_short_url:
+    weight: 24
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_video:
+    weight: 20
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
   path:
     type: path
     weight: 30

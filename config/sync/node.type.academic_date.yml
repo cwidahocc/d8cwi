@@ -1,0 +1,16 @@
+uuid: a011c1d6-2fed-4d46-a267-551ecfd8a3f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main-menu:0:'
+name: 'Program - Academic Date'
+type: academic_date
+description: '<strong><em>NOTE: Do Not Add </em></strong> new dates through this method, they will not show up anywhere.<br /> Locate the Program you want first in your <a href="/admin/workbench">Workbench</a> then edit or visit the Program page and click the edit tab and then add dates through the Dates Tab.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

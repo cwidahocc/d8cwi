@@ -1,0 +1,19 @@
+uuid: bad95c5f-1a21-4296-a408-003dacbad0da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_resource_desc
+    - paragraphs.paragraphs_type.resource
+id: paragraph.resource.field_resource_desc
+field_name: field_resource_desc
+entity_type: paragraph
+bundle: resource
+label: Description
+description: 'Enter the resource description. This may not always be visible on the page, but will be displayed as tool tip when the resource is hovered over. Keep it brief and informative!<br /><strong>Example:</strong> Used when doing this process in order to do that.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

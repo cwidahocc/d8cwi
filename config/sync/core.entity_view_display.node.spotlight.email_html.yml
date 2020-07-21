@@ -1,0 +1,36 @@
+uuid: 1917bd04-1c36-41b7-bc52-1a70f564e1a6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_html
+    - field.field.node.spotlight.body
+    - field.field.node.spotlight.field_file_file
+    - field.field.node.spotlight.field_headline
+    - field.field.node.spotlight.field_image_gallery
+    - field.field.node.spotlight.field_link
+    - field.field.node.spotlight.field_news_date
+    - field.field.node.spotlight.field_news_hero
+    - field.field.node.spotlight.field_video
+    - node.type.spotlight
+  module:
+    - user
+id: node.spotlight.email_html
+targetEntityType: node
+bundle: spotlight
+mode: email_html
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_file_file: true
+  field_headline: true
+  field_image_gallery: true
+  field_link: true
+  field_news_date: true
+  field_news_hero: true
+  field_video: true

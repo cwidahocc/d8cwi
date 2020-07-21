@@ -1,0 +1,108 @@
+uuid: 67f15857-eb37-485d-836e-66d6cb5d4052
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.program.body
+    - field.field.node.program.field_academic_dates_er
+    - field.field.node.program.field_academic_dates_show
+    - field.field.node.program.field_board_member_name
+    - field.field.node.program.field_clubs_er
+    - field.field.node.program.field_degree_ref
+    - field.field.node.program.field_department_er
+    - field.field.node.program.field_division
+    - field.field.node.program.field_location_er
+    - field.field.node.program.field_page_contact_person
+    - field.field.node.program.field_page_headerimg
+    - field.field.node.program.field_page_icon
+    - field.field.node.program.field_program_advising
+    - field.field.node.program.field_program_age
+    - field.field.node.program.field_program_aid
+    - field.field.node.program.field_program_announcements
+    - field.field.node.program.field_program_career_info
+    - field.field.node.program.field_program_career_tax
+    - field.field.node.program.field_program_coming_cta
+    - field.field.node.program.field_program_coming_soon
+    - field.field.node.program.field_program_cost_info
+    - field.field.node.program.field_program_faq_category
+    - field.field.node.program.field_program_faq_questions
+    - field.field.node.program.field_program_flyer
+    - field.field.node.program.field_program_image_slide
+    - field.field.node.program.field_program_learntodo_tax
+    - field.field.node.program.field_program_mission
+    - field.field.node.program.field_program_new
+    - field.field.node.program.field_program_next_step
+    - field.field.node.program.field_program_opportunities
+    - field.field.node.program.field_program_redirect
+    - field.field.node.program.field_program_skills_tax
+    - field.field.node.program.field_program_transfer_info
+    - field.field.node.program.field_program_transferable
+    - field.field.node.program.field_program_why
+    - field.field.node.program.field_related_programs
+    - field.field.node.program.field_request_more_emails
+    - field.field.node.program.field_resource
+    - field.field.node.program.field_testimonial
+    - field.field.node.program.field_video
+    - node.type.program
+  module:
+    - text
+    - user
+id: node.program.teaser
+targetEntityType: node
+bundle: program
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_academic_dates_er: true
+  field_academic_dates_show: true
+  field_board_member_name: true
+  field_clubs_er: true
+  field_degree_ref: true
+  field_department_er: true
+  field_division: true
+  field_location_er: true
+  field_page_contact_person: true
+  field_page_headerimg: true
+  field_page_icon: true
+  field_program_advising: true
+  field_program_age: true
+  field_program_aid: true
+  field_program_announcements: true
+  field_program_career_info: true
+  field_program_career_tax: true
+  field_program_coming_cta: true
+  field_program_coming_soon: true
+  field_program_cost_info: true
+  field_program_faq_category: true
+  field_program_faq_questions: true
+  field_program_flyer: true
+  field_program_image_slide: true
+  field_program_learntodo_tax: true
+  field_program_mission: true
+  field_program_new: true
+  field_program_next_step: true
+  field_program_opportunities: true
+  field_program_redirect: true
+  field_program_skills_tax: true
+  field_program_transfer_info: true
+  field_program_transferable: true
+  field_program_why: true
+  field_related_programs: true
+  field_request_more_emails: true
+  field_resource: true
+  field_testimonial: true
+  field_video: true

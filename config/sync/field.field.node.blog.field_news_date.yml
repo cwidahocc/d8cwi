@@ -1,0 +1,21 @@
+uuid: 6cf0d71a-9359-4e26-b428-7a34c5284c3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_date
+    - node.type.blog
+  module:
+    - datetime
+id: node.blog.field_news_date
+field_name: field_news_date
+entity_type: node
+bundle: blog
+label: 'Blog Publish Date'
+description: 'Date shown on the Blog and used to sort, time is only in 15 minute increments.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

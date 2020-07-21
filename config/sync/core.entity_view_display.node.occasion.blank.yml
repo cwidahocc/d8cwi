@@ -1,0 +1,24 @@
+uuid: b734db1a-21da-4ed9-a973-40cd8f30389b
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.occasion.field_occasion_date
+    - field.field.node.occasion.field_occasion_link
+    - node.type.occasion
+  module:
+    - user
+id: node.occasion.blank
+targetEntityType: node
+bundle: occasion
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_occasion_date: true
+  field_occasion_link: true

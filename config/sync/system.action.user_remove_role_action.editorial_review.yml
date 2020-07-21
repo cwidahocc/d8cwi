@@ -1,0 +1,14 @@
+uuid: feb6cf05-e3f9-4029-b192-4db9ac66f37d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.editorial_review
+  module:
+    - user
+id: user_remove_role_action.editorial_review
+label: 'Remove the Editorial Review role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: editorial_review

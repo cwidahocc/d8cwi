@@ -43,4 +43,5 @@ content:
     third_party_settings: {  }
     weight: -1
     region: content
-hidden: {  }
+hidden:
+  ldap_user_prov_entries: true

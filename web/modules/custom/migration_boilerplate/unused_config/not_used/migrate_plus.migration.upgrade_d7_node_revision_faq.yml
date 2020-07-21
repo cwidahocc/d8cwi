@@ -1,0 +1,134 @@
+uuid: 358b11f3-963e-4f78-9b91-610735bc1d4d
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_revision_faq
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldFormatterMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node revisions (FAQ)'
+source:
+  plugin: d7_node_revision
+  node_type: faq
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  comment_node_faq/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_faq_term:
+    -
+      plugin: sub_process
+      source: field_faq_term
+      process:
+        target_id: tid
+  field_faq_order:
+    -
+      plugin: get
+      source: field_faq_order
+  field_file_file:
+    -
+      plugin: sub_process
+      source: field_file_file
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_video:
+    -
+      plugin: sub_process
+      source: field_video
+      process:
+        target_id: fid
+        display: display
+        description: description
+destination:
+  plugin: 'entity_revision:node'
+  default_bundle: faq
+migration_dependencies:
+  required:
+    - upgrade_d7_node_academic_date
+    - upgrade_d7_node_announcement
+    - upgrade_d7_node_blog
+    - upgrade_d7_node_book
+    - upgrade_d7_node_club
+    - upgrade_d7_node_contact_us
+    - upgrade_d7_node_cwi_newsletter
+    - upgrade_d7_node_degree
+    - upgrade_d7_node_department
+    - upgrade_d7_node_faq
+    - upgrade_d7_node_file
+    - upgrade_d7_node_hero
+    - upgrade_d7_node_homepage_slide_collection
+    - upgrade_d7_node_location
+    - upgrade_d7_node_news
+    - upgrade_d7_node_occasion
+    - upgrade_d7_node_page
+    - upgrade_d7_node_person
+    - upgrade_d7_node_person_bio
+    - upgrade_d7_node_program
+    - upgrade_d7_node_social
+    - upgrade_d7_node_spotlight
+    - upgrade_d7_node_upgrade_ad
+    - upgrade_d7_node_webform
+  optional: {  }

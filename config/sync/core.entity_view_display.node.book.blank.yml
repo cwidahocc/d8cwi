@@ -1,0 +1,44 @@
+uuid: 4350f1cc-8016-4a17-ad53-2421ba3a7342
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.book.body
+    - field.field.node.book.field_book_definition
+    - field.field.node.book.field_book_department
+    - field.field.node.book.field_book_effective
+    - field.field.node.book.field_book_file
+    - field.field.node.book.field_book_forms
+    - field.field.node.book.field_book_name
+    - field.field.node.book.field_book_number
+    - field.field.node.book.field_book_page_type
+    - field.field.node.book.field_book_policy_body
+    - field.field.node.book.field_book_revision
+    - field.field.node.book.field_book_scope
+    - node.type.book
+  module:
+    - user
+id: node.book.blank
+targetEntityType: node
+bundle: book
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_book_definition: true
+  field_book_department: true
+  field_book_effective: true
+  field_book_file: true
+  field_book_forms: true
+  field_book_name: true
+  field_book_number: true
+  field_book_page_type: true
+  field_book_policy_body: true
+  field_book_revision: true
+  field_book_scope: true

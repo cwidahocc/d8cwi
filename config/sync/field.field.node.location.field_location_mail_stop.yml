@@ -1,0 +1,23 @@
+uuid: d284d137-c375-4000-807b-94aca9e542ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_mail_stop
+    - node.type.location
+id: node.location.field_location_mail_stop
+field_name: field_location_mail_stop
+entity_type: node
+bundle: location
+label: 'Mail Stop'
+description: 'Mail Stop Number for this location'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  max: null
+  min: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

@@ -1,0 +1,26 @@
+uuid: 6f1533eb-5f30-4ce7-a258-30a2140fa307
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_department_type
+    - node.type.department
+    - taxonomy.vocabulary.department_type
+id: node.department.field_department_type
+field_name: field_department_type
+entity_type: node
+bundle: department
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      department_type: department_type
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

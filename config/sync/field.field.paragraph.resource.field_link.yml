@@ -1,0 +1,23 @@
+uuid: 10a913d7-cf22-4f7f-99dc-5599c4b43693
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_link
+    - paragraphs.paragraphs_type.resource
+  module:
+    - link
+id: paragraph.resource.field_link
+field_name: field_link
+entity_type: paragraph
+bundle: resource
+label: Resource
+description: "Enter a title for this resource.  This will be shown whenever this resource is referenced on the site.  <br /><strong>Example Name:</strong> Program Student Handbook<br /><br />\r\nEnter the URL for this Resource that applies to this program.  A file URL could be found using <a href=\"/imce\">IMCE</a> or using the Files Pages on our site. \r\n<ul><li><strong>Perferred</strong> - Locate the File page by visiting <a href=\"/admin/content?type=file\">Find Content</a> and then copying the page URL</li>\r\n<li> <a href=\"/imce\">IMCE</a> -- navigate to \"PDF / Program / Program Name\" then click on the PDF then copy the URL show at the bottom of the window labeled \"File URL path:\".</li>\r\n<ul></li>Example URL Format: <strong>sites/default/files/imce/PDF/programs/program_name/program_resource.pdf</strong></li>\r\n<li>Create a new directory for your program if needed - try to replace any existing files to preserve links - don't use dates in file names</li></ul></ul>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

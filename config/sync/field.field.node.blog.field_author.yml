@@ -1,0 +1,30 @@
+uuid: 0f6c6e96-e07f-4128-8966-1ba21c158bfc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author
+    - node.type.blog
+    - node.type.person
+id: node.blog.field_author
+field_name: field_author
+entity_type: node
+bundle: blog
+label: Author(s)
+description: 'Choose Author(s) for this Blog. Start typing their name and then choose from list. Must separate multiples authors with a comma.<br />This links the this article to an author for display on the blog post also the article will be displayed in the Author''s Faculty and Staff page.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      person: person
+field_type: entity_reference

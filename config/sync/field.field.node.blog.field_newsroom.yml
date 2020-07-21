@@ -1,0 +1,23 @@
+uuid: ff26911a-2138-4848-a1fc-a22eb19170c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_newsroom
+    - node.type.blog
+id: node.blog.field_newsroom
+field_name: field_newsroom
+entity_type: node
+bundle: blog
+label: 'Post To News Room'
+description: 'Don''t use unless this was approved already, Communications will make the final decision here. Activate to show this blog in the News Room area.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

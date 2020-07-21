@@ -1,0 +1,10 @@
+uuid: f1cc7c74-13de-4017-aa3a-55777220434f
+langcode: en
+status: true
+dependencies: {  }
+id: column_2
+label: 'Column 2'
+icon_uuid: null
+icon_default: null
+description: 'Migrated from paragraph bundle Column 2'
+behavior_plugins: {  }

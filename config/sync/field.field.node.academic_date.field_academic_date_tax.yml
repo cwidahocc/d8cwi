@@ -1,0 +1,26 @@
+uuid: ca3be192-9802-4340-8ade-7c695d5e1076
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_academic_date_tax
+    - node.type.academic_date
+    - taxonomy.vocabulary.academic_date_visibility
+id: node.academic_date.field_academic_date_tax
+field_name: field_academic_date_tax
+entity_type: node
+bundle: academic_date
+label: Visibility
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      academic_date_visibility: academic_date_visibility
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

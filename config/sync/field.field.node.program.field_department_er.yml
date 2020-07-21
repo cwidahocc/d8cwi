@@ -1,0 +1,32 @@
+uuid: dc49c673-3462-4016-b3e3-fa34aa9e910d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_department_er
+    - node.type.program
+id: node.program.field_department_er
+field_name: field_department_er
+entity_type: node
+bundle: program
+label: Department
+description: 'The department this program belongs to.<br /><strong>Auto Completes:</strong><ul><li>Begin typing the name of a department</li><li><strong>Wait</strong> allowing the auto complete results to display</li><li>Select one of the results and your done</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    view:
+      args: {  }
+      display_name: entityreference_parent
+      view_name: department_parent_entity_reference
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

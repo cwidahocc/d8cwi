@@ -1,0 +1,30 @@
+uuid: 4d0dc023-dd45-4375-add2-23f91d9c2486
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.faq.body
+    - field.field.node.faq.field_faq_order
+    - field.field.node.faq.field_faq_term
+    - field.field.node.faq.field_file_file
+    - field.field.node.faq.field_video
+    - node.type.faq
+  module:
+    - user
+id: node.faq.blank
+targetEntityType: node
+bundle: faq
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_faq_order: true
+  field_faq_term: true
+  field_file_file: true
+  field_video: true

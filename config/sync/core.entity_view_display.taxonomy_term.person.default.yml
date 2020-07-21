@@ -1,0 +1,35 @@
+uuid: 7002094e-4171-474a-9f9e-1bd56449cd45
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.person.field_person_breadcrumb_link
+    - taxonomy.vocabulary.person
+  module:
+    - link
+    - text
+id: taxonomy_term.person.default
+targetEntityType: taxonomy_term
+bundle: person
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_person_breadcrumb_link:
+    label: above
+    weight: 0
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

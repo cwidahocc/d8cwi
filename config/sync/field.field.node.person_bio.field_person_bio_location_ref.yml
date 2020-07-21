@@ -1,0 +1,32 @@
+uuid: 26be6523-b89c-4340-bda3-f62d4fc422c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_bio_location_ref
+    - node.type.person_bio
+id: node.person_bio.field_person_bio_location_ref
+field_name: field_person_bio_location_ref
+entity_type: node
+bundle: person_bio
+label: 'Building Location'
+description: 'Location of this person''s primary meeting space.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    view:
+      args: {  }
+      display_name: entityreference_location
+      view_name: person_bio_reference_unique
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

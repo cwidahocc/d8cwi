@@ -1,0 +1,8 @@
+uuid: 0b194447-e1be-478f-a9b9-33d0cc6cefdb
+langcode: en
+status: true
+dependencies: {  }
+name: News
+vid: news
+description: ' by Term'
+weight: -4

@@ -1,0 +1,51 @@
+uuid: 71c067bf-1b8f-4983-9182-31e86b38df07
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rollover.eb_background
+    - field.field.paragraph.rollover.field_link
+    - field.field.paragraph.rollover.field_rollover
+    - field.field.paragraph.rollover.field_rollover_description
+    - field.field.paragraph.rollover.field_rollover_image
+    - paragraphs.paragraphs_type.rollover
+  module:
+    - link
+    - responsive_image
+    - text
+id: paragraph.rollover.default
+targetEntityType: paragraph
+bundle: rollover
+mode: default
+content:
+  field_link:
+    label: hidden
+    weight: 1
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_rollover_description:
+    label: hidden
+    weight: 2
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_rollover_image:
+    label: hidden
+    weight: 0
+    type: responsive_image
+    settings:
+      image_link: ''
+      responsive_image_style: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  eb_background: true
+  field_rollover: true

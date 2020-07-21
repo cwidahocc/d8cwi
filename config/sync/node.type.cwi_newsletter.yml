@@ -1,0 +1,16 @@
+uuid: 409ca2f8-48a5-4eb2-bf27-6afc7767356f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'menu-academics---all-programs-an:0:'
+name: 'Newsletter - Communications'
+type: cwi_newsletter
+description: 'Bert''s Alerts and the External Marketing Newsletter'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

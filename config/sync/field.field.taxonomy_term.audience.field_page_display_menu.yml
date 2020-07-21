@@ -1,0 +1,21 @@
+uuid: e68289fe-ff9d-4e7c-910b-14440539bbcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_page_display_menu
+    - taxonomy.vocabulary.audience
+  module:
+    - options
+id: taxonomy_term.audience.field_page_display_menu
+field_name: field_page_display_menu
+entity_type: taxonomy_term
+bundle: audience
+label: 'What menu should display for this page?'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,21 @@
+uuid: 0417b3f0-e41b-417c-8c1f-864ffad04c79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_definition
+    - node.type.book
+  module:
+    - text
+id: node.book.field_book_definition
+field_name: field_book_definition
+entity_type: node
+bundle: book
+label: Definition
+description: 'A place to define complex words'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

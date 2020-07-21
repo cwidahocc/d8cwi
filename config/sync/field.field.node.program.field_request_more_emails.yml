@@ -1,0 +1,21 @@
+uuid: c372958c-7c6f-4ede-8d23-4ffbe2f04ee3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_request_more_emails
+    - node.type.program
+id: node.program.field_request_more_emails
+field_name: field_request_more_emails
+entity_type: node
+bundle: program
+label: 'Request More Information - Emails'
+description: 'These is email will be notified when the Request More Information form is submitted. Multiple email address are allowed, please use comma between them.<br /><strong>This cannot be blank, if you are unsure please use programs@cwi.edu for these communications, you might want to make sure they are aware of the change.</strong>'
+required: true
+translatable: false
+default_value:
+  -
+    value: programs@cwi.edu
+default_value_callback: ''
+settings: {  }
+field_type: string

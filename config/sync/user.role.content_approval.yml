@@ -1,0 +1,14 @@
+uuid: f8ec50d7-32c7-4fad-8ae7-ca87fd7f39c4
+langcode: en
+status: true
+dependencies: {  }
+id: content_approval
+label: 'Content Approval'
+weight: 16
+is_admin: null
+permissions:
+  - 'access google analytics reports'
+  - 'administer taxonomy'
+  - 'diff view changes'
+  - 'generate pdf using mpdf'
+  - 'use text format announcements_text_format'

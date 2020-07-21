@@ -1,0 +1,16 @@
+uuid: d00b1a23-c47b-4c2f-8e5c-c7128e5f6092
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'menu-faculty-and-staff---gened-d:0:'
+name: Person
+type: person
+description: 'Faculty and Staff of CWI imported from HR''s Employee Feed. <br/>These are mostly created and managed via a file feed import. Exceptions being Board and General Numbers not tied to employee numbers<br/>This content type is categorized by the taxonomy Vocabularies <strong>"Department"</strong> and <strong>"Person."</strong><br/><br/><strong><em>NOTE:</em></strong> Changing these values by hand is generally not recommended as your changes may be overwritten by subsequent imports.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

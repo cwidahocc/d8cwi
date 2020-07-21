@@ -1,0 +1,34 @@
+uuid: 035ae746-19c8-4c0b-8364-af19c1912868
+langcode: en
+status: true
+dependencies: {  }
+id: program_editor
+label: 'Program Editor'
+weight: 13
+is_admin: null
+permissions:
+  - 'access google analytics reports'
+  - 'create academic_date content'
+  - 'create degree content'
+  - 'create program content'
+  - 'diff view changes'
+  - 'edit any academic_date content'
+  - 'edit any degree content'
+  - 'edit any program content'
+  - 'edit own academic_date content'
+  - 'edit own degree content'
+  - 'edit own program content'
+  - 'enter program revision log entry'
+  - 'moderate program state from draft to editorial_review'
+  - 'moderate program state from draft to needs_review'
+  - 'moderate program state from draft to published'
+  - 'moderate program state from editorial_review to draft'
+  - 'moderate program state from editorial_review to needs_review'
+  - 'moderate program state from editorial_review to published'
+  - 'override program revision option'
+  - 'revert revisions'
+  - 'use workbench_moderation my drafts tab'
+  - 'use workbench_moderation needs review tab'
+  - 'view all unpublished content'
+  - 'view moderation history'
+  - 'view moderation messages'

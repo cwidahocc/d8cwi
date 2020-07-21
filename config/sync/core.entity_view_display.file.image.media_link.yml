@@ -1,0 +1,18 @@
+uuid: 65fac6e7-37f0-4cd3-8b0f-0881934e8452
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.file.media_link
+    - field.field.file.image.field_file_image_alt_text
+    - field.field.file.image.field_file_image_title_text
+  module:
+    - file
+id: file.image.media_link
+targetEntityType: file
+bundle: image
+mode: media_link
+content: {  }
+hidden:
+  field_file_image_alt_text: true
+  field_file_image_title_text: true

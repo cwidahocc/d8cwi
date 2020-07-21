@@ -1,0 +1,19 @@
+uuid: 1ff89573-0150-49e8-8811-b7cff2a01fa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_club_calendar
+    - node.type.club
+id: node.club.field_club_calendar
+field_name: field_club_calendar
+entity_type: node
+bundle: club
+label: 'Club Calendar Filter'
+description: 'Leaving this blank to show the default club calendar.  Entering the name of the filter used for the specific calendar, this must be configured in 25Live before it will work.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

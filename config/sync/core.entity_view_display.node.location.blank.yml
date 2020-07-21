@@ -1,0 +1,40 @@
+uuid: 7e1ad9ee-c770-4446-b442-af50c8684dc7
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.location.body
+    - field.field.node.location.field_building_hours
+    - field.field.node.location.field_location_address
+    - field.field.node.location.field_location_building_code
+    - field.field.node.location.field_location_directions_summar
+    - field.field.node.location.field_location_mail_stop
+    - field.field.node.location.field_location_onestop
+    - field.field.node.location.field_location_photo
+    - field.field.node.location.field_location_type
+    - field.field.node.location.field_person_department
+    - node.type.location
+  module:
+    - user
+id: node.location.blank
+targetEntityType: node
+bundle: location
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_building_hours: true
+  field_location_address: true
+  field_location_building_code: true
+  field_location_directions_summar: true
+  field_location_mail_stop: true
+  field_location_onestop: true
+  field_location_photo: true
+  field_location_type: true
+  field_person_department: true

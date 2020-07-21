@@ -1,0 +1,23 @@
+uuid: a72adb50-603d-48d4-a962-6699738249aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.cwi_newsletter
+  module:
+    - text
+id: node.cwi_newsletter.body
+field_name: body
+entity_type: node
+bundle: cwi_newsletter
+label: 'Search Text'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

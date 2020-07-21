@@ -1,0 +1,30 @@
+uuid: 9fb151d5-e80e-4932-ae3b-7fbd4af973dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social
+    - node.type.club
+    - node.type.social
+id: node.club.field_social
+field_name: field_social
+entity_type: node
+bundle: club
+label: Social
+description: 'Add a Connection to the Social Directory to display the Appropriate Social Links. Search by name of the Club'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      social: social
+field_type: entity_reference

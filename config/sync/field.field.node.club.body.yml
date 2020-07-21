@@ -1,0 +1,23 @@
+uuid: e4f2d609-8500-4a79-aa6b-c369b57d033c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.club
+  module:
+    - text
+id: node.club.body
+field_name: body
+entity_type: node
+bundle: club
+label: 'About - Bio'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

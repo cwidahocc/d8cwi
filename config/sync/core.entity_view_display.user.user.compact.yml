@@ -26,4 +26,5 @@ content:
     third_party_settings: {  }
     label: hidden
 hidden:
+  ldap_user_prov_entries: true
   member_for: true

@@ -1,0 +1,10 @@
+uuid: a36e752e-fca7-49a0-8366-2eec1108f046
+langcode: en
+status: true
+dependencies: {  }
+id: tax_content
+label: tax_content
+description: ''
+source_type: null
+module: null
+shared_configuration: null

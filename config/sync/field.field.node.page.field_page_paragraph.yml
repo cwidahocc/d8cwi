@@ -1,0 +1,95 @@
+uuid: 68878ffc-527d-409a-bb1a-8b8d519cfaf1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_paragraph
+    - node.type.page
+    - paragraphs.paragraphs_type.column_1
+    - paragraphs.paragraphs_type.column_2
+    - paragraphs.paragraphs_type.rollover
+  module:
+    - entity_reference_revisions
+id: node.page.field_page_paragraph
+field_name: field_page_paragraph
+entity_type: node
+bundle: page
+label: 'Panels Builder'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    negate: 0
+    target_bundles:
+      column_1: column_1
+      column_2: column_2
+      rollover: rollover
+    target_bundles_drag_drop:
+      attachmentgroup:
+        enabled: false
+        weight: -6
+      column_1:
+        enabled: true
+        weight: -12
+      column_2:
+        enabled: true
+        weight: -11
+      contact:
+        enabled: false
+        weight: -5
+      food_vendor_contact_info:
+        enabled: false
+        weight: -4
+      image:
+        enabled: false
+        weight: -9
+      kground:
+        enabled: false
+        weight: -3
+      link:
+        enabled: false
+        weight: -8
+      newsletter_free_form:
+        enabled: false
+        weight: -2
+      newsletter_free_form_2:
+        enabled: false
+        weight: -1
+      newsletter_quick_links:
+        enabled: false
+        weight: 0
+      page_secondary_sections:
+        enabled: false
+        weight: 1
+      page_section_group:
+        enabled: false
+        weight: 2
+      page_slideshow_collection:
+        enabled: false
+        weight: 3
+      related_link_collection:
+        enabled: false
+        weight: 4
+      resource:
+        enabled: false
+        weight: 5
+      rollover:
+        enabled: true
+        weight: -10
+      testimonial:
+        enabled: false
+        weight: 6
+      text:
+        enabled: false
+        weight: -7
+      video:
+        enabled: false
+        weight: 7
+      view:
+        enabled: false
+        weight: 8
+  handler: 'default:paragraph'
+field_type: entity_reference_revisions

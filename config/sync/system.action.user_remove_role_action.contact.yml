@@ -1,0 +1,14 @@
+uuid: 04465b6d-deef-4736-81d1-1bddcb34c9a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contact
+  module:
+    - user
+id: user_remove_role_action.contact
+label: 'Remove the Contact role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: contact

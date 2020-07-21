@@ -1,0 +1,10 @@
+uuid: 4adff41a-d2e2-4618-9da4-7fdd68d7945a
+langcode: en
+status: true
+dependencies: {  }
+id: page_section_group
+label: 'Page section group'
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_page_section_group'
+behavior_plugins: {  }

@@ -1,0 +1,26 @@
+uuid: 3d890283-f326-49ed-8755-f162dc1d65da
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_page_term_sitesection
+    - paragraphs.paragraphs_type.page_slideshow_collection
+    - taxonomy.vocabulary.site_section
+id: paragraph.page_slideshow_collection.field_page_term_sitesection
+field_name: field_page_term_sitesection
+entity_type: paragraph
+bundle: page_slideshow_collection
+label: 'Site section'
+description: 'What area of the site does this slide belong to.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      site_section: site_section
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

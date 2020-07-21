@@ -1,0 +1,23 @@
+uuid: 727a8031-2946-4bcb-a560-77914568348c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_newsletter_free_form_text1
+    - paragraphs.paragraphs_type.newsletter_free_form
+  module:
+    - text
+id: paragraph.newsletter_free_form.field_newsletter_free_form_text1
+field_name: field_newsletter_free_form_text1
+entity_type: paragraph
+bundle: newsletter_free_form
+label: Description
+description: 'This field will show the Summary in the email version of the newsletter with a Read More link.  The main area will only show in the Online Version.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

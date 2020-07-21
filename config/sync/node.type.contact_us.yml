@@ -1,0 +1,18 @@
+uuid: 7e6a7251-146a-4464-b285-a587c4a91931
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: 'Contact us'
+type: contact_us
+description: 'Contact us is a button on the side menu that links to different departments'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

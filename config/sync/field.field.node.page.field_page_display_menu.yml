@@ -1,0 +1,23 @@
+uuid: b7048733-9b23-4753-8233-0b630a82d13c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_display_menu
+    - node.type.page
+  module:
+    - options
+id: node.page.field_page_display_menu
+field_name: field_page_display_menu
+entity_type: node
+bundle: page
+label: 'What menu should display for this page'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: '1'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

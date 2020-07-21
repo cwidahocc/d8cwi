@@ -1,0 +1,57 @@
+uuid: 55f6f7de-2b1f-4a62-8dea-220479dd9039
+langcode: und
+status: true
+dependencies:
+  module:
+    - options
+    - taxonomy
+id: taxonomy_term.field_page_display_menu
+field_name: field_page_display_menu
+entity_type: taxonomy_term
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: 'Main Menu (topical)'
+    -
+      value: '12'
+      label: 'Paying For Classes'
+    -
+      value: '8'
+      label: 'Financial Aid Pages'
+    -
+      value: '9'
+      label: 'Faculty and Staff'
+    -
+      value: '13'
+      label: 'Student Services'
+    -
+      value: '14'
+      label: 'Interested In CWI'
+    -
+      value: '15'
+      label: 'Academics - Unexpanded'
+    -
+      value: '16'
+      label: 'General Info'
+    -
+      value: '17'
+      label: 'Current Students - Unexpanded'
+    -
+      value: '19'
+      label: 'Foundation and Alumni'
+    -
+      value: '20'
+      label: 'Faculty and Staff with GenEd Depts'
+    -
+      value: '21'
+      label: 'Community Connections'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

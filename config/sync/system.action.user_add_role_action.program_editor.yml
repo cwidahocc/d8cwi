@@ -1,0 +1,14 @@
+uuid: dc72ffce-c2df-4818-bbc0-6f1879c0fbb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.program_editor
+  module:
+    - user
+id: user_add_role_action.program_editor
+label: 'Add the Program Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: program_editor

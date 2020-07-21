@@ -1,0 +1,32 @@
+uuid: d0b4e236-22d5-4c5f-b245-2cca8408838f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_academic_dates_er
+    - node.type.program
+id: node.program.field_academic_dates_er
+field_name: field_academic_dates_er
+entity_type: node
+bundle: program
+label: 'Actionable Dates'
+description: 'Only add dates that are specific to this program like: Orientations, Special Application Deadlines, Competitive entry deadlines. <ul><li>Any standard Academic Dates should <strong>not</strong> be included in this list, they will be included automatically when you selected "Display All Academic Calendar Dates" above.</li><li><strong>Add New Date:</strong> This will display a form to create a new date, add a Name and Date. Link and Description are optional then "Create Date" to Save it.</li><li>Unpublished: A date will be approved after the entire program is save as "Needs Reviewed"</li><li>Only Future Dates will be displayed, feel free to "Edit" past items with new dates to refresh them.</li><li>To remove any dates that are no longer relevant or if you have questions please submit a <a href="https://helpdesk.cwidaho.cc/helpdesk/WebObjects/Helpdesk.woa" target="_blank">Help Desk</a> ticket to Marketing -> CWI Website</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    view:
+      args: {  }
+      display_name: entityreference_1
+      view_name: academic_dates_entity_reference
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

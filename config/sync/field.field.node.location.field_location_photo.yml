@@ -1,0 +1,38 @@
+uuid: b69e2392-334a-443b-b2e7-81197d350d36
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_photo
+    - node.type.location
+  module:
+    - image
+id: node.location.field_location_photo
+field_name: field_location_photo
+entity_type: node
+bundle: location
+label: 'Location Photo'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: false
+  alt_field_required: false
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: locations_ct
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

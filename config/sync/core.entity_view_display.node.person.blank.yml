@@ -1,0 +1,36 @@
+uuid: 3e3a2429-e1e6-4832-be57-7e3d619da764
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.person.field_person_department
+    - field.field.node.person.field_person_email
+    - field.field.node.person.field_person_namefirst
+    - field.field.node.person.field_person_namelast
+    - field.field.node.person.field_person_phone
+    - field.field.node.person.field_person_prefix
+    - field.field.node.person.field_person_title
+    - field.field.node.person.field_type_of_person
+    - node.type.person
+  module:
+    - user
+id: node.person.blank
+targetEntityType: node
+bundle: person
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_person_department: true
+  field_person_email: true
+  field_person_namefirst: true
+  field_person_namelast: true
+  field_person_phone: true
+  field_person_prefix: true
+  field_person_title: true
+  field_type_of_person: true

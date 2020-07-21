@@ -1,0 +1,26 @@
+uuid: c42f2808-17ef-4b13-8282-04feafe8dcae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_tax
+    - node.type.degree
+    - taxonomy.vocabulary.program_degree
+id: node.degree.field_degree_tax
+field_name: field_degree_tax
+entity_type: node
+bundle: degree
+label: 'Degree Type'
+description: 'Select the appropriate degree type. Used to filter programs and group them together elsewhere on our site.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      program_degree: program_degree
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

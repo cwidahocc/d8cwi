@@ -1,0 +1,26 @@
+uuid: 3b98a711-13c1-4509-8634-f2f64e6b8ba4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_tags
+    - node.type.blog
+    - taxonomy.vocabulary.news_tags
+id: node.blog.field_news_tags
+field_name: field_news_tags
+entity_type: node
+bundle: blog
+label: 'News Tags'
+description: 'Classify this article, the terms will be used to filter and search. As well as display the blog on other pages across our site. Example is "Alumni - will show this article on our alumni page"'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      news_tags: news_tags
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

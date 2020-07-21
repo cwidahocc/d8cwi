@@ -1,0 +1,23 @@
+uuid: 456f5029-1c67-436f-9f25-fb846cb0a011
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_approved
+    - node.type.social
+id: node.social.field_social_approved
+field_name: field_social_approved
+entity_type: node
+bundle: social
+label: 'Directory Approved'
+description: 'Approval will allow this listing to show up in the <a href="social">Social Directory</a> page otherwise, this social listing entity can only be linked to from club pages.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: '1'
+  off_label: '0'
+field_type: boolean

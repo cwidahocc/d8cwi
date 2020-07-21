@@ -1,0 +1,21 @@
+uuid: c2738b7b-3683-4780-997a-0a620da4216d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_date
+    - node.type.spotlight
+  module:
+    - datetime
+id: node.spotlight.field_news_date
+field_name: field_news_date
+entity_type: node
+bundle: spotlight
+label: Date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

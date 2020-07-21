@@ -1,0 +1,42 @@
+uuid: c2f6545c-4bd3-479b-af8e-5af66e448de5
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.department.body
+    - field.field.node.department.field_department_er
+    - field.field.node.department.field_department_taxonomy
+    - field.field.node.department.field_department_type
+    - field.field.node.department.field_page_contact_person
+    - field.field.node.department.field_page_headerimg
+    - field.field.node.department.field_page_icon
+    - node.type.department
+  module:
+    - text
+    - user
+id: node.department.teaser
+targetEntityType: node
+bundle: department
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_department_er: true
+  field_department_taxonomy: true
+  field_department_type: true
+  field_page_contact_person: true
+  field_page_headerimg: true
+  field_page_icon: true

@@ -1,0 +1,18 @@
+uuid: 62f4efbd-7e56-4adc-9857-d47968b1713a
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: Spotlight
+type: spotlight
+description: 'Spotlight is used for the top sections of our Newsletters, previously Photo of the Week.  These can be created during the creation of a newsletter.'
+help: 'Title can be left Blank and it will be generate automatically from the "Headline - Today''s Date"'
+new_revision: false
+preview_mode: 1
+display_submitted: false

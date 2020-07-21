@@ -1,0 +1,38 @@
+uuid: 737035fa-92d0-4631-a055-26672fa6ce51
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.file.body
+    - field.field.node.file.field_file_embed
+    - field.field.node.file.field_file_embed_type
+    - field.field.node.file.field_file_file
+    - field.field.node.file.field_file_vocab_dtype
+    - node.type.file
+  module:
+    - text
+    - user
+id: node.file.teaser
+targetEntityType: node
+bundle: file
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_file_embed: true
+  field_file_embed_type: true
+  field_file_file: true
+  field_file_vocab_dtype: true

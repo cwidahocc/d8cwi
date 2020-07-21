@@ -1,0 +1,220 @@
+uuid: 17abfb94-3782-478b-a1e5-86a71ac41f19
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_page
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldInstanceMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: node_content
+label: 'Nodes (Page)'
+source:
+  plugin: d7_node
+  node_type: page
+process:
+  nid:
+    -
+      plugin: get
+      source: tnid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  comment_node_page/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_overview_field:
+    -
+      plugin: get
+      source: field_overview_field
+  field_right_site_callout:
+    -
+      plugin: get
+      source: field_right_site_callout
+  field_related_link_collection:
+    -
+      plugin: get
+      source: field_related_link_collection
+  field_related_pages:
+    -
+      plugin: get
+      source: field_related_pages
+  field_page_section_group:
+    -
+      plugin: get
+      source: field_page_section_group
+  field_page_icon:
+    -
+      plugin: sub_process
+      source: field_page_icon
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_page_contact_person:
+    -
+      plugin: get
+      source: field_page_contact_person
+  field_page_headerimg:
+    -
+      plugin: sub_process
+      source: field_page_headerimg
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_page_secondary_sections:
+    -
+      plugin: get
+      source: field_page_secondary_sections
+  field_page_term_sitesection:
+    -
+      plugin: sub_process
+      source: field_page_term_sitesection
+      process:
+        target_id: tid
+  field_page_audience:
+    -
+      plugin: sub_process
+      source: field_page_audience
+      process:
+        target_id: tid
+  field_page_gallery_include:
+    -
+      plugin: get
+      source: field_page_gallery_include
+  field_c2a_directional_url:
+    -
+      plugin: field_link
+      source: field_c2a_directional_url
+  field_c2a_text_content:
+    -
+      plugin: get
+      source: field_c2a_text_content
+  field_page_display_menu:
+    -
+      plugin: get
+      source: field_page_display_menu
+  field_attachmentgroup:
+    -
+      plugin: get
+      source: field_attachmentgroup
+  field_meta_desc:
+    -
+      plugin: get
+      source: field_meta_desc
+  field_board_member_name:
+    -
+      plugin: get
+      source: field_board_member_name
+  field_short_url:
+    -
+      plugin: get
+      source: field_short_url
+  field_video:
+    -
+      plugin: sub_process
+      source: field_video
+      process:
+        target_id: fid
+        display: display
+        description: description
+  field_rollover:
+    -
+      plugin: get
+      source: field_rollover
+  field_contact_us:
+    -
+      plugin: get
+      source: field_contact_us
+  field_page_paragraph:
+    -
+      plugin: get
+      source: field_page_paragraph
+  field_page_slideshow:
+    -
+      plugin: sub_process
+      source: field_page_slideshow
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_page_faq_category:
+    -
+      plugin: sub_process
+      source: field_page_faq_category
+      process:
+        target_id: tid
+  field_page_faq_questions:
+    -
+      plugin: get
+      source: field_page_faq_questions
+destination:
+  plugin: 'entity:node'
+  default_bundle: page
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_comment_field_instance

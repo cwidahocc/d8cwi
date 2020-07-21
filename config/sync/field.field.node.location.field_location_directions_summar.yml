@@ -1,0 +1,19 @@
+uuid: 987e5cb6-757a-4a3f-80ad-ed197bfcd159
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_directions_summar
+    - node.type.location
+id: node.location.field_location_directions_summar
+field_name: field_location_directions_summar
+entity_type: node
+bundle: location
+label: 'Location Instructions Summary'
+description: 'Add custom direction summary to help people better understand how to reach the location.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

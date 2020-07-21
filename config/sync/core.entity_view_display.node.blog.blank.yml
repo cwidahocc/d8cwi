@@ -1,0 +1,44 @@
+uuid: 76388428-f946-4b9b-a4ec-ce4cfa2cae37
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.blog.body
+    - field.field.node.blog.field_author
+    - field.field.node.blog.field_blog_category
+    - field.field.node.blog.field_file_file
+    - field.field.node.blog.field_image_gallery
+    - field.field.node.blog.field_news_date
+    - field.field.node.blog.field_news_expire_date
+    - field.field.node.blog.field_news_hero
+    - field.field.node.blog.field_news_tags
+    - field.field.node.blog.field_newsroom
+    - field.field.node.blog.field_organizations
+    - field.field.node.blog.field_video
+    - node.type.blog
+  module:
+    - user
+id: node.blog.blank
+targetEntityType: node
+bundle: blog
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_author: true
+  field_blog_category: true
+  field_file_file: true
+  field_image_gallery: true
+  field_news_date: true
+  field_news_expire_date: true
+  field_news_hero: true
+  field_news_tags: true
+  field_newsroom: true
+  field_organizations: true
+  field_video: true

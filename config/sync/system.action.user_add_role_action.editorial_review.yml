@@ -1,0 +1,14 @@
+uuid: e6c9dd1e-352b-4217-98b3-57f36550c63d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.editorial_review
+  module:
+    - user
+id: user_add_role_action.editorial_review
+label: 'Add the Editorial Review role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: editorial_review

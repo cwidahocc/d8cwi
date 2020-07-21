@@ -1,0 +1,44 @@
+uuid: 25758340-babb-46d0-b4cb-8ecb8cad8c8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.occasion.field_occasion_date
+    - field.field.node.occasion.field_occasion_link
+    - node.type.occasion
+  module:
+    - datetime
+    - link
+    - user
+id: node.occasion.default
+targetEntityType: node
+bundle: occasion
+mode: default
+content:
+  field_occasion_date:
+    label: above
+    weight: 0
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_occasion_link:
+    label: above
+    weight: 1
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

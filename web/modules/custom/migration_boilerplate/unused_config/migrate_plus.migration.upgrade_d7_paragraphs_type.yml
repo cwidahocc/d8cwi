@@ -1,0 +1,33 @@
+uuid: eb0b4c7b-a4f7-4b5e-9f40-da71e0cd2f90
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_paragraphs_type
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+migration_group: paragraphs
+label: 'Paragraphs type configuration'
+source:
+  plugin: d7_paragraphs_type
+  add_description: true
+process:
+  id:
+    -
+      plugin: get
+      source: bundle
+  label:
+    -
+      plugin: get
+      source: name
+  description:
+    -
+      plugin: get
+      source: description
+destination:
+  plugin: 'entity:paragraphs_type'
+migration_dependencies:
+  required: {  }
+  optional: {  }

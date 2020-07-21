@@ -1,0 +1,19 @@
+uuid: edbb170b-dc9f-4847-b6b3-f261bd980e74
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sensitive_message
+    - node.type.cwi_newsletter
+id: node.cwi_newsletter.field_sensitive_message
+field_name: field_sensitive_message
+entity_type: node
+bundle: cwi_newsletter
+label: 'Sensitive Message'
+description: 'This field will only display in the email version of the newsletter. It will not display on the website.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

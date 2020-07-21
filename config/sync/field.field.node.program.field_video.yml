@@ -1,0 +1,27 @@
+uuid: a90ab3b8-900b-485e-a94b-c1af3fe60ceb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - node.type.program
+  module:
+    - file
+id: node.program.field_video
+field_name: field_video
+entity_type: node
+bundle: program
+label: Video
+description: 'Press <strong>Select</strong> -- Then check the Library Tab if it''s an existing video or provide the YouTube URL for a new one.  <ul><li>Video is the primary Media it will be used before any images from the slideshow. </li><li>If you would like to create a video for your program contact the CWI Marketing Team for some assistance.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: program_ct/video
+  file_extensions: mp4
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

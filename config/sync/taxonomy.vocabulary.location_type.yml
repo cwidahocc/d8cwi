@@ -1,0 +1,8 @@
+uuid: e73c3ded-3c59-4008-b40b-ed15d139ec55
+langcode: en
+status: true
+dependencies: {  }
+name: 'Location Type'
+vid: location_type
+description: 'Is this a campus, or some other kind of location?'
+weight: 3

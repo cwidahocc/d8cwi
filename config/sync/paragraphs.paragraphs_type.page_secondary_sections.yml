@@ -1,0 +1,10 @@
+uuid: d25689bc-53aa-43cc-b949-56aff366aab9
+langcode: en
+status: true
+dependencies: {  }
+id: page_secondary_sections
+label: 'Page secondary sections'
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_page_secondary_sections'
+behavior_plugins: {  }

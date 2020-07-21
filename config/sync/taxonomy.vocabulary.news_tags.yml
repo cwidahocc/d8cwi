@@ -1,0 +1,8 @@
+uuid: 16a93b3c-e683-4439-a915-db839d14cbfa
+langcode: en
+status: true
+dependencies: {  }
+name: 'News Tags'
+vid: news_tags
+description: 'Tags used to classify a news story, used for filtering and displaying news on designated pages'
+weight: -3

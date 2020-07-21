@@ -1,0 +1,8 @@
+uuid: 6d0919a4-4117-4732-a7ab-d2e61077e9eb
+langcode: en
+status: true
+dependencies: {  }
+name: 'Announcement - Displays'
+vid: announcement_displays
+description: ''
+weight: 0

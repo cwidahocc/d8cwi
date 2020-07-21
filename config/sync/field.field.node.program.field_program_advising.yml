@@ -1,0 +1,21 @@
+uuid: f55a1217-2c66-4624-b739-9f4e40eda8dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_advising
+    - node.type.program
+  module:
+    - text
+id: node.program.field_program_advising
+field_name: field_program_advising
+entity_type: node
+bundle: program
+label: 'Additional Advising Information'
+description: 'Specific information or requirements the Program might have like Math levels or internships requirements, that might be different than other programs or the standard advising information.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

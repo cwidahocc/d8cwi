@@ -1,0 +1,14 @@
+uuid: 6345244c-8d07-44f3-b8c1-4b64f8c66ced
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.blog_editor
+  module:
+    - user
+id: user_add_role_action.blog_editor
+label: 'Add the Blog Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: blog_editor

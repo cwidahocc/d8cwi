@@ -1,0 +1,30 @@
+uuid: 20db0577-8a12-4c6c-8410-0d373c770c12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_spotlight
+    - node.type.cwi_newsletter
+    - node.type.spotlight
+id: node.cwi_newsletter.field_spotlight
+field_name: field_spotlight
+entity_type: node
+bundle: cwi_newsletter
+label: Spotlight
+description: 'Type the name of the spotlight you want to reference. You can Add or Edit existing Spotlights. Only the first spotlight will be displayed, do not add more than one.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      spotlight: spotlight
+field_type: entity_reference

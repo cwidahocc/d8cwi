@@ -1,0 +1,10 @@
+uuid: 89786423-7a67-4aee-ae6d-36f62b439e0f
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.diff_standard
+label: diff_standard
+targetEntityType: paragraph
+cache: true

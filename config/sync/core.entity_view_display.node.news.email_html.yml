@@ -1,0 +1,42 @@
+uuid: 1dd9919d-39ba-4cd8-a978-9b3df8e348c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_html
+    - field.field.node.news.body
+    - field.field.node.news.field_file_file
+    - field.field.node.news.field_image_gallery
+    - field.field.node.news.field_news_boiler_plate
+    - field.field.node.news.field_news_date
+    - field.field.node.news.field_news_expire_date
+    - field.field.node.news.field_news_hero
+    - field.field.node.news.field_news_tags
+    - field.field.node.news.field_organizations
+    - field.field.node.news.field_type_of_news
+    - field.field.node.news.field_video
+    - node.type.news
+  module:
+    - user
+id: node.news.email_html
+targetEntityType: node
+bundle: news
+mode: email_html
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_file_file: true
+  field_image_gallery: true
+  field_news_boiler_plate: true
+  field_news_date: true
+  field_news_expire_date: true
+  field_news_hero: true
+  field_news_tags: true
+  field_organizations: true
+  field_type_of_news: true
+  field_video: true

@@ -1,0 +1,27 @@
+uuid: ffcaa17e-9362-4ca7-87ef-a811da5aad65
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - node.type.page
+  module:
+    - file
+id: node.page.field_video
+field_name: field_video
+entity_type: node
+bundle: page
+label: Video
+description: 'Click on "Select media," click on "Web", then enter the URL of the video you wish to display. Do not enter embed code.  If we have the video already on our site, use "My Files" or "Library" tab to locate it.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: txt
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

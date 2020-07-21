@@ -1,0 +1,64 @@
+uuid: ad8ba85b-728e-4806-9e31-667941c84dd0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.program_degree.field_abbreviation
+    - field.field.taxonomy_term.program_degree.field_color
+    - field.field.taxonomy_term.program_degree.field_link
+    - field.field.taxonomy_term.program_degree.field_page_icon
+    - taxonomy.vocabulary.program_degree
+  module:
+    - image
+    - link
+    - text
+id: taxonomy_term.program_degree.default
+targetEntityType: taxonomy_term
+bundle: program_degree
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_abbreviation:
+    label: hidden
+    weight: 1
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_color:
+    label: above
+    weight: 3
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_link:
+    label: hidden
+    weight: 2
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_page_icon:
+    label: hidden
+    weight: 0
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

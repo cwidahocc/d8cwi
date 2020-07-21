@@ -1,0 +1,8 @@
+uuid: 51d47a54-e564-4ad4-9d8a-d26dde2878d3
+langcode: en
+status: true
+dependencies: {  }
+name: 'Social Platform'
+vid: social_platform
+description: 'Used with the social content type to identify which social platforms are used, should be computed with rules'
+weight: 0

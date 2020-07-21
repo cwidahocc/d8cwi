@@ -1,0 +1,23 @@
+uuid: 33f6b3c8-c1fa-4691-952b-37e9a4eca7dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_linkedin
+    - node.type.social
+  module:
+    - link
+id: node.social.field_social_linkedin
+field_name: field_social_linkedin
+entity_type: node
+bundle: social
+label: LinkedIn
+description: 'Enter the Full LinkedIn URL'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

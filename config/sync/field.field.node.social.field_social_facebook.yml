@@ -1,0 +1,23 @@
+uuid: 7fa405d7-e8d0-4c48-b4e1-2dde55b5b2fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_facebook
+    - node.type.social
+  module:
+    - link
+id: node.social.field_social_facebook
+field_name: field_social_facebook
+entity_type: node
+bundle: social
+label: Facebook
+description: 'Enter the Full Facebook URL'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

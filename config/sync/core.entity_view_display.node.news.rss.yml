@@ -1,0 +1,51 @@
+uuid: 83b1b85e-2f43-41a2-8410-2c98c8b12935
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.rss
+    - field.field.node.news.body
+    - field.field.node.news.field_file_file
+    - field.field.node.news.field_image_gallery
+    - field.field.node.news.field_news_boiler_plate
+    - field.field.node.news.field_news_date
+    - field.field.node.news.field_news_expire_date
+    - field.field.node.news.field_news_hero
+    - field.field.node.news.field_news_tags
+    - field.field.node.news.field_organizations
+    - field.field.node.news.field_type_of_news
+    - field.field.node.news.field_video
+    - node.type.news
+  module:
+    - image
+    - user
+id: node.news.rss
+targetEntityType: node
+bundle: news
+mode: rss
+content:
+  field_news_hero:
+    label: hidden
+    weight: 0
+    type: image
+    settings:
+      image_link: ''
+      image_style: news_hero_image_cwi_mobile_feed
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_file_file: true
+  field_image_gallery: true
+  field_news_boiler_plate: true
+  field_news_date: true
+  field_news_expire_date: true
+  field_news_tags: true
+  field_organizations: true
+  field_type_of_news: true
+  field_video: true

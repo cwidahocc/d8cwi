@@ -1,0 +1,124 @@
+uuid: ee88a873-aac2-41ee-880f-85941389c357
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.social.field_social_approved
+    - field.field.node.social.field_social_facebook
+    - field.field.node.social.field_social_instagram
+    - field.field.node.social.field_social_linkedin
+    - field.field.node.social.field_social_pinterest
+    - field.field.node.social.field_social_platform
+    - field.field.node.social.field_social_twitter
+    - field.field.node.social.field_social_type
+    - field.field.node.social.field_social_youtube
+    - node.type.social
+  module:
+    - link
+    - options
+    - user
+id: node.social.default
+targetEntityType: node
+bundle: social
+mode: default
+content:
+  field_social_approved:
+    label: above
+    weight: 2
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_social_facebook:
+    label: above
+    weight: 4
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_social_instagram:
+    label: above
+    weight: 6
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_social_linkedin:
+    label: above
+    weight: 9
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_social_pinterest:
+    label: above
+    weight: 7
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_social_platform:
+    label: above
+    weight: 1
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_social_twitter:
+    label: above
+    weight: 5
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_social_type:
+    label: above
+    weight: 0
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_social_youtube:
+    label: above
+    weight: 8
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

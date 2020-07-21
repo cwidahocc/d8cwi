@@ -1,0 +1,36 @@
+uuid: c10749c8-920e-46bd-b901-435f4c09f70e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.newsletter_quick_links.field_quick_link_image
+    - field.field.paragraph.newsletter_quick_links.field_quick_link_url
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.newsletter_quick_links
+  module:
+    - image
+    - link
+id: paragraph.newsletter_quick_links.default
+targetEntityType: paragraph
+bundle: newsletter_quick_links
+mode: default
+content:
+  field_quick_link_image:
+    weight: 32
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  field_quick_link_url:
+    weight: 31
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

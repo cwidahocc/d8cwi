@@ -1,0 +1,28 @@
+uuid: f0979e87-7d16-4b68-933f-ab4100f5255b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_simplenews_term
+    - node.type.cwi_newsletter
+    - taxonomy.vocabulary.newsletter
+id: node.cwi_newsletter.field_simplenews_term
+field_name: field_simplenews_term
+entity_type: node
+bundle: cwi_newsletter
+label: 'Newsletter category'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    tid: 221
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      newsletter: newsletter
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

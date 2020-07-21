@@ -1,0 +1,26 @@
+uuid: ee6a10a1-fdce-41bb-8f1b-a8694c3476c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_tags
+    - node.type.news
+    - taxonomy.vocabulary.news_tags
+id: node.news.field_news_tags
+field_name: field_news_tags
+entity_type: node
+bundle: news
+label: 'News Tags'
+description: 'Classify this article, the terms will be used to filter and display the content on other pages.  Example is "Student Life - will show this article on our Student Life page"'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      news_tags: news_tags
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

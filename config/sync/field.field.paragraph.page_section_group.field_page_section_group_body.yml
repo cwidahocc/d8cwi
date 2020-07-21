@@ -1,0 +1,21 @@
+uuid: a9bc0672-47ba-44c0-a102-cc35b7f58bf5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_page_section_group_body
+    - paragraphs.paragraphs_type.page_section_group
+  module:
+    - text
+id: paragraph.page_section_group.field_page_section_group_body
+field_name: field_page_section_group_body
+entity_type: paragraph
+bundle: page_section_group
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

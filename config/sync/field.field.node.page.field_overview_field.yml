@@ -1,0 +1,21 @@
+uuid: 1b5b1e91-c2e3-451c-8e9e-a7a2a0f9979c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_overview_field
+    - node.type.page
+  module:
+    - text
+id: node.page.field_overview_field
+field_name: field_overview_field
+entity_type: node
+bundle: page
+label: 'Promotional Overview'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

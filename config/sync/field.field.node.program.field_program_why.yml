@@ -1,0 +1,19 @@
+uuid: 01abcaa8-8dde-4deb-a3e0-136b3a63e4a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_why
+    - node.type.program
+id: node.program.field_program_why
+field_name: field_program_why
+entity_type: node
+bundle: program
+label: 'Why This Program'
+description: 'For Example, The Business – General associate degree is designed primarily to prepare you… It Includes…'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

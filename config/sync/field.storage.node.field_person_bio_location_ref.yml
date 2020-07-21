@@ -1,0 +1,19 @@
+uuid: f0e64a4e-5689-428d-b04e-40810f96da51
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_person_bio_location_ref
+field_name: field_person_bio_location_ref
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

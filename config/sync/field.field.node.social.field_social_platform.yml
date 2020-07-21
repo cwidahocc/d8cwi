@@ -1,0 +1,26 @@
+uuid: 3ce3cd4a-6c68-4718-a08f-789a24c2d046
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_platform
+    - node.type.social
+    - taxonomy.vocabulary.social_platform
+id: node.social.field_social_platform
+field_name: field_social_platform
+entity_type: node
+bundle: social
+label: 'Social Platform'
+description: 'No need to touch, these are managed automatically by saving!'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      social_platform: social_platform
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

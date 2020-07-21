@@ -4,8 +4,20 @@ status: true
 dependencies:
   config:
     - field.field.node.book.body
+    - field.field.node.book.field_book_definition
+    - field.field.node.book.field_book_department
+    - field.field.node.book.field_book_effective
+    - field.field.node.book.field_book_file
+    - field.field.node.book.field_book_forms
+    - field.field.node.book.field_book_name
+    - field.field.node.book.field_book_number
+    - field.field.node.book.field_book_page_type
+    - field.field.node.book.field_book_policy_body
+    - field.field.node.book.field_book_revision
+    - field.field.node.book.field_book_scope
     - node.type.book
   module:
+    - datetime
     - text
     - user
 _core:
@@ -22,7 +34,59 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_book_definition:
+    label: above
+    weight: 5
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_book_department:
+    label: above
+    weight: 1
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_book_effective:
+    label: above
+    weight: 2
+    type: datetime_default
+    settings:
+      format_type: cwi_date_only
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_book_policy_body:
+    label: hidden
+    weight: 6
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_book_revision:
+    label: above
+    weight: 3
+    type: datetime_default
+    settings:
+      format_type: cwi_date_only
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_book_scope:
+    label: above
+    weight: 4
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
   links:
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  field_book_file: true
+  field_book_forms: true
+  field_book_name: true
+  field_book_number: true
+  field_book_page_type: true

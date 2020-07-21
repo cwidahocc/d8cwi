@@ -1,0 +1,91 @@
+uuid: 7f05d16d-2aca-477d-b289-8be27dabc5d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rollover
+    - node.type.page
+    - paragraphs.paragraphs_type.rollover
+  module:
+    - entity_reference_revisions
+id: node.page.field_rollover
+field_name: field_rollover
+entity_type: node
+bundle: page
+label: Rollover
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    negate: 0
+    target_bundles:
+      rollover: rollover
+    target_bundles_drag_drop:
+      attachmentgroup:
+        enabled: false
+        weight: 2
+      column_1:
+        enabled: false
+        weight: 3
+      column_2:
+        enabled: false
+        weight: 4
+      contact:
+        enabled: false
+        weight: 5
+      food_vendor_contact_info:
+        enabled: false
+        weight: 6
+      image:
+        enabled: false
+        weight: 7
+      kground:
+        enabled: false
+        weight: 8
+      link:
+        enabled: false
+        weight: 9
+      newsletter_free_form:
+        enabled: false
+        weight: 10
+      newsletter_free_form_2:
+        enabled: false
+        weight: 11
+      newsletter_quick_links:
+        enabled: false
+        weight: 12
+      page_secondary_sections:
+        enabled: false
+        weight: 13
+      page_section_group:
+        enabled: false
+        weight: 14
+      page_slideshow_collection:
+        enabled: false
+        weight: 15
+      related_link_collection:
+        enabled: false
+        weight: 16
+      resource:
+        enabled: false
+        weight: 17
+      rollover:
+        enabled: true
+        weight: 1
+      testimonial:
+        enabled: false
+        weight: 18
+      text:
+        enabled: false
+        weight: 19
+      video:
+        enabled: false
+        weight: 20
+      view:
+        enabled: false
+        weight: 21
+  handler: 'default:paragraph'
+field_type: entity_reference_revisions

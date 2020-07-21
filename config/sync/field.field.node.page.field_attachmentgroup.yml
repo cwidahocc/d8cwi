@@ -1,0 +1,91 @@
+uuid: 829adc7a-bcaf-4d50-a752-9a80e767278e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_attachmentgroup
+    - node.type.page
+    - paragraphs.paragraphs_type.attachmentgroup
+  module:
+    - entity_reference_revisions
+id: node.page.field_attachmentgroup
+field_name: field_attachmentgroup
+entity_type: node
+bundle: page
+label: 'Attachment Group'
+description: "Files attached here can be given groupings so you can display groups of files using panelizer to display them on the page.\r\nAttachment groups MUST be added via panelizer they do not appear by default.\r\nAttachment groups should be added to panelizer by the group number, starting from \"0\" index.\r\nYou will need to click the \"override title\" box and add the heading for the group display in panelizer.\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    negate: 0
+    target_bundles:
+      attachmentgroup: attachmentgroup
+    target_bundles_drag_drop:
+      attachmentgroup:
+        enabled: true
+        weight: 1
+      column_1:
+        enabled: false
+        weight: 2
+      column_2:
+        enabled: false
+        weight: 3
+      contact:
+        enabled: false
+        weight: 4
+      food_vendor_contact_info:
+        enabled: false
+        weight: 5
+      image:
+        enabled: false
+        weight: 6
+      kground:
+        enabled: false
+        weight: 7
+      link:
+        enabled: false
+        weight: 8
+      newsletter_free_form:
+        enabled: false
+        weight: 9
+      newsletter_free_form_2:
+        enabled: false
+        weight: 10
+      newsletter_quick_links:
+        enabled: false
+        weight: 11
+      page_secondary_sections:
+        enabled: false
+        weight: 12
+      page_section_group:
+        enabled: false
+        weight: 13
+      page_slideshow_collection:
+        enabled: false
+        weight: 14
+      related_link_collection:
+        enabled: false
+        weight: 15
+      resource:
+        enabled: false
+        weight: 16
+      rollover:
+        enabled: false
+        weight: 17
+      testimonial:
+        enabled: false
+        weight: 18
+      text:
+        enabled: false
+        weight: 19
+      video:
+        enabled: false
+        weight: 20
+      view:
+        enabled: false
+        weight: 21
+  handler: 'default:paragraph'
+field_type: entity_reference_revisions

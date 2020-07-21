@@ -1,0 +1,26 @@
+uuid: 6a500e52-ade4-4923-8443-51767de98d43
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_faq_category
+    - node.type.page
+    - taxonomy.vocabulary.frequently_asked_question
+id: node.page.field_page_faq_category
+field_name: field_page_faq_category
+entity_type: node
+bundle: page
+label: 'FAQ Category'
+description: "<ul>\r\n<li>Choose an FAQ Category to show the full list of FAQ's available.</li>\r\n<li>If a category is selected, no individual questions will be included from \"FAQ Questions\".</li>\r\n<li>To add to your page insdie customize display use the \"FAQ by Category\" pane found in CWI panes area</li>\r\n</ul>\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      frequently_asked_question: frequently_asked_question
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

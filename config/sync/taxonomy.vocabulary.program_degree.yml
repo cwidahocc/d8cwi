@@ -1,0 +1,8 @@
+uuid: 4ab03445-bfc4-43d5-bbc3-b0b50e30c18a
+langcode: en
+status: true
+dependencies: {  }
+name: 'Program - Degree Type'
+vid: program_degree
+description: 'Degree Level Used with Programs'
+weight: 0

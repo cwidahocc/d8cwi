@@ -1,0 +1,30 @@
+uuid: c2f2b4ab-1db2-4f40-a08e-68929ace5f92
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact_us
+    - node.type.contact_us
+    - node.type.page
+id: node.page.field_contact_us
+field_name: field_contact_us
+entity_type: node
+bundle: page
+label: 'Contact Us'
+description: 'Enter in the department title you want to link to the Contact Us button on the side menu. This field has autocomplete.  Example: One Stop'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      contact_us: contact_us
+field_type: entity_reference

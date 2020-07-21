@@ -1,0 +1,30 @@
+uuid: ebc83a9c-1e27-4037-a711-997ab432da32
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.audience.field_page_display_menu
+    - taxonomy.vocabulary.audience
+  module:
+    - options
+    - text
+id: taxonomy_term.audience.default
+targetEntityType: taxonomy_term
+bundle: audience
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_page_display_menu:
+    label: above
+    weight: 0
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,19 @@
+uuid: c91314bf-c53a-4c4c-8156-e9528e6e0224
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_bio_room
+    - node.type.person_bio
+id: node.person_bio.field_person_bio_room
+field_name: field_person_bio_room
+entity_type: node
+bundle: person_bio
+label: 'Room Number'
+description: 'Room number in the Building Location specified.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

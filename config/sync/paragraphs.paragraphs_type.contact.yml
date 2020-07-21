@@ -1,0 +1,10 @@
+uuid: c49f82b0-78ff-47c8-9922-0e48609fc010
+langcode: en
+status: true
+dependencies: {  }
+id: contact
+label: Contact
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_contact'
+behavior_plugins: {  }

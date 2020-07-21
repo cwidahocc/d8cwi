@@ -1,0 +1,20 @@
+uuid: 1e086895-db1c-4ba2-aeda-f7784b14c3c6
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_degree_format
+field_name: field_degree_format
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

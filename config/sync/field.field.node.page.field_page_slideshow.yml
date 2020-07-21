@@ -1,0 +1,38 @@
+uuid: 93d1de35-5c6b-4f0a-9b77-a14e9cf0ed9f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_slideshow
+    - node.type.page
+  module:
+    - image
+id: node.page.field_page_slideshow
+field_name: field_page_slideshow
+entity_type: node
+bundle: page
+label: Slideshow
+description: 'Recommended 1560 x 1022 image size for the best quality image on all displays.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: true
+  alt_field_required: true
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: page_contenttype/slides
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

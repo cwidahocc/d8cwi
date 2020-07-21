@@ -1,0 +1,14 @@
+uuid: 70b39e6c-f40d-4a86-a665-61d1d60dbd7e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.student_clubs
+  module:
+    - user
+id: user_add_role_action.student_clubs
+label: 'Add the Student Clubs role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: student_clubs

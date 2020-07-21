@@ -1,0 +1,30 @@
+uuid: 0d7c152c-34fd-4d42-b946-489113959db2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.file.body
+    - field.field.node.file.field_file_embed
+    - field.field.node.file.field_file_embed_type
+    - field.field.node.file.field_file_file
+    - field.field.node.file.field_file_vocab_dtype
+    - node.type.file
+  module:
+    - user
+id: node.file.blank
+targetEntityType: node
+bundle: file
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_file_embed: true
+  field_file_embed_type: true
+  field_file_file: true
+  field_file_vocab_dtype: true

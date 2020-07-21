@@ -1,0 +1,14 @@
+uuid: 79c19ed7-1d18-4017-81b5-712c788db96b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.file_editor
+  module:
+    - user
+id: user_add_role_action.file_editor
+label: 'Add the File Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: file_editor

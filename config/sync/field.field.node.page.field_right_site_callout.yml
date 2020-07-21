@@ -1,0 +1,21 @@
+uuid: eaf7b7f0-2c74-48a5-85d7-7df9125f9d96
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_right_site_callout
+    - node.type.page
+  module:
+    - text
+id: node.page.field_right_site_callout
+field_name: field_right_site_callout
+entity_type: node
+bundle: page
+label: 'Promotional Callout'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

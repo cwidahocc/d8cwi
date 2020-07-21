@@ -1,0 +1,42 @@
+uuid: 709427d6-a2fe-4633-878e-96684ad1779c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.column_1.eb_background
+    - field.field.paragraph.column_1.field_paragraph_column_1
+    - paragraphs.paragraphs_type.column_1
+  module:
+    - paragraphs
+id: paragraph.column_1.default
+targetEntityType: paragraph
+bundle: column_1
+mode: default
+content:
+  eb_background:
+    weight: 3
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_column_1:
+    weight: 4
+    type: entity_reference_paragraphs
+    settings:
+      title: Element
+      title_plural: Elements
+      edit_mode: open
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

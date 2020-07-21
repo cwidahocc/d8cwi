@@ -1,0 +1,14 @@
+uuid: e590efd2-f54b-4e1e-99c1-618d7504b212
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.imce_pdf_contributor
+  module:
+    - user
+id: user_remove_role_action.imce_pdf_contributor
+label: 'Remove the Imce PDF Contributor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: imce_pdf_contributor

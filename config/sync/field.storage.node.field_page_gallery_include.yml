@@ -1,0 +1,27 @@
+uuid: b13abf60-9286-48e7-bef0-1c11f55c31a4
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_page_gallery_include
+field_name: field_page_gallery_include
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '0'
+      label: 'No, hide from gallery pages.'
+    -
+      value: '1'
+      label: 'Yes, show on gallery pages'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

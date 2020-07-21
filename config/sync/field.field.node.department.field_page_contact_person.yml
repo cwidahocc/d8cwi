@@ -1,0 +1,30 @@
+uuid: 14a7e71e-45ff-4c0d-b1d1-a10c525a2002
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_contact_person
+    - node.type.department
+    - node.type.person
+id: node.department.field_page_contact_person
+field_name: field_page_contact_person
+entity_type: node
+bundle: department
+label: 'General Contacts'
+description: 'Used for Main Contact, Typically the General Contact Numbers'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: promote
+      direction: ASC
+    target_bundles:
+      person: person
+field_type: entity_reference

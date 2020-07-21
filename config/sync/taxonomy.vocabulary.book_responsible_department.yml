@@ -1,0 +1,8 @@
+uuid: 4ca5ce84-58a0-479e-8ae3-c6d758e7f587
+langcode: en
+status: true
+dependencies: {  }
+name: 'Book - Responsible Department'
+vid: book_responsible_department
+description: ''
+weight: 0

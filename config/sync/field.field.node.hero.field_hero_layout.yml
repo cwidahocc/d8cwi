@@ -1,0 +1,21 @@
+uuid: 3a430983-e8be-48f6-a69a-ea99f2d668c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_layout
+    - node.type.hero
+  module:
+    - options
+id: node.hero.field_hero_layout
+field_name: field_hero_layout
+entity_type: node
+bundle: hero
+label: 'Text Box Layout'
+description: 'Where should the text box and content be displayed over the image?'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

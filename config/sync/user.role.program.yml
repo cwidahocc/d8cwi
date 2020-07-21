@@ -1,0 +1,31 @@
+uuid: b8a46acc-7ebf-429b-b697-b0066d5c9b41
+langcode: en
+status: true
+dependencies: {  }
+id: program
+label: Program
+weight: 4
+is_admin: null
+permissions:
+  - 'access google analytics reports'
+  - 'create academic_date content'
+  - 'create degree content'
+  - 'create program content'
+  - 'edit any academic_date content'
+  - 'edit any degree content'
+  - 'edit any program content'
+  - 'edit own academic_date content'
+  - 'edit own degree content'
+  - 'edit own program content'
+  - 'edit terms in 26'
+  - 'edit terms in 30'
+  - 'edit terms in 31'
+  - 'enter program revision log entry'
+  - 'moderate content from draft to needs_review'
+  - 'moderate content from needs_review to draft'
+  - 'override program revision option'
+  - 'use manualcrop'
+  - 'use workbench_moderation my drafts tab'
+  - 'view all unpublished content'
+  - 'view moderation history'
+  - 'view moderation messages'

@@ -1,0 +1,91 @@
+uuid: 96fe7baf-c158-4405-ae7b-397571b2013c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_contact
+    - node.type.club
+    - paragraphs.paragraphs_type.contact
+  module:
+    - entity_reference_revisions
+id: node.club.field_contact
+field_name: field_contact
+entity_type: node
+bundle: club
+label: 'Club Contact(s)'
+description: 'Enter Contact Information for the Club. President, Secretary etc...'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    negate: 0
+    target_bundles:
+      contact: contact
+    target_bundles_drag_drop:
+      attachmentgroup:
+        enabled: false
+        weight: 2
+      column_1:
+        enabled: false
+        weight: 3
+      column_2:
+        enabled: false
+        weight: 4
+      contact:
+        enabled: true
+        weight: 1
+      food_vendor_contact_info:
+        enabled: false
+        weight: 5
+      image:
+        enabled: false
+        weight: 6
+      kground:
+        enabled: false
+        weight: 7
+      link:
+        enabled: false
+        weight: 8
+      newsletter_free_form:
+        enabled: false
+        weight: 9
+      newsletter_free_form_2:
+        enabled: false
+        weight: 10
+      newsletter_quick_links:
+        enabled: false
+        weight: 11
+      page_secondary_sections:
+        enabled: false
+        weight: 12
+      page_section_group:
+        enabled: false
+        weight: 13
+      page_slideshow_collection:
+        enabled: false
+        weight: 14
+      related_link_collection:
+        enabled: false
+        weight: 15
+      resource:
+        enabled: false
+        weight: 16
+      rollover:
+        enabled: false
+        weight: 17
+      testimonial:
+        enabled: false
+        weight: 18
+      text:
+        enabled: false
+        weight: 19
+      video:
+        enabled: false
+        weight: 20
+      view:
+        enabled: false
+        weight: 21
+  handler: 'default:paragraph'
+field_type: entity_reference_revisions

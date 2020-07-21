@@ -1,0 +1,19 @@
+uuid: 3f5d1cd6-58b7-45d7-b002-99fbbd1e1062
+langcode: und
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_degree_advising
+field_name: field_degree_advising
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

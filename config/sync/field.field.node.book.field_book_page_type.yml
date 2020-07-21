@@ -1,0 +1,23 @@
+uuid: 4251670c-6e2c-453a-b3b6-684e66277793
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_page_type
+    - node.type.book
+  module:
+    - options
+id: node.book.field_book_page_type
+field_name: field_book_page_type
+entity_type: node
+bundle: book
+label: 'Page Type'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: policy
+default_value_callback: ''
+settings: {  }
+field_type: list_string

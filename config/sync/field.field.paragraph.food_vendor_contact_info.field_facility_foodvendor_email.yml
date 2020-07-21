@@ -1,0 +1,19 @@
+uuid: 82c3f163-01c2-403d-8cb1-647ff6a097b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_facility_foodvendor_email
+    - paragraphs.paragraphs_type.food_vendor_contact_info
+id: paragraph.food_vendor_contact_info.field_facility_foodvendor_email
+field_name: field_facility_foodvendor_email
+entity_type: paragraph
+bundle: food_vendor_contact_info
+label: 'Food Vendor Email'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

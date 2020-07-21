@@ -1,0 +1,19 @@
+uuid: 0425267a-797a-476e-9e69-74fb3bca1f30
+langcode: und
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_link_to_calendar
+field_name: field_link_to_calendar
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

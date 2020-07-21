@@ -1,0 +1,10 @@
+uuid: 3855c1dd-0585-457c-886a-9e8ca07ccb59
+langcode: en
+status: true
+dependencies: {  }
+id: book
+label: book
+description: ''
+source_type: null
+module: null
+shared_configuration: null

@@ -1,0 +1,38 @@
+uuid: 4c849698-c5f5-46f2-96c5-a06b27ed399a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_gallery
+    - node.type.blog
+  module:
+    - image
+id: node.blog.field_image_gallery
+field_name: field_image_gallery
+entity_type: node
+bundle: blog
+label: 'Image gallery'
+description: 'Used as secondary images for blogs.  Will be shown a crossed the bottom in thumbnails and displayed in a lightbox.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: true
+  alt_field_required: true
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: blog_ct/gallery
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: true
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,0 +1,10 @@
+uuid: 444536de-05be-4866-a0c6-62c42b6ba07c
+langcode: en
+status: true
+dependencies: {  }
+id: newsletter_quick_links
+label: 'Newsletter quick links'
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_newsletter_quick_links'
+behavior_plugins: {  }

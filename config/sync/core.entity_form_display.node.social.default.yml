@@ -1,0 +1,142 @@
+uuid: 3b08eeef-8037-4358-8331-6a94db0463eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.social.field_social_approved
+    - field.field.node.social.field_social_facebook
+    - field.field.node.social.field_social_instagram
+    - field.field.node.social.field_social_linkedin
+    - field.field.node.social.field_social_pinterest
+    - field.field.node.social.field_social_platform
+    - field.field.node.social.field_social_twitter
+    - field.field.node.social.field_social_type
+    - field.field.node.social.field_social_youtube
+    - node.type.social
+  module:
+    - link
+    - path
+id: node.social.default
+targetEntityType: node
+bundle: social
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_social_approved:
+    weight: 2
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+  field_social_facebook:
+    weight: 2
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  field_social_instagram:
+    weight: 3
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  field_social_linkedin:
+    weight: 6
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  field_social_pinterest:
+    weight: 7
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  field_social_platform:
+    weight: 4
+    type: options_buttons
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_social_twitter:
+    weight: 4
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  field_social_type:
+    weight: 1
+    type: options_buttons
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_social_youtube:
+    weight: 5
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+hidden: {  }

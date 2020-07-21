@@ -1,0 +1,21 @@
+uuid: 6c986a7a-d533-4845-a770-b54da0a3e054
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_occasion_date
+    - node.type.occasion
+  module:
+    - datetime
+id: node.occasion.field_occasion_date
+field_name: field_occasion_date
+entity_type: node
+bundle: occasion
+label: Date
+description: 'What day does this occasion happen!'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,84 @@
+uuid: 1c6c19e6-2d3a-450b-ba7b-0f25cd5e6e4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.location.body
+    - field.field.node.location.field_building_hours
+    - field.field.node.location.field_location_address
+    - field.field.node.location.field_location_building_code
+    - field.field.node.location.field_location_directions_summar
+    - field.field.node.location.field_location_mail_stop
+    - field.field.node.location.field_location_onestop
+    - field.field.node.location.field_location_photo
+    - field.field.node.location.field_location_type
+    - field.field.node.location.field_person_department
+    - image.style.thumbnail
+    - node.type.location
+  module:
+    - image
+    - simple_gmap
+    - text
+    - user
+id: node.location.teaser
+targetEntityType: node
+bundle: location
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_location_address:
+    label: hidden
+    weight: 3
+    type: simple_gmap
+    settings:
+      apikey: ''
+      iframe_height: '300'
+      iframe_width: '400'
+      include_link: true
+      include_map: false
+      include_static_map: false
+      include_text: false
+      langcode: en
+      link_text: Directions
+      map_type: m
+      static_scale: 1
+      zoom_level: 14
+      iframe_title: ''
+    third_party_settings: {  }
+    region: content
+  field_location_directions_summar:
+    label: hidden
+    weight: 2
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_location_photo:
+    label: hidden
+    weight: 0
+    type: image
+    settings:
+      image_link: ''
+      image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_building_hours: true
+  field_location_building_code: true
+  field_location_mail_stop: true
+  field_location_onestop: true
+  field_location_type: true
+  field_person_department: true

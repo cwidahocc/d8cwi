@@ -1,0 +1,32 @@
+uuid: 049f238f-732e-42be-b885-d1be2ead68aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_faq_questions
+    - node.type.program
+id: node.program.field_program_faq_questions
+field_name: field_program_faq_questions
+entity_type: node
+bundle: program
+label: 'FAQ Questions'
+description: "<ul>\r\n<li>Link to individual FAQ Questions by typing the name of the FAQ and seleting from the dropdown</li>\r\n<li>If a category is selected above, no individual questions will be included from \"FAQ Questions\".</li>\r\n<li><strong>Auto Completes:</strong>\r\n<ul><li>Begin typing the name of a question</li><li><strong>Wait</strong> allowing the auto complete results to display</li>\r\n<li>Select one of the results and your done</li>\r\n</ul></li>\r\n<li><strong>Add Another Item:</strong> Press the button to add additional line items</li>\r\n<li><strong>Reorder:</strong> Click and Drag the four way arrows to reorder, its best to have the most important at the top.</li>\r\n<li><strong>Remove:</strong> Erase the entire line or just add a different item in its place</li>\r\n</ul>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    view:
+      args: {  }
+      display_name: entityreference_faq
+      view_name: faq_entity_reference
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

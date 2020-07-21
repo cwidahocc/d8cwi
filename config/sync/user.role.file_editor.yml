@@ -1,0 +1,26 @@
+uuid: bd7c4461-2e60-49ef-bcc3-014177fddc22
+langcode: en
+status: true
+dependencies: {  }
+id: file_editor
+label: 'File Editor'
+weight: 14
+is_admin: null
+permissions:
+  - 'create file content'
+  - 'edit any file content'
+  - 'edit own file content'
+  - 'enter file revision log entry'
+  - 'moderate file state from draft to editorial_review'
+  - 'moderate file state from draft to needs_review'
+  - 'moderate file state from draft to published'
+  - 'moderate file state from editorial_review to draft'
+  - 'moderate file state from editorial_review to needs_review'
+  - 'moderate file state from editorial_review to published'
+  - 'override file authored by option'
+  - 'override file revision option'
+  - 'use workbench_moderation my drafts tab'
+  - 'use workbench_moderation needs review tab'
+  - 'view all unpublished content'
+  - 'view moderation history'
+  - 'view moderation messages'

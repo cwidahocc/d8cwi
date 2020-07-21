@@ -1,0 +1,26 @@
+uuid: ee9c10bf-fba8-48e0-b487-ae698b9b50ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_audience
+    - node.type.page
+    - taxonomy.vocabulary.audience
+id: node.page.field_page_audience
+field_name: field_page_audience
+entity_type: node
+bundle: page
+label: Audience
+description: 'Which group of site visitors is this content for?  Based on your selection here, a link to this page will be displayed on one or more audience gallery listings.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      audience: audience
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

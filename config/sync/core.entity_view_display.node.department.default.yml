@@ -1,0 +1,85 @@
+uuid: e8a0a7a7-07cb-4b78-8456-b015244bd587
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.department.body
+    - field.field.node.department.field_department_er
+    - field.field.node.department.field_department_taxonomy
+    - field.field.node.department.field_department_type
+    - field.field.node.department.field_page_contact_person
+    - field.field.node.department.field_page_headerimg
+    - field.field.node.department.field_page_icon
+    - node.type.department
+  module:
+    - image
+    - text
+    - user
+id: node.department.default
+targetEntityType: node
+bundle: department
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_department_er:
+    label: above
+    weight: 10
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_department_taxonomy:
+    label: above
+    weight: 9
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_department_type:
+    label: above
+    weight: 8
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_page_contact_person:
+    label: above
+    weight: 3
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_page_headerimg:
+    label: above
+    weight: 2
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_page_icon:
+    label: above
+    weight: 6
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

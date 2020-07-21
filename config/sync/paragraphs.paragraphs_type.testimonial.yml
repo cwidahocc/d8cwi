@@ -1,0 +1,10 @@
+uuid: 838a8efe-921f-4d24-a796-6517ee880b20
+langcode: en
+status: true
+dependencies: {  }
+id: testimonial
+label: Testimonial
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_testimonial'
+behavior_plugins: {  }

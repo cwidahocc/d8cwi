@@ -1,0 +1,19 @@
+uuid: 19b39945-638b-48d9-9339-d0753d71b6e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_title
+    - node.type.person
+id: node.person.field_person_title
+field_name: field_person_title
+entity_type: node
+bundle: person
+label: 'Role or Job Title'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

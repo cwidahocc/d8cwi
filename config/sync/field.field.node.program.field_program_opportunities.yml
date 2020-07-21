@@ -1,0 +1,21 @@
+uuid: cf7a7d48-2848-482f-8537-71e5fde5a339
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_opportunities
+    - node.type.program
+  module:
+    - text
+id: node.program.field_program_opportunities
+field_name: field_program_opportunities
+entity_type: node
+bundle: program
+label: 'Additional Opportunities'
+description: 'Can be Partnerships, Unique Activities, Special Field Trips or Community involvement etc...)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

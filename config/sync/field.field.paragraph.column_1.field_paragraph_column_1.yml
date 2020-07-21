@@ -1,0 +1,99 @@
+uuid: 2bd2af6d-c024-47cd-b348-6eff83c3ff08
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_column_1
+    - paragraphs.paragraphs_type.column_1
+    - paragraphs.paragraphs_type.image
+    - paragraphs.paragraphs_type.link
+    - paragraphs.paragraphs_type.text
+    - paragraphs.paragraphs_type.video
+    - paragraphs.paragraphs_type.view
+  module:
+    - entity_reference_revisions
+id: paragraph.column_1.field_paragraph_column_1
+field_name: field_paragraph_column_1
+entity_type: paragraph
+bundle: column_1
+label: 'Full Width Column'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    negate: 0
+    target_bundles:
+      image: image
+      link: link
+      text: text
+      video: video
+      view: view
+    target_bundles_drag_drop:
+      attachmentgroup:
+        enabled: false
+        weight: 10
+      column_1:
+        enabled: false
+        weight: -14
+      column_2:
+        enabled: false
+        weight: -13
+      contact:
+        enabled: false
+        weight: 11
+      food_vendor_contact_info:
+        enabled: false
+        weight: 12
+      image:
+        enabled: true
+        weight: -12
+      kground:
+        enabled: false
+        weight: 13
+      link:
+        enabled: true
+        weight: -11
+      newsletter_free_form:
+        enabled: false
+        weight: 14
+      newsletter_free_form_2:
+        enabled: false
+        weight: 15
+      newsletter_quick_links:
+        enabled: false
+        weight: 16
+      page_secondary_sections:
+        enabled: false
+        weight: 17
+      page_section_group:
+        enabled: false
+        weight: 18
+      page_slideshow_collection:
+        enabled: false
+        weight: 19
+      related_link_collection:
+        enabled: false
+        weight: 20
+      resource:
+        enabled: false
+        weight: 21
+      rollover:
+        enabled: false
+        weight: -10
+      testimonial:
+        enabled: false
+        weight: 22
+      text:
+        enabled: true
+        weight: -9
+      video:
+        enabled: true
+        weight: -8
+      view:
+        enabled: true
+        weight: 9
+  handler: 'default:paragraph'
+field_type: entity_reference_revisions

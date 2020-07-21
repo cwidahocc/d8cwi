@@ -1,0 +1,14 @@
+uuid: d52cf65c-a778-43bc-8f38-c4b5220a2247
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.contact
+  module:
+    - user
+id: user_add_role_action.contact
+label: 'Add the Contact role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: contact

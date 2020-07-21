@@ -1,0 +1,23 @@
+uuid: 2bcef6a5-d8b2-4983-9fe2-abc81f4c7180
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link
+    - node.type.spotlight
+  module:
+    - link
+id: node.spotlight.field_link
+field_name: field_link
+entity_type: node
+bundle: spotlight
+label: 'External Link'
+description: 'Only use this link if you want the Read More link to go somewhere other than the online version of the newsletter.  The Title will be the name of the Link, if title is left blank the full url will be shown.  This also disables the Video, File and Gallery Icons in the Email.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

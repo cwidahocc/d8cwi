@@ -1,0 +1,23 @@
+uuid: b6697c61-3222-4edc-8b5a-f0b97152d144
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_new
+    - node.type.program
+id: node.program.field_program_new
+field_name: field_program_new
+entity_type: node
+bundle: program
+label: 'Show As New'
+description: 'This will enable a designation of New in our main program listing'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: New
+  off_label: ''
+field_type: boolean

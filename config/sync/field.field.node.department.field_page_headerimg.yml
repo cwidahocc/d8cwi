@@ -1,0 +1,33 @@
+uuid: eef78c9a-8113-41b2-9aeb-37391b69a846
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_headerimg
+    - node.type.department
+  module:
+    - image
+id: node.department.field_page_headerimg
+field_name: field_page_headerimg
+entity_type: node
+bundle: department
+label: 'Header image'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: false
+  default_image: 0
+  file_directory: dept_ct/header
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: false
+  alt_field_required: true
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

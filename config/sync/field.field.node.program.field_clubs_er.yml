@@ -1,0 +1,32 @@
+uuid: 1672b2a8-e5d2-4acc-9aee-4c9fad6a546f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_clubs_er
+    - node.type.program
+id: node.program.field_clubs_er
+field_name: field_clubs_er
+entity_type: node
+bundle: program
+label: Clubs
+description: 'Add a <strong>Club</strong> that might be related to this program.  This is an important item that will bring visibility to Club and help improve our student life.<ul><li>You will only be able to link with Clubs that already exist on our site. This relationship will build dynamic links between the Club and the Program.</li><li><strong>Auto Completes:</strong><ul><li>Begin typing the name of a department</li><li><strong>Wait</strong> allowing the auto complete results to display</li><li>Select one of the results and your done</li></ul></li><li><strong>Add Another Item:</strong> Press the button to add additional line items</li><li><strong>Reorder:</strong> Click and Drag the four way arrows to reorder, its best to have the most important at the top.</li><li><strong>Remove:</strong> Erase the entire line or just add a different item in its place</li><li>If a club does not exist, please contact Student Enrichment about the status or details of that club</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    view:
+      args: {  }
+      display_name: entityreference_clubs
+      view_name: program_entity_reference
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

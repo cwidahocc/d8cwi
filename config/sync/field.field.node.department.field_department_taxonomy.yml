@@ -1,0 +1,26 @@
+uuid: 0c0925f8-1e88-4de3-bc75-61b0901cd308
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_department_taxonomy
+    - node.type.department
+    - taxonomy.vocabulary.departments
+id: node.department.field_department_taxonomy
+field_name: field_department_taxonomy
+entity_type: node
+bundle: department
+label: 'Linked Department in the Directory'
+description: 'Department name in the Faulty and Staff Directory'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      departments: departments
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

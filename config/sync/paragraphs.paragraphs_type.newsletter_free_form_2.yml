@@ -1,0 +1,10 @@
+uuid: eeebe4f4-5b26-4090-aa96-81abfa060f75
+langcode: en
+status: true
+dependencies: {  }
+id: newsletter_free_form_2
+label: 'Newsletter free form 2'
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_newsletter_free_form_2'
+behavior_plugins: {  }

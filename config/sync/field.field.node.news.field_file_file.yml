@@ -1,0 +1,27 @@
+uuid: 1d93ae35-b87a-4c00-aecb-eb942cf97de0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_file
+    - node.type.news
+  module:
+    - file
+id: node.news.field_file_file
+field_name: field_file_file
+entity_type: node
+bundle: news
+label: File
+description: 'Include a PDF version of External Article(s)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: news_ct/file
+  file_extensions: 'txt pdf doc docx xls xlsx'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

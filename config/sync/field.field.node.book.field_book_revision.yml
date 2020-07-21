@@ -1,0 +1,21 @@
+uuid: 10cfefb8-0480-4e0f-bbf7-8792190b3d57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_revision
+    - node.type.book
+  module:
+    - datetime
+id: node.book.field_book_revision
+field_name: field_book_revision
+entity_type: node
+bundle: book
+label: 'Last Revision'
+description: 'Last date that a revision was made to the this item'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

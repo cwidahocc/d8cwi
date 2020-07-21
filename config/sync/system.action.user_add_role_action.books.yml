@@ -1,0 +1,14 @@
+uuid: 89bf6834-3b3b-429e-ac3b-615aea557c4d
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.books
+  module:
+    - user
+id: user_add_role_action.books
+label: 'Add the Books role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: books

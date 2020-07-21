@@ -1,0 +1,10 @@
+uuid: 543deecd-1162-4508-9d56-8f42d3bc1744
+langcode: en
+status: true
+dependencies: {  }
+id: kground
+label: Kground
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection eb_background'
+behavior_plugins: {  }

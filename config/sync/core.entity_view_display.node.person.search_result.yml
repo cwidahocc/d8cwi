@@ -1,0 +1,77 @@
+uuid: 0f180477-b226-454b-856b-8902936f9836
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.person.field_person_department
+    - field.field.node.person.field_person_email
+    - field.field.node.person.field_person_namefirst
+    - field.field.node.person.field_person_namelast
+    - field.field.node.person.field_person_phone
+    - field.field.node.person.field_person_prefix
+    - field.field.node.person.field_person_title
+    - field.field.node.person.field_type_of_person
+    - node.type.person
+  module:
+    - user
+id: node.person.search_result
+targetEntityType: node
+bundle: person
+mode: search_result
+content:
+  field_person_department:
+    label: hidden
+    weight: 4
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_person_email:
+    label: hidden
+    weight: 6
+    type: email_mailto
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_person_namefirst:
+    label: hidden
+    weight: 1
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_person_namelast:
+    label: hidden
+    weight: 2
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_person_phone:
+    label: hidden
+    weight: 5
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_person_title:
+    label: hidden
+    weight: 3
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_person_prefix: true
+  field_type_of_person: true

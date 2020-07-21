@@ -1,0 +1,8 @@
+uuid: a0ba98e9-d67f-4420-b511-303a47545fe7
+langcode: en
+status: true
+dependencies: {  }
+name: Person
+vid: person
+description: 'Taxonomy for biographies of staff and student government'
+weight: -3

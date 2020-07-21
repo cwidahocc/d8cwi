@@ -1,0 +1,38 @@
+uuid: f9935bf4-aba8-43c2-96a8-ad578d53fd1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_icon
+    - node.type.club
+  module:
+    - image
+id: node.club.field_page_icon
+field_name: field_page_icon
+entity_type: node
+bundle: club
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: true
+  alt_field_required: true
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: club_ct/icon
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: 100x100
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

@@ -1,0 +1,24 @@
+uuid: 42100f86-8ab6-45b6-9b44-88f975ffde83
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.occasion.field_occasion_date
+    - field.field.node.occasion.field_occasion_link
+    - node.type.occasion
+  module:
+    - user
+id: node.occasion.teaser
+targetEntityType: node
+bundle: occasion
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_occasion_date: true
+  field_occasion_link: true

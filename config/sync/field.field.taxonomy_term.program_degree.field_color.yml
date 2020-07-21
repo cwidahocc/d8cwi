@@ -1,0 +1,21 @@
+uuid: 365e8f43-8803-4b7a-82b6-4589ea25b9f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_color
+    - taxonomy.vocabulary.program_degree
+id: taxonomy_term.program_degree.field_color
+field_name: field_color
+entity_type: taxonomy_term
+bundle: program_degree
+label: Color
+description: 'Enter a Hex Value to represent this degree, do not include #'
+required: false
+translatable: false
+default_value:
+  -
+    value: '000000'
+default_value_callback: ''
+settings: {  }
+field_type: string

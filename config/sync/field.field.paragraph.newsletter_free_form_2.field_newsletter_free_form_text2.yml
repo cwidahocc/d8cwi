@@ -1,0 +1,23 @@
+uuid: d3251ff7-d079-420a-a202-3eb0233c3dbc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_newsletter_free_form_text2
+    - paragraphs.paragraphs_type.newsletter_free_form_2
+  module:
+    - text
+id: paragraph.newsletter_free_form_2.field_newsletter_free_form_text2
+field_name: field_newsletter_free_form_text2
+entity_type: paragraph
+bundle: newsletter_free_form_2
+label: 'Description '
+description: 'This field will show the Summary as the linked title in the email version of the newsletter.  The second area will only show in the Online Version.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

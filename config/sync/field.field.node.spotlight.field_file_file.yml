@@ -1,0 +1,27 @@
+uuid: a8575165-aee6-437f-bc2e-b7091b6e39a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_file
+    - node.type.spotlight
+  module:
+    - file
+id: node.spotlight.field_file_file
+field_name: field_file_file
+entity_type: node
+bundle: spotlight
+label: File
+description: 'Include a PDF version of External Article(s)'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: spotlight_ct/file
+  file_extensions: 'txt pdf doc docx xls xlsx'
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

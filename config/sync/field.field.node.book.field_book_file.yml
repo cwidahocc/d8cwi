@@ -1,0 +1,27 @@
+uuid: 7df1ae7a-d78c-4b64-9d40-f02422317866
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_file
+    - node.type.book
+  module:
+    - file
+id: node.book.field_book_file
+field_name: field_book_file
+entity_type: node
+bundle: book
+label: 'Downloadable File'
+description: 'Upload the downloadable version of this book page. Only allows PDF''s'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: book_ct/file
+  file_extensions: pdf
+  max_filesize: '4 MB'
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,21 @@
+uuid: 868a1636-3908-42dc-a21e-03857418f69e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_expire_date
+    - node.type.blog
+  module:
+    - datetime
+id: node.blog.field_news_expire_date
+field_name: field_news_expire_date
+entity_type: node
+bundle: blog
+label: 'Expire Date'
+description: '<strong>Use this to remove an unwanted News / Blog item (like an event) from our various news feeds.</strong>  This is the date a News / Blog item will expire and no longer be displayed on organizations pages like: Programs, Clubs or news tag based views like: Giving or Student Life etc...  The News / Blog item will remain published and available in the main news room and in site searches.  If you wish to remove the news item <strong>completely</strong> it should unpublished.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

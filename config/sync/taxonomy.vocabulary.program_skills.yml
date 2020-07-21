@@ -1,0 +1,8 @@
+uuid: 10aeb260-3d11-42f4-8b17-413554b25fb4
+langcode: en
+status: true
+dependencies: {  }
+name: 'Program - Skills Traits Prep Classes'
+vid: program_skills
+description: ''
+weight: 0

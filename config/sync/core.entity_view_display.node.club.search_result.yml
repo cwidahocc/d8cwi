@@ -1,0 +1,47 @@
+uuid: 4891c0f7-e2fe-44c2-8174-67b8c0ac9945
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.club.body
+    - field.field.node.club.field_active
+    - field.field.node.club.field_club_calendar
+    - field.field.node.club.field_club_type
+    - field.field.node.club.field_contact
+    - field.field.node.club.field_page_contact_person
+    - field.field.node.club.field_page_headerimg
+    - field.field.node.club.field_page_icon
+    - field.field.node.club.field_social
+    - node.type.club
+  module:
+    - image
+    - user
+id: node.club.search_result
+targetEntityType: node
+bundle: club
+mode: search_result
+content:
+  field_page_icon:
+    label: hidden
+    weight: 1
+    type: image
+    settings:
+      image_link: content
+      image_style: club_icon
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_active: true
+  field_club_calendar: true
+  field_club_type: true
+  field_contact: true
+  field_page_contact_person: true
+  field_page_headerimg: true
+  field_social: true

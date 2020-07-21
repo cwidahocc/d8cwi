@@ -1,0 +1,21 @@
+uuid: 7f84bff7-8aff-4fbf-910a-2e06d8cb6561
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slideshow_collection_desc
+    - paragraphs.paragraphs_type.page_slideshow_collection
+  module:
+    - text
+id: paragraph.page_slideshow_collection.field_slideshow_collection_desc
+field_name: field_slideshow_collection_desc
+entity_type: paragraph
+bundle: page_slideshow_collection
+label: 'Slide description'
+description: 'This is the descriptive text that will appear next to the slide. Try to keep your description under 350 characters since it will automatically get cut off on the slide at that point.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

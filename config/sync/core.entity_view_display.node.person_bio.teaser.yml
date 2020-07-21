@@ -1,0 +1,42 @@
+uuid: 34728565-1fe5-4793-ac9f-104450ecad92
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.person_bio.body
+    - field.field.node.person_bio.field_person_bio_additional
+    - field.field.node.person_bio.field_person_bio_headshot
+    - field.field.node.person_bio.field_person_bio_location_ref
+    - field.field.node.person_bio.field_person_bio_reference
+    - field.field.node.person_bio.field_person_bio_room
+    - field.field.node.person_bio.field_person_bio_url
+    - node.type.person_bio
+  module:
+    - text
+    - user
+id: node.person_bio.teaser
+targetEntityType: node
+bundle: person_bio
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_person_bio_additional: true
+  field_person_bio_headshot: true
+  field_person_bio_location_ref: true
+  field_person_bio_reference: true
+  field_person_bio_room: true
+  field_person_bio_url: true

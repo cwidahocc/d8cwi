@@ -1,0 +1,19 @@
+uuid: 4fea7e86-6271-46c4-afa9-fe44d5005a04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_building_code
+    - node.type.location
+id: node.location.field_location_building_code
+field_name: field_location_building_code
+entity_type: node
+bundle: location
+label: 'Building code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

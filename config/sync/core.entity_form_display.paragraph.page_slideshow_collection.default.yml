@@ -1,0 +1,69 @@
+uuid: d55254fa-c84e-4b2c-bdc3-6679f83414cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.page_slideshow_collection.field_page_term_sitesection
+    - field.field.paragraph.page_slideshow_collection.field_slideshow_collection_desc
+    - field.field.paragraph.page_slideshow_collection.field_slideshow_collection_image
+    - field.field.paragraph.page_slideshow_collection.field_slideshow_collection_link
+    - field.field.paragraph.page_slideshow_collection.field_slideshow_collection_title
+    - field.field.paragraph.page_slideshow_collection.field_slideshow_section
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.page_slideshow_collection
+  module:
+    - image
+    - link
+    - text
+id: paragraph.page_slideshow_collection.default
+targetEntityType: paragraph
+bundle: page_slideshow_collection
+mode: default
+content:
+  field_page_term_sitesection:
+    weight: 1
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_slideshow_collection_desc:
+    weight: 4
+    type: text_textarea
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_slideshow_collection_image:
+    weight: 3
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  field_slideshow_collection_link:
+    weight: 1
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  field_slideshow_collection_title:
+    weight: 0
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_slideshow_section:
+    weight: 2
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

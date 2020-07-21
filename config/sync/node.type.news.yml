@@ -1,0 +1,16 @@
+uuid: 6c31f9e6-0b8e-457d-a9cb-5665fe69f5c6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'menu-community-connections:0:'
+name: News
+type: news
+description: 'Create News Articles here these will be shown in our the CWI News Room and other pages around the site, they can also be distributed with Newsletters. <br/>This content type is categorized by two taxonomy Vocabularies titled <strong>"News"</strong> and <strong>"News Tags."</strong>'
+help: 'Be sure to add a Main Image and choose the proper Type, Tags and a Publish Date'
+new_revision: false
+preview_mode: 1
+display_submitted: false

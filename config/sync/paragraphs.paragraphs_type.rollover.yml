@@ -1,0 +1,10 @@
+uuid: 24286153-c5f8-473b-92e8-95e7e95ba766
+langcode: en
+status: true
+dependencies: {  }
+id: rollover
+label: Rollover
+icon_uuid: null
+icon_default: null
+description: 'Migrated from paragraph bundle Rollover'
+behavior_plugins: {  }

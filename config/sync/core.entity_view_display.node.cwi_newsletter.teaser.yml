@@ -1,0 +1,48 @@
+uuid: a16b0c15-3b8e-4403-b220-6ced4ea32ab6
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.cwi_newsletter.body
+    - field.field.node.cwi_newsletter.field_link_to_calendar
+    - field.field.node.cwi_newsletter.field_newsletter_free_form
+    - field.field.node.cwi_newsletter.field_newsletter_free_form_2
+    - field.field.node.cwi_newsletter.field_newsletter_quick_links
+    - field.field.node.cwi_newsletter.field_sensitive_message
+    - field.field.node.cwi_newsletter.field_simplenews_news_item
+    - field.field.node.cwi_newsletter.field_simplenews_term
+    - field.field.node.cwi_newsletter.field_spotlight
+    - field.field.node.cwi_newsletter.field_upcoming_dates
+    - node.type.cwi_newsletter
+  module:
+    - text
+    - user
+id: node.cwi_newsletter.teaser
+targetEntityType: node
+bundle: cwi_newsletter
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_link_to_calendar: true
+  field_newsletter_free_form: true
+  field_newsletter_free_form_2: true
+  field_newsletter_quick_links: true
+  field_sensitive_message: true
+  field_simplenews_news_item: true
+  field_simplenews_term: true
+  field_spotlight: true
+  field_upcoming_dates: true

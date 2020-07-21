@@ -1,0 +1,10 @@
+uuid: fb7f486e-2dba-4233-a4a7-bc7ec59e3b59
+langcode: en
+status: true
+dependencies: {  }
+id: file
+label: file
+description: ''
+source_type: null
+module: null
+shared_configuration: null

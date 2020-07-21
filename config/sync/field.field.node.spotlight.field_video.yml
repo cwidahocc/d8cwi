@@ -1,0 +1,27 @@
+uuid: dc88c22c-ea9a-4c12-bf3f-291b11576959
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - node.type.spotlight
+  module:
+    - file
+id: node.spotlight.field_video
+field_name: field_video
+entity_type: node
+bundle: spotlight
+label: Video
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: txt
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

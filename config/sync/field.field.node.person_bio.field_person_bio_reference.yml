@@ -1,0 +1,32 @@
+uuid: 8e98a640-b098-4f5c-ac85-228b2adb0f33
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_bio_reference
+    - node.type.person_bio
+id: node.person_bio.field_person_bio_reference
+field_name: field_person_bio_reference
+entity_type: node
+bundle: person_bio
+label: 'Person Reference'
+description: 'Link this Biography to a person.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    view:
+      args: {  }
+      display_name: entityreference_person
+      view_name: person_bio_reference_unique
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

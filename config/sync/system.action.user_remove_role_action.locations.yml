@@ -1,0 +1,14 @@
+uuid: a2a5dc05-b6b6-46b9-a35d-e84d03c54fc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.locations
+  module:
+    - user
+id: user_remove_role_action.locations
+label: 'Remove the Locations role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: locations

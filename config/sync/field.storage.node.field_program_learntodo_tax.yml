@@ -1,0 +1,20 @@
+uuid: e92db86a-d6fe-4ac4-be95-db1af40dd9c9
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_program_learntodo_tax
+field_name: field_program_learntodo_tax
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

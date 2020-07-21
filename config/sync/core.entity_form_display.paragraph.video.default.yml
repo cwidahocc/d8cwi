@@ -1,0 +1,24 @@
+uuid: 6e5f4fbb-a7fb-4ee8-be3e-7449b24912db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.video.field_paragraph_video
+    - paragraphs.paragraphs_type.video
+  module:
+    - file
+id: paragraph.video.default
+targetEntityType: paragraph
+bundle: video
+mode: default
+content:
+  field_paragraph_video:
+    weight: 1
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

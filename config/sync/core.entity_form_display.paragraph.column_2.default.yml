@@ -1,0 +1,55 @@
+uuid: b049ecbf-899c-40e6-ad2b-20250ef3e9cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.column_2.eb_background
+    - field.field.paragraph.column_2.field_paragraph_column_left
+    - field.field.paragraph.column_2.field_paragraph_column_right
+    - paragraphs.paragraphs_type.column_2
+  module:
+    - paragraphs
+id: paragraph.column_2.default
+targetEntityType: paragraph
+bundle: column_2
+mode: default
+content:
+  eb_background:
+    weight: 4
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_column_left:
+    weight: 5
+    type: entity_reference_paragraphs
+    settings:
+      title: 'Left Element'
+      title_plural: 'Left Elements'
+      edit_mode: open
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_paragraph_column_right:
+    weight: 6
+    type: entity_reference_paragraphs
+    settings:
+      title: 'Right Elements'
+      title_plural: 'Right Elements'
+      edit_mode: open
+      add_mode: select
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

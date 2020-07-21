@@ -1,0 +1,26 @@
+uuid: 51ee0128-7d7f-4e53-907e-c6b03930c03f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_to_calendar
+    - node.type.cwi_newsletter
+  module:
+    - link
+id: node.cwi_newsletter.field_link_to_calendar
+field_name: field_link_to_calendar
+entity_type: node
+bundle: cwi_newsletter
+label: 'Link to Calendar'
+description: 'Enter the path or URL to the campus events calendar.'
+required: false
+translatable: false
+default_value:
+  -
+    title: 'CWI Event Calendars'
+    url: calendar-events
+default_value_callback: ''
+settings:
+  title: 1
+  link_type: 17
+field_type: link

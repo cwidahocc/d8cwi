@@ -1,0 +1,19 @@
+uuid: 657521c8-4f97-4de8-9dc6-e77458ba13d1
+langcode: und
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_slideshow_collection_link
+field_name: field_slideshow_collection_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

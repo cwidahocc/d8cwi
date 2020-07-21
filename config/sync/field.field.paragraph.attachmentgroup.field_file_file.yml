@@ -1,0 +1,27 @@
+uuid: fa366517-0250-4fb3-9a77-944eec218c6c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_file_file
+    - paragraphs.paragraphs_type.attachmentgroup
+  module:
+    - file
+id: paragraph.attachmentgroup.field_file_file
+field_name: field_file_file
+entity_type: paragraph
+bundle: attachmentgroup
+label: Attachment
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[current-page:page-number]'
+  file_extensions: 'txt pdf zip'
+  max_filesize: 4MB
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

@@ -1,0 +1,23 @@
+uuid: 578574a2-6e77-4d46-9e95-3cfa664e98f7
+langcode: en
+status: true
+dependencies: {  }
+id: books
+label: Books
+weight: 8
+is_admin: null
+permissions:
+  - 'access google analytics reports'
+  - 'add content to books'
+  - 'create book content'
+  - 'edit any book content'
+  - 'edit own book content'
+  - 'edit terms in 35'
+  - 'enter book revision log entry'
+  - 'moderate content from draft to needs_review'
+  - 'moderate content from needs_review to draft'
+  - 'override book revision option'
+  - 'use workbench_moderation my drafts tab'
+  - 'view all unpublished content'
+  - 'view moderation history'
+  - 'view moderation messages'

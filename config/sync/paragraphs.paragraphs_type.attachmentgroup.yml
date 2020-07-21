@@ -1,0 +1,10 @@
+uuid: c470a719-c481-48a6-93f5-8297c31fc511
+langcode: en
+status: true
+dependencies: {  }
+id: attachmentgroup
+label: Attachmentgroup
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_attachmentgroup'
+behavior_plugins: {  }

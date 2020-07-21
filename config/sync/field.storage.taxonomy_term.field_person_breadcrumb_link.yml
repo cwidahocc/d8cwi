@@ -1,0 +1,19 @@
+uuid: 63a27db9-0a38-4334-8e92-2145dd32a631
+langcode: und
+status: true
+dependencies:
+  module:
+    - link
+    - taxonomy
+id: taxonomy_term.field_person_breadcrumb_link
+field_name: field_person_breadcrumb_link
+entity_type: taxonomy_term
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

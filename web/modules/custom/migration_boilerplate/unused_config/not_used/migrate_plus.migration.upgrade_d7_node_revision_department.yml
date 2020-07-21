@@ -1,0 +1,148 @@
+uuid: 995e54b6-2169-4597-a418-b83cd3331c8a
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_revision_department
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: alterFieldFormatterMigration
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Node revisions (Department)'
+source:
+  plugin: d7_node_revision
+  node_type: department
+process:
+  nid:
+    -
+      plugin: get
+      source: nid
+  vid:
+    -
+      plugin: get
+      source: vid
+  langcode:
+    -
+      plugin: default_value
+      source: language
+      default_value: und
+  title:
+    -
+      plugin: get
+      source: title
+  uid:
+    -
+      plugin: get
+      source: node_uid
+  status:
+    -
+      plugin: get
+      source: status
+  created:
+    -
+      plugin: get
+      source: created
+  changed:
+    -
+      plugin: get
+      source: changed
+  promote:
+    -
+      plugin: get
+      source: promote
+  sticky:
+    -
+      plugin: get
+      source: sticky
+  revision_uid:
+    -
+      plugin: get
+      source: revision_uid
+  revision_log:
+    -
+      plugin: get
+      source: log
+  revision_timestamp:
+    -
+      plugin: get
+      source: timestamp
+  comment_node_department/0/status:
+    -
+      plugin: get
+      source: comment
+  body:
+    -
+      plugin: get
+      source: body
+  field_page_contact_person:
+    -
+      plugin: get
+      source: field_page_contact_person
+  field_page_headerimg:
+    -
+      plugin: sub_process
+      source: field_page_headerimg
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_page_icon:
+    -
+      plugin: sub_process
+      source: field_page_icon
+      process:
+        target_id: fid
+        alt: alt
+        title: title
+        width: width
+        height: height
+  field_department_taxonomy:
+    -
+      plugin: sub_process
+      source: field_department_taxonomy
+      process:
+        target_id: tid
+  field_department_type:
+    -
+      plugin: sub_process
+      source: field_department_type
+      process:
+        target_id: tid
+  field_department_er:
+    -
+      plugin: get
+      source: field_department_er
+destination:
+  plugin: 'entity_revision:node'
+  default_bundle: department
+migration_dependencies:
+  required:
+    - upgrade_d7_node_academic_date
+    - upgrade_d7_node_announcement
+    - upgrade_d7_node_blog
+    - upgrade_d7_node_book
+    - upgrade_d7_node_club
+    - upgrade_d7_node_contact_us
+    - upgrade_d7_node_cwi_newsletter
+    - upgrade_d7_node_degree
+    - upgrade_d7_node_department
+    - upgrade_d7_node_faq
+    - upgrade_d7_node_file
+    - upgrade_d7_node_hero
+    - upgrade_d7_node_homepage_slide_collection
+    - upgrade_d7_node_location
+    - upgrade_d7_node_news
+    - upgrade_d7_node_occasion
+    - upgrade_d7_node_page
+    - upgrade_d7_node_person
+    - upgrade_d7_node_person_bio
+    - upgrade_d7_node_program
+    - upgrade_d7_node_social
+    - upgrade_d7_node_spotlight
+    - upgrade_d7_node_upgrade_ad
+    - upgrade_d7_node_webform
+  optional: {  }

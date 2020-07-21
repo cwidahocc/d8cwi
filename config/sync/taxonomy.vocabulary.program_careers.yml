@@ -1,0 +1,8 @@
+uuid: f38d5a5e-0bbb-49a2-9c18-27506185f2c9
+langcode: en
+status: true
+dependencies: {  }
+name: 'Program - Careers'
+vid: program_careers
+description: 'Used with Programs'
+weight: 0

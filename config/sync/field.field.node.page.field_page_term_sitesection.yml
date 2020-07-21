@@ -1,0 +1,26 @@
+uuid: e5dbb390-2a39-4d92-87db-3c4c3e4a9f2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_term_sitesection
+    - node.type.page
+    - taxonomy.vocabulary.site_section
+id: node.page.field_page_term_sitesection
+field_name: field_page_term_sitesection
+entity_type: node
+bundle: page
+label: Topic
+description: 'What section of the site does this page belong to?'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      site_section: site_section
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

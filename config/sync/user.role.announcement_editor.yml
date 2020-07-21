@@ -1,0 +1,31 @@
+uuid: 051b2b0d-b295-40a6-ab30-1edd434aaf7a
+langcode: en
+status: true
+dependencies: {  }
+id: announcement_editor
+label: 'Announcement Editor'
+weight: 10
+is_admin: null
+permissions:
+  - 'access google analytics reports'
+  - 'create announcement content'
+  - 'delete any announcement content'
+  - 'delete own announcement content'
+  - 'diff view changes'
+  - 'edit any announcement content'
+  - 'edit own announcement content'
+  - 'enter announcement revision log entry'
+  - 'moderate content from draft to needs_review'
+  - 'moderate content from needs_review to draft'
+  - 'moderate content from needs_review to published'
+  - 'override announcement authored on option'
+  - 'override announcement promote to front page option'
+  - 'override announcement published option'
+  - 'override announcement revision option'
+  - 'schedule publishing of nodes'
+  - 'use text format announcements_text_format'
+  - 'use workbench_moderation my drafts tab'
+  - 'use workbench_moderation needs review tab'
+  - 'view all unpublished content'
+  - 'view moderation history'
+  - 'view moderation messages'

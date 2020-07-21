@@ -1,0 +1,23 @@
+uuid: 3b830269-6b55-4553-a397-da3520c220d2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_active
+    - node.type.club
+id: node.club.field_active
+field_name: field_active
+entity_type: node
+bundle: club
+label: 'Is the Club Active?'
+description: 'Use to Disable the Club in Searches'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Active
+  off_label: Inactive
+field_type: boolean

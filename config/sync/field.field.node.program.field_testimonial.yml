@@ -1,0 +1,91 @@
+uuid: b7ed8dec-9141-45d9-b847-5f47dad1b437
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_testimonial
+    - node.type.program
+    - paragraphs.paragraphs_type.testimonial
+  module:
+    - entity_reference_revisions
+id: node.program.field_testimonial
+field_name: field_testimonial
+entity_type: node
+bundle: program
+label: Testimonial
+description: 'Consists of a person''s name and written statement extolling the virtue of a your program.<ul><li>Add multiple and they will be display in a rotating manner.</li><li>The quotes may also be displayed in large groups elsewhere on the site and related back to this program.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    negate: 0
+    target_bundles:
+      testimonial: testimonial
+    target_bundles_drag_drop:
+      attachmentgroup:
+        enabled: false
+        weight: 2
+      column_1:
+        enabled: false
+        weight: 3
+      column_2:
+        enabled: false
+        weight: 4
+      contact:
+        enabled: false
+        weight: 5
+      food_vendor_contact_info:
+        enabled: false
+        weight: 6
+      image:
+        enabled: false
+        weight: 7
+      kground:
+        enabled: false
+        weight: 8
+      link:
+        enabled: false
+        weight: 9
+      newsletter_free_form:
+        enabled: false
+        weight: 10
+      newsletter_free_form_2:
+        enabled: false
+        weight: 11
+      newsletter_quick_links:
+        enabled: false
+        weight: 12
+      page_secondary_sections:
+        enabled: false
+        weight: 13
+      page_section_group:
+        enabled: false
+        weight: 14
+      page_slideshow_collection:
+        enabled: false
+        weight: 15
+      related_link_collection:
+        enabled: false
+        weight: 16
+      resource:
+        enabled: false
+        weight: 17
+      rollover:
+        enabled: false
+        weight: 18
+      testimonial:
+        enabled: true
+        weight: 1
+      text:
+        enabled: false
+        weight: 19
+      video:
+        enabled: false
+        weight: 20
+      view:
+        enabled: false
+        weight: 21
+  handler: 'default:paragraph'
+field_type: entity_reference_revisions

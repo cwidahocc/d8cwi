@@ -1,0 +1,34 @@
+uuid: 5baa4b91-66c5-47a7-a3ba-90f13cb89a29
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.page_secondary_sections.field_secondary_section_body
+    - field.field.paragraph.page_secondary_sections.field_secondary_section_title
+    - paragraphs.paragraphs_type.page_secondary_sections
+  module:
+    - text
+id: paragraph.page_secondary_sections.default
+targetEntityType: paragraph
+bundle: page_secondary_sections
+mode: default
+content:
+  field_secondary_section_body:
+    weight: 2
+    type: text_textarea
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_secondary_section_title:
+    weight: 1
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

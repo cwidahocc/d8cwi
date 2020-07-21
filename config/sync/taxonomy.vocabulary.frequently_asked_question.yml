@@ -1,0 +1,8 @@
+uuid: 55563565-5c95-47e1-b9af-528a9d21fc67
+langcode: en
+status: true
+dependencies: {  }
+name: FAQ
+vid: frequently_asked_question
+description: 'FAQ Taxonomy Category'
+weight: -6

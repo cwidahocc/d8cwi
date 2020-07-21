@@ -1,0 +1,21 @@
+uuid: 8a009fb3-f1ef-409f-97a9-2e4cf5dd6c00
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_news_boiler_plate
+    - node.type.news
+  module:
+    - text
+id: node.news.field_news_boiler_plate
+field_name: field_news_boiler_plate
+entity_type: node
+bundle: news
+label: 'Contact Boiler Plate'
+description: 'Use Press Review template for formatting, this will only show on the Full News Item page not in the Newsletter or teaser views.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

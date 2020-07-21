@@ -1,0 +1,33 @@
+uuid: 5419fad8-80e6-408d-be00-497313d63d82
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_icon
+    - node.type.department
+  module:
+    - image
+id: node.department.field_page_icon
+field_name: field_page_icon
+entity_type: node
+bundle: department
+label: Icon
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: false
+  default_image: 5287
+  file_directory: dept_ct/icon
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: false
+  alt_field_required: true
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

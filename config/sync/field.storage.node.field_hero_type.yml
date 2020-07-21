@@ -1,0 +1,30 @@
+uuid: d4191bae-9d0f-430f-baa0-7e08a1b2844e
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_hero_type
+field_name: field_hero_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: video
+      label: Video
+    -
+      value: image
+      label: Image
+    -
+      value: text
+      label: Text
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

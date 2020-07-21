@@ -1,0 +1,14 @@
+uuid: 97bc59c3-d13e-4b4f-9700-96a4de7c8376
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.locations
+  module:
+    - user
+id: user_add_role_action.locations
+label: 'Add the Locations role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: locations

@@ -1,0 +1,23 @@
+uuid: 9ee0439b-e2c6-4082-9fcb-46b501ed6904
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_instagram
+    - node.type.social
+  module:
+    - link
+id: node.social.field_social_instagram
+field_name: field_social_instagram
+entity_type: node
+bundle: social
+label: Instagram
+description: 'Enter Full Instagram Url'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

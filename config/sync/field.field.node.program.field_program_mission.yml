@@ -1,0 +1,19 @@
+uuid: b7c18229-1f0c-474b-99a5-9e0cabeeb927
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_mission
+    - node.type.program
+id: node.program.field_program_mission
+field_name: field_program_mission
+entity_type: node
+bundle: program
+label: Mission
+description: 'For Example, CWI’s * Program prepares students for… '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

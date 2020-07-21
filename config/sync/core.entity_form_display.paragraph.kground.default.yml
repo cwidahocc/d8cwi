@@ -1,0 +1,40 @@
+uuid: cbd1138b-9f3e-457e-8f90-e29361cc11fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kground.eb_selection
+    - field.field.paragraph.kground.field_eb_image
+    - field.field.paragraph.kground.field_eb_image_style
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.kground
+  module:
+    - image
+id: paragraph.kground.default
+targetEntityType: paragraph
+bundle: kground
+mode: default
+content:
+  eb_selection:
+    weight: -50
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_eb_image:
+    weight: 1
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  field_eb_image_style:
+    weight: 2
+    type: options_select
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

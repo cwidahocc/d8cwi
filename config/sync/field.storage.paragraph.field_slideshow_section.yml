@@ -1,0 +1,20 @@
+uuid: d3a66a97-6a7a-421c-b9a1-775c77262619
+langcode: und
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - taxonomy
+id: paragraph.field_slideshow_section
+field_name: field_slideshow_section
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 292f1268-1822-4d54-ab8a-5f5748921120
+langcode: en
+status: true
+dependencies: {  }
+id: contact
+label: Contact
+weight: 7
+is_admin: null
+permissions:
+  - 'access ckeditor link'
+  - 'access toolbar'
+  - 'access workbench access by role'
+  - 'edit any person_bio content'
+  - 'enter person_bio revision log entry'
+  - 'moderate person_bio state from draft to needs_review'
+  - 'moderate person_bio state from needs_review to draft'
+  - 'use manualcrop'
+  - 'view all unpublished content'
+  - 'view moderation history'
+  - 'view moderation messages'

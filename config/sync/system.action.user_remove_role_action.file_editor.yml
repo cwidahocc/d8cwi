@@ -1,0 +1,14 @@
+uuid: d60884fe-8518-488d-abe4-d46a7e31ca64
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.file_editor
+  module:
+    - user
+id: user_remove_role_action.file_editor
+label: 'Remove the File Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: file_editor

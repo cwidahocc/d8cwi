@@ -1,0 +1,64 @@
+uuid: b5f8515a-205d-425e-b88e-37821a4fb7b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.degree.field_degree_advising
+    - field.field.node.degree.field_degree_format
+    - field.field.node.degree.field_degree_tax
+    - field.field.node.degree.field_link
+    - node.type.degree
+  module:
+    - link
+    - user
+id: node.degree.default
+targetEntityType: node
+bundle: degree
+mode: default
+content:
+  field_degree_advising:
+    label: above
+    weight: 6
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_degree_format:
+    label: above
+    weight: 3
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_degree_tax:
+    label: hidden
+    weight: 1
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_link:
+    label: inline
+    weight: 4
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

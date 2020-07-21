@@ -1,0 +1,36 @@
+uuid: 1e740850-d0dc-4dcd-8bc4-b6570fa0f8e6
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_hero_layout
+field_name: field_hero_layout
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: text-left
+      label: 'Top Left'
+    -
+      value: text-right
+      label: 'Top Right'
+    -
+      value: text-bottomleft
+      label: 'Bottom Left'
+    -
+      value: text-bottomright
+      label: 'Bottom Right'
+    -
+      value: text-none
+      label: 'Do Not Display text box'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

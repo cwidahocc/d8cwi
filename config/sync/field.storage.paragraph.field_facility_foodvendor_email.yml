@@ -1,0 +1,18 @@
+uuid: 75a85ea5-4925-401e-a653-a87b864bf8db
+langcode: und
+status: true
+dependencies:
+  module:
+    - paragraphs
+id: paragraph.field_facility_foodvendor_email
+field_name: field_facility_foodvendor_email
+entity_type: paragraph
+type: email
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

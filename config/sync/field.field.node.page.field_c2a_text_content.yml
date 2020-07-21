@@ -1,0 +1,21 @@
+uuid: 3f1da801-cedf-4ecf-976a-83da5ebaa574
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_c2a_text_content
+    - node.type.page
+  module:
+    - text
+id: node.page.field_c2a_text_content
+field_name: field_c2a_text_content
+entity_type: node
+bundle: page
+label: 'Call to Action Content'
+description: 'This content is for the creation of call to action buttons for internal pages. There are specific styles applied to this feature . Using the "bold" button or "strong" html code will create a grey italic header. You can also place button images and icons in this area.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

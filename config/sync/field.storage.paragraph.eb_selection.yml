@@ -1,0 +1,21 @@
+uuid: 7848380d-1ad9-472d-bb78-a0d9df640f1e
+langcode: und
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.eb_selection
+field_name: eb_selection
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values: {  }
+  allowed_values_function: entity_background_selection_list
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

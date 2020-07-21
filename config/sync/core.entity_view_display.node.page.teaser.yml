@@ -5,6 +5,32 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.body
+    - field.field.node.page.field_attachmentgroup
+    - field.field.node.page.field_board_member_name
+    - field.field.node.page.field_c2a_directional_url
+    - field.field.node.page.field_c2a_text_content
+    - field.field.node.page.field_contact_us
+    - field.field.node.page.field_meta_desc
+    - field.field.node.page.field_overview_field
+    - field.field.node.page.field_page_audience
+    - field.field.node.page.field_page_contact_person
+    - field.field.node.page.field_page_display_menu
+    - field.field.node.page.field_page_faq_category
+    - field.field.node.page.field_page_faq_questions
+    - field.field.node.page.field_page_gallery_include
+    - field.field.node.page.field_page_headerimg
+    - field.field.node.page.field_page_icon
+    - field.field.node.page.field_page_paragraph
+    - field.field.node.page.field_page_secondary_sections
+    - field.field.node.page.field_page_section_group
+    - field.field.node.page.field_page_slideshow
+    - field.field.node.page.field_page_term_sitesection
+    - field.field.node.page.field_related_link_collection
+    - field.field.node.page.field_related_pages
+    - field.field.node.page.field_right_site_callout
+    - field.field.node.page.field_rollover
+    - field.field.node.page.field_short_url
+    - field.field.node.page.field_video
     - node.type.page
   module:
     - text
@@ -27,4 +53,30 @@ content:
   links:
     weight: 101
     region: content
-hidden: {  }
+hidden:
+  field_attachmentgroup: true
+  field_board_member_name: true
+  field_c2a_directional_url: true
+  field_c2a_text_content: true
+  field_contact_us: true
+  field_meta_desc: true
+  field_overview_field: true
+  field_page_audience: true
+  field_page_contact_person: true
+  field_page_display_menu: true
+  field_page_faq_category: true
+  field_page_faq_questions: true
+  field_page_gallery_include: true
+  field_page_headerimg: true
+  field_page_icon: true
+  field_page_paragraph: true
+  field_page_secondary_sections: true
+  field_page_section_group: true
+  field_page_slideshow: true
+  field_page_term_sitesection: true
+  field_related_link_collection: true
+  field_related_pages: true
+  field_right_site_callout: true
+  field_rollover: true
+  field_short_url: true
+  field_video: true

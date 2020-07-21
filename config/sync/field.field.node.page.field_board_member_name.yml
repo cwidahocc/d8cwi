@@ -1,0 +1,30 @@
+uuid: 8b1c3c1e-5b1c-4260-8d1c-6134b00869ee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_board_member_name
+    - node.type.page
+    - node.type.person
+id: node.page.field_board_member_name
+field_name: field_board_member_name
+entity_type: node
+bundle: page
+label: 'Board Members'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      person: person
+field_type: entity_reference

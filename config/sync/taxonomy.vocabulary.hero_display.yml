@@ -1,0 +1,8 @@
+uuid: 45a61fb8-5d75-400f-a8db-3905d8de1b78
+langcode: en
+status: true
+dependencies: {  }
+name: 'Hero Display'
+vid: hero_display
+description: 'Used to determine where a hero is displayed'
+weight: 0

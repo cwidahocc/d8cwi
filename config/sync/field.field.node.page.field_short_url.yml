@@ -1,0 +1,19 @@
+uuid: 3682427e-6cd6-47c0-ad9c-a5357a246177
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_short_url
+    - node.type.page
+id: node.page.field_short_url
+field_name: field_short_url
+entity_type: node
+bundle: page
+label: 'Short URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

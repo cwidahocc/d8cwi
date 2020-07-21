@@ -1,0 +1,14 @@
+uuid: bee91e02-5d92-4a3d-9b25-b1319b9aacd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.books
+  module:
+    - user
+id: user_remove_role_action.books
+label: 'Remove the Books role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: books

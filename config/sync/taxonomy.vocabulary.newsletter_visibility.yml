@@ -1,0 +1,8 @@
+uuid: 859b6726-d4a7-4853-8253-b218eaf1850f
+langcode: en
+status: true
+dependencies: {  }
+name: 'Newsletter Visibility'
+vid: newsletter_visibility
+description: ''
+weight: 0

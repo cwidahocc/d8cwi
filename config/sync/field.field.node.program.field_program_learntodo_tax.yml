@@ -1,0 +1,26 @@
+uuid: 4b7229e5-635a-4dfc-8971-d34e70529429
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_learntodo_tax
+    - node.type.program
+    - taxonomy.vocabulary.program_learn
+id: node.program.field_program_learntodo_tax
+field_name: field_program_learntodo_tax
+entity_type: node
+bundle: program
+label: 'What You Will Learn to Do'
+description: 'Use this to list the final objectives of this program, what skills a student will walk away with upon <strong>Completion</strong>.<ul><li>To keep consistency with other programs use the auto-complete statements when applicable. Make only one statement per line.</li><li>Every statement will included as bullets and will be text searchable in the program areas</li><li><strong>Auto Completes:</strong><ul><li>Begin typing the name of a department</li><li><strong>Wait</strong> allowing the auto complete results to display</li><li>Select one of the results and your done</li><li>Always attempt to use the auto complete statements.</li></ul></li><li><strong>Adding New Statements:</strong>Type the full statement out and saving will automatically add, then the statement will available for auto completes on other programs.</li><li><strong>Add Another Item:</strong> Press the button to add additional line item statements</li><li><strong>Reorder:</strong> Click and Drag the four way arrows to reorder your statements, its best to have the most important at the top.</li><li><strong>Remove:</strong> Erase the entire line or just add a different statement in its place</li><li> If a statement needs modified or updated don''t just create news ones especially if only a minor change, please submit a Help Desk ticket to Marketing.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      program_learn: program_learn
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

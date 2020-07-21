@@ -1,0 +1,14 @@
+uuid: ae1d9e21-87fc-4b28-b711-40ec05a01611
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.student_clubs
+  module:
+    - user
+id: user_remove_role_action.student_clubs
+label: 'Remove the Student Clubs role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: student_clubs

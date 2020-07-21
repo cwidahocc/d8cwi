@@ -1,0 +1,14 @@
+uuid: df316460-caa4-4b24-80ee-da6f6c27e739
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.news_room
+  module:
+    - user
+id: user_remove_role_action.news_room
+label: 'Remove the News Room role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: news_room

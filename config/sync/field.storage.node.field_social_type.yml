@@ -1,0 +1,33 @@
+uuid: a15a7d78-079d-4f52-bdbd-7abf4d93dba5
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_social_type
+field_name: field_social_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: club
+      label: Club
+    -
+      value: department
+      label: Department
+    -
+      value: main
+      label: Main
+    -
+      value: program
+      label: Program
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

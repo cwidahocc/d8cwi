@@ -1,0 +1,21 @@
+uuid: 18463ae7-06a3-4bb5-8df1-a96d34740425
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_announcements
+    - node.type.program
+  module:
+    - text
+id: node.program.field_program_announcements
+field_name: field_program_announcements
+entity_type: node
+bundle: program
+label: Announcements
+description: 'This is your only Free Form promotional area. Please only add any special program information that this program form does not already cover.<ul><li>This will be display prominently on the Program page when applicable.</li><li>If you need assistance some special programming please contact Marketing for assistance.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,14 @@
+uuid: 303a9dfb-50ff-43e5-9413-62ec0b4b5f59
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.content_approval
+  module:
+    - user
+id: user_remove_role_action.content_approval
+label: 'Remove the Content Approval role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: content_approval

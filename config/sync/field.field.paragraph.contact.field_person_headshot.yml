@@ -1,0 +1,38 @@
+uuid: 589ab2c2-2569-4811-8ddd-c42beb2a397e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_person_headshot
+    - paragraphs.paragraphs_type.contact
+  module:
+    - image
+id: paragraph.contact.field_person_headshot
+field_name: field_person_headshot
+entity_type: paragraph
+bundle: contact
+label: Headshot
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: false
+  alt_field_required: false
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: club_ct/headshot
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: 125x125
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

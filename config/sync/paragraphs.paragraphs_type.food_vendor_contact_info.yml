@@ -1,0 +1,10 @@
+uuid: daadbe7d-55e9-4cfe-9d5a-836761fe65ef
+langcode: en
+status: true
+dependencies: {  }
+id: food_vendor_contact_info
+label: 'Food vendor contact info'
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_food_vendor_contact_info'
+behavior_plugins: {  }

@@ -1,0 +1,19 @@
+uuid: a56295b5-fa30-49a5-a412-9d8cce858e3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_address
+    - node.type.location
+id: node.location.field_location_address
+field_name: field_location_address
+entity_type: node
+bundle: location
+label: 'Physical Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

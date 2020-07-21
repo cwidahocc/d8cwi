@@ -1,0 +1,19 @@
+uuid: a78372c0-064f-41b7-80e1-5e843269e36c
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_spotlight
+field_name: field_spotlight
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

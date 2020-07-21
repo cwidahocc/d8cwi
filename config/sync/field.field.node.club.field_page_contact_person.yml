@@ -1,0 +1,30 @@
+uuid: bb018d4c-4b87-4135-aedd-2c73087983df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_contact_person
+    - node.type.club
+    - node.type.person
+id: node.club.field_page_contact_person
+field_name: field_page_contact_person
+entity_type: node
+bundle: club
+label: 'Club Advisor(s)'
+description: 'Every Club needs an Advisor.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: promote
+      direction: ASC
+    target_bundles:
+      person: person
+field_type: entity_reference

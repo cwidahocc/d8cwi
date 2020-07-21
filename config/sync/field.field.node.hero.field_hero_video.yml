@@ -1,0 +1,27 @@
+uuid: 79326769-378a-4a07-9ba2-c4d3f0ae95d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_video
+    - node.type.hero
+  module:
+    - file
+id: node.hero.field_hero_video
+field_name: field_hero_video
+entity_type: node
+bundle: hero
+label: 'Hero Video'
+description: 'Upload Video sized 1920x800'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: hero_ct/mp4
+  file_extensions: mp4
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

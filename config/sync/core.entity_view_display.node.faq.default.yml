@@ -1,0 +1,57 @@
+uuid: 34ab2ef4-cdeb-45c7-950a-5549458136c7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.faq.body
+    - field.field.node.faq.field_faq_order
+    - field.field.node.faq.field_faq_term
+    - field.field.node.faq.field_file_file
+    - field.field.node.faq.field_video
+    - node.type.faq
+  module:
+    - file
+    - text
+    - user
+id: node.faq.default
+targetEntityType: node
+bundle: faq
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_faq_term:
+    label: hidden
+    weight: 3
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_file_file:
+    label: hidden
+    weight: 0
+    type: file_url_plain
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_video:
+    label: hidden
+    weight: 1
+    type: file_default
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_faq_order: true

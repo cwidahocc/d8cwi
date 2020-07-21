@@ -1,0 +1,26 @@
+uuid: 28aab1d8-5f8c-41ec-aab2-7fc148d83b5e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_skills_tax
+    - node.type.program
+    - taxonomy.vocabulary.program_skills
+id: node.program.field_program_skills_tax
+field_name: field_program_skills_tax
+entity_type: node
+bundle: program
+label: 'Skills, Traits, and Prep Classes'
+description: 'Use this to list the Skills, Traits, and Prep Classes a person will want to have to <strong>Start</strong> this program with success.<ul><li>To keep consistency with other programs use the auto-complete statements when applicable. Make only one statement per line.</li><li>Every statement will included as bullets and will be text searchable in the program areas</li><li><strong>Auto Completes:</strong><ul><li>Begin typing the name of a department</li><li><strong>Wait</strong> allowing the auto complete results to display</li><li>Select one of the results and your done</li><li>Always attempt to use the auto complete statements.</li></ul></li><li><strong>Adding New Statements:</strong>Type the full statement out and saving will automatically add, then the statement will available for auto completes on other programs.</li><li><strong>Add Another Item:</strong> Press the button to add additional line item statements</li><li><strong>Reorder:</strong> Click and Drag the four way arrows to reorder your statements, its best to have the most important at the top.</li><li><strong>Remove:</strong> Erase the entire line or just add a different statement in its place</li><li> If a statement needs modified or updated don''t just create news ones especially if only a minor change, please submit a Help Desk ticket to Marketing.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      program_skills: program_skills
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

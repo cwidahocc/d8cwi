@@ -1,0 +1,21 @@
+uuid: 345a3fc5-2b73-43c9-a1ed-344e46ad8213
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_coming_cta
+    - node.type.program
+  module:
+    - text
+id: node.program.field_program_coming_cta
+field_name: field_program_coming_cta
+entity_type: node
+bundle: program
+label: 'Coming Soon CTA'
+description: 'Shown under the CTA buttons! Please keep it short, Frank.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

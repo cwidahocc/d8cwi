@@ -1,0 +1,38 @@
+uuid: d5606579-b312-4457-8b66-c8425c9913f4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slideshow_collection_image
+    - paragraphs.paragraphs_type.page_slideshow_collection
+  module:
+    - image
+id: paragraph.page_slideshow_collection.field_slideshow_collection_image
+field_name: field_slideshow_collection_image
+entity_type: paragraph
+bundle: page_slideshow_collection
+label: Image
+description: 'Recommended 1560 x 1022 image size for the best quality image on all displays.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: true
+  alt_field_required: true
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: page_contenttype/slides
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

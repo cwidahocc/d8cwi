@@ -1,0 +1,28 @@
+uuid: b4940adf-72d5-4422-9e86-4b141030987c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.search_result
+    - field.field.node.webform.body
+    - field.field.node.webform.field_page_section_group
+    - field.field.node.webform.field_page_term_sitesection
+    - field.field.node.webform.field_topic
+    - node.type.webform
+  module:
+    - user
+id: node.webform.search_result
+targetEntityType: node
+bundle: webform
+mode: search_result
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_page_section_group: true
+  field_page_term_sitesection: true
+  field_topic: true

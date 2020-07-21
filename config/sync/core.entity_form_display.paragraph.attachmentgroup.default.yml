@@ -1,0 +1,43 @@
+uuid: 70fb4103-984a-400a-a80d-29b291d15eae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.attachmentgroup.field_file_file
+    - field.field.paragraph.attachmentgroup.field_groupname
+    - field.field.paragraph.attachmentgroup.field_grp_desc
+    - paragraphs.paragraphs_type.attachmentgroup
+  module:
+    - file
+    - text
+id: paragraph.attachmentgroup.default
+targetEntityType: paragraph
+bundle: attachmentgroup
+mode: default
+content:
+  field_file_file:
+    weight: 2
+    type: file_generic
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    region: content
+  field_groupname:
+    weight: 0
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_grp_desc:
+    weight: 1
+    type: text_textarea
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

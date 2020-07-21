@@ -1,0 +1,26 @@
+uuid: 037933e2-904f-479f-aa97-5853b752b279
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_person
+    - node.type.person
+    - taxonomy.vocabulary.person
+id: node.person.field_type_of_person
+field_name: field_type_of_person
+entity_type: node
+bundle: person
+label: 'Person Term'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      person: person
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

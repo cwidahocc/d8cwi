@@ -1,0 +1,18 @@
+uuid: 6f7d6f82-9221-4671-8d66-46ccc21f2227
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.kground.eb_selection
+    - field.field.paragraph.kground.field_eb_image
+    - field.field.paragraph.kground.field_eb_image_style
+    - paragraphs.paragraphs_type.kground
+id: paragraph.kground.default
+targetEntityType: paragraph
+bundle: kground
+mode: default
+content: {  }
+hidden:
+  eb_selection: true
+  field_eb_image: true
+  field_eb_image_style: true

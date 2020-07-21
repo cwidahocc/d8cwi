@@ -1,0 +1,54 @@
+uuid: a57deccf-4895-46a4-b15e-e37d6cffbccf
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.spotlight.body
+    - field.field.node.spotlight.field_file_file
+    - field.field.node.spotlight.field_headline
+    - field.field.node.spotlight.field_image_gallery
+    - field.field.node.spotlight.field_link
+    - field.field.node.spotlight.field_news_date
+    - field.field.node.spotlight.field_news_hero
+    - field.field.node.spotlight.field_video
+    - image.style.medium
+    - node.type.spotlight
+  module:
+    - image
+    - text
+    - user
+id: node.spotlight.teaser
+targetEntityType: node
+bundle: spotlight
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_news_hero:
+    label: hidden
+    weight: 0
+    type: image
+    settings:
+      image_link: content
+      image_style: medium
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_file_file: true
+  field_headline: true
+  field_image_gallery: true
+  field_link: true
+  field_news_date: true
+  field_video: true

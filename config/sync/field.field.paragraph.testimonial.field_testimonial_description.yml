@@ -1,0 +1,19 @@
+uuid: 01727119-d38f-408b-bebe-661dc5e3a2df
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_testimonial_description
+    - paragraphs.paragraphs_type.testimonial
+id: paragraph.testimonial.field_testimonial_description
+field_name: field_testimonial_description
+entity_type: paragraph
+bundle: testimonial
+label: Testimonial
+description: 'Will trim end to 200 characters also include spaces!'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

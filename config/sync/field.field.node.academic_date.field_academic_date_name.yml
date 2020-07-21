@@ -1,0 +1,19 @@
+uuid: ea86a5c7-006a-41f3-acf4-d7e7e84a8649
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_academic_date_name
+    - node.type.academic_date
+id: node.academic_date.field_academic_date_name
+field_name: field_academic_date_name
+entity_type: node
+bundle: academic_date
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,26 @@
+uuid: 25be490e-768d-4a27-ade4-7ee899c3db73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_term_sitesection
+    - node.type.webform
+    - taxonomy.vocabulary.site_section
+id: node.webform.field_page_term_sitesection
+field_name: field_page_term_sitesection
+entity_type: node
+bundle: webform
+label: Breadcrumb
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      site_section: site_section
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

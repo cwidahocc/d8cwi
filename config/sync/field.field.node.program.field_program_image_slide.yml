@@ -1,0 +1,38 @@
+uuid: 28ad8b2e-c89e-4eed-8bc8-b48a2f41f7d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_image_slide
+    - node.type.program
+  module:
+    - image
+id: node.program.field_program_image_slide
+field_name: field_program_image_slide
+entity_type: node
+bundle: program
+label: 'Slideshow Image'
+description: 'Press <strong>Select</strong> -- Then Choose your file, press Next, add a Title Text if applicable, and Save.<ul><li>To add additional image to make it a slideshow, click <strong>Add Another Item</strong>.  Any Titles will be displayed on top of the image during the slideshow press <strong>Edit</strong> to change the title. </li><li>Images will not be shown on the page if a video is available.</li><li>Important to have one image here at all times its used when sharing this program page via <strong>Facebook or another Social medium</strong>.</li><li> Minimum dimensions are at 660px x 432px, the site will automatically resize the image on that ratio and crop where necessary. Final images should be reduced in resolution to 72px</li><li><strong>Locate Images with Portfolio:</strong> <ul><li>Copy this Password now = 4Marketingneedsmine</li><li>Don''t enter a Username when prompted.</li><li>Search for images using keywords</li><li>Click <a href="http://portfolio.cwidaho.cc:8085/cwi-image-library-internal" target="_blank">http://portfolio.cwidaho.cc:8085/cwi-image-library-internal</a> to get started</li></ul></li><li>If you would like help with find images for your program review the our image Portfolio or contact the CWI Marketing Team for some assistance.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: true
+  alt_field_required: true
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: program_ct/slides
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: 660x432
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

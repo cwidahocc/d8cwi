@@ -1,0 +1,38 @@
+uuid: 85d41a39-965c-4132-9ade-ecd73c207601
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_image_gallery
+    - node.type.spotlight
+  module:
+    - image
+id: node.spotlight.field_image_gallery
+field_name: field_image_gallery
+entity_type: node
+bundle: spotlight
+label: 'Image gallery'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: true
+  alt_field_required: true
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: spotlight_ct/gallery
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

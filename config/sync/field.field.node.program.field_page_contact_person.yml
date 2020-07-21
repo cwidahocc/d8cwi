@@ -1,0 +1,30 @@
+uuid: c9076066-6682-4912-89be-d26672b873d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_contact_person
+    - node.type.person
+    - node.type.program
+id: node.program.field_page_contact_person
+field_name: field_page_contact_person
+entity_type: node
+bundle: program
+label: Instructors
+description: 'Add <strong>Instructors</strong> that are related to this program.  This is an important item that will bring visibility to the Instructors along with contact information for students.<ul><li>You will only be able to link with Instructors that already exist on our site. This relationship will build dynamic links between the Instructor and the Program.</li><li><strong>Auto Completes:</strong><ul><li>Begin typing the name of a program</li><li><strong>Wait</strong> allowing the auto complete results to display</li><li>Select one of the results and your done</li></ul></li><li><strong>Add Another Item:</strong> Press the button to add additional line items</li><li><strong>Reorder:</strong> Click and Drag the four way arrows to reorder, its best to have the most important at the top.</li><li><strong>Remove:</strong> Erase the entire line or just add a different item in its place</li><li>If a instructor does not exist, please contact HR about the status or details of that employee. It will take up to 24 hours after an instructor has been added to colleague before they will be displayed on this site.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: promote
+      direction: ASC
+    target_bundles:
+      person: person
+field_type: entity_reference

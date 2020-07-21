@@ -1,0 +1,117 @@
+uuid: ff45d957-363f-4d8a-bc94-50799b38fd2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news.body
+    - field.field.node.news.field_file_file
+    - field.field.node.news.field_image_gallery
+    - field.field.node.news.field_news_boiler_plate
+    - field.field.node.news.field_news_date
+    - field.field.node.news.field_news_expire_date
+    - field.field.node.news.field_news_hero
+    - field.field.node.news.field_news_tags
+    - field.field.node.news.field_organizations
+    - field.field.node.news.field_type_of_news
+    - field.field.node.news.field_video
+    - node.type.news
+  module:
+    - colorbox
+    - datetime
+    - file
+    - responsive_image
+    - text
+    - user
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_file_file:
+    label: hidden
+    weight: 5
+    type: file_default
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    region: content
+  field_image_gallery:
+    label: hidden
+    weight: 4
+    type: colorbox
+    settings:
+      colorbox_caption: auto
+      colorbox_caption_custom: ''
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_image_style: ''
+      colorbox_node_style: news_image_gallery_thumbnail
+      colorbox_node_style_first: ''
+    third_party_settings: {  }
+    region: content
+  field_news_boiler_plate:
+    label: hidden
+    weight: 7
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_news_date:
+    label: hidden
+    weight: 1
+    type: datetime_default
+    settings:
+      format_type: cwi_date_only
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_news_expire_date:
+    label: above
+    weight: 11
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_news_hero:
+    label: hidden
+    weight: 0
+    type: responsive_image
+    settings:
+      image_link: ''
+      responsive_image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_news_tags:
+    label: hidden
+    weight: 6
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_video:
+    label: hidden
+    weight: 3
+    type: entity_reference_entity_view
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_organizations: true
+  field_type_of_news: true

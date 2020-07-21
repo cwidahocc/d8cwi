@@ -1,0 +1,33 @@
+uuid: f2af71d7-c3ad-4bfe-880a-28d3544b1812
+langcode: en
+status: true
+dependencies: {  }
+id: user_admin
+label: 'User Admin'
+weight: 18
+is_admin: null
+permissions:
+  - 'access site reports'
+  - 'administer users'
+  - 'administer workbench access'
+  - 'assign Announcement Editor role'
+  - 'assign Blog Editor role'
+  - 'assign Books role'
+  - 'assign Contact role'
+  - 'assign Content Approval role'
+  - 'assign Content Editor role'
+  - 'assign Contributor role'
+  - 'assign Draft Review role'
+  - 'assign Editorial Review role'
+  - 'assign File Editor role'
+  - 'assign Hero Editor role'
+  - 'assign Imce PDF Contributor role'
+  - 'assign Locations role'
+  - 'assign News Room role'
+  - 'assign Program Editor role'
+  - 'assign Program role'
+  - 'assign Student Clubs role'
+  - 'assign workbench access'
+  - 'batch update workbench access'
+  - 'view workbench access information'
+  - 'view workbench taxonomy pages'

@@ -1,0 +1,38 @@
+uuid: dc301687-7438-445e-a3c2-50829b39b6b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.social.field_social_approved
+    - field.field.node.social.field_social_facebook
+    - field.field.node.social.field_social_instagram
+    - field.field.node.social.field_social_linkedin
+    - field.field.node.social.field_social_pinterest
+    - field.field.node.social.field_social_platform
+    - field.field.node.social.field_social_twitter
+    - field.field.node.social.field_social_type
+    - field.field.node.social.field_social_youtube
+    - node.type.social
+  module:
+    - user
+id: node.social.blank
+targetEntityType: node
+bundle: social
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_social_approved: true
+  field_social_facebook: true
+  field_social_instagram: true
+  field_social_linkedin: true
+  field_social_pinterest: true
+  field_social_platform: true
+  field_social_twitter: true
+  field_social_type: true
+  field_social_youtube: true

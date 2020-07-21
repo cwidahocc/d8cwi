@@ -1,0 +1,14 @@
+uuid: 0926f983-7ad8-48f6-994d-0342be4796a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.program
+  module:
+    - user
+id: user_remove_role_action.program
+label: 'Remove the Program role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: program

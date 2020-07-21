@@ -1,0 +1,10 @@
+uuid: 83bd2185-a624-47c0-8901-26bdf1f018e3
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.PDF
+label: PDF
+targetEntityType: node
+cache: true

@@ -1,0 +1,25 @@
+uuid: 7466366b-fcf5-4028-8f53-6ebfc140400e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.related_link_collection.field_related_link
+    - paragraphs.paragraphs_type.related_link_collection
+  module:
+    - link
+id: paragraph.related_link_collection.default
+targetEntityType: paragraph
+bundle: related_link_collection
+mode: default
+content:
+  field_related_link:
+    weight: 1
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

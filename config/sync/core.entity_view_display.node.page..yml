@@ -1,0 +1,21 @@
+uuid: 5afb89d0-bfe2-4172-baea-cd3a23474b2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - user
+id: node.page.
+targetEntityType: node
+bundle: page
+mode: null
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true

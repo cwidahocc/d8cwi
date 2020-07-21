@@ -1,0 +1,27 @@
+uuid: feaac770-6a95-4c3a-95b5-ad06ad061800
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_file_file
+    - node.type.file
+  module:
+    - file
+id: node.file.field_file_file
+field_name: field_file_file
+entity_type: node
+bundle: file
+label: File
+description: '<strong>Please, be sure to run the Accessibility Checker on the original document, fix all errors then save as a pdf before uploading to this file page.</strong> <br/>Need help, see the <a href="http://dev-cwidaho-toolkit.pantheonsite.io/pdfs">CWI Toolkit - Make PDF documents accessible.</a>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: file_contenttype
+  file_extensions: pdf
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

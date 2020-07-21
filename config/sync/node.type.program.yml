@@ -1,0 +1,18 @@
+uuid: c91f9315-f000-4f3c-89bd-0af9d674bdd8
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:8772:'
+name: Program
+type: program
+description: 'Used to manage the information about Programs at CWI, these are managed by the academic group/department they represent. <br/> Notable fields sections include Degrees, Careers, and Promotional Media.<br/><br/><strong><em>NOTE:</em></strong> Changing these pages effect how the programs will be represented on the website on various pages.'
+help: 'Programs are an essential part of the College. In order for this website to provide tools to inform, locate and market your program you need to fill-out as much information as you can.  Make sure your adding careers, degrees, and the additional information areas they are all important.'
+new_revision: true
+preview_mode: 1
+display_submitted: false

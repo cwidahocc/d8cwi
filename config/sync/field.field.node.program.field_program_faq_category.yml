@@ -1,0 +1,26 @@
+uuid: 621f1165-f3a5-4492-a212-2a8e7742124d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_faq_category
+    - node.type.program
+    - taxonomy.vocabulary.frequently_asked_question
+id: node.program.field_program_faq_category
+field_name: field_program_faq_category
+entity_type: node
+bundle: program
+label: 'FAQ Category'
+description: "<ul>\r\n<li>Choose an FAQ Category to show the full list of FAQ's available.</li>\r\n<li>If a category is selected, no individual questions will be included from \"FAQ Questions\".</li>\r\n</ul>\r\n"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      frequently_asked_question: frequently_asked_question
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

@@ -1,0 +1,8 @@
+uuid: 2954aef1-546c-4100-834b-10400378d6ec
+langcode: en
+status: true
+dependencies: {  }
+name: 'Document Type'
+vid: document_type
+description: 'For the File content type - rfp, financial report, etc.'
+weight: -8

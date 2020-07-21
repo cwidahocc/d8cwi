@@ -1,0 +1,10 @@
+uuid: 5c24d6a8-4516-4ffd-8682-1941332afedf
+langcode: en
+status: true
+dependencies: {  }
+id: resource
+label: Resource
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_resource'
+behavior_plugins: {  }

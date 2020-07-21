@@ -1,0 +1,27 @@
+uuid: 950934c4-1157-44ad-8bdc-7448dede8d73
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - node.type.blog
+  module:
+    - file
+id: node.blog.field_video
+field_name: field_video
+entity_type: node
+bundle: blog
+label: Video
+description: 'Provide YouTube Video Link'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: blog_ct/video
+  file_extensions: mp4
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

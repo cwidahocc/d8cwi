@@ -1,0 +1,23 @@
+uuid: ecf10a46-b572-425f-9c2c-d8c15834ee22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_redirect
+    - node.type.program
+  module:
+    - link
+id: node.program.field_program_redirect
+field_name: field_program_redirect
+entity_type: node
+bundle: program
+label: 'Redirect Link'
+description: '<strong>Do Not Touch</strong> This will be managed by an Administrator. Will be used to redirect the entire page.  Probably will only be used during program transition for BP/WD program in the short term.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

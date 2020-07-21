@@ -1,0 +1,30 @@
+uuid: 7ebfaecb-9b9a-4ab9-84bf-b27b8793840d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_ref
+    - node.type.degree
+    - node.type.program
+id: node.program.field_degree_ref
+field_name: field_degree_ref
+entity_type: node
+bundle: program
+label: Degree
+description: 'Add all degrees that are specific to this program. <ul><li><strong>Add New Degree:</strong> This will display a form to create a new degree, then use "Create Degree" to Save it.</li><li>Enter a name for this degree.  This will be shown when ever this degree is referenced on the site. <strong>Example Name:</strong> Associate of Science in Drupal Contribution</li><li>Unpublished: A date will be approved after the entire program is save as "Needs Reviewed"</li><li><strong>Reorder:</strong> Click and Drag the four way arrows to reorder your degrees, its best to have the most important at the top.</li><li>To remove any degrees that are no longer relevant or if you have questions please submit a <a href="https://helpdesk.cwidaho.cc/helpdesk/WebObjects/Helpdesk.woa" target="_blank">Help Desk</a> ticket to Marketing -> CWI Website</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      degree: degree
+field_type: entity_reference

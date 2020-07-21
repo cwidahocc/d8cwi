@@ -1,0 +1,14 @@
+uuid: de9f4228-2a07-4f5b-8077-16c79c9c3d10
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.announcement_editor
+  module:
+    - user
+id: user_remove_role_action.announcement_editor
+label: 'Remove the Announcement Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: announcement_editor

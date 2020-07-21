@@ -1,0 +1,13 @@
+uuid: 610e99dd-1215-4ae8-b452-e8f6140c9938
+langcode: en
+status: true
+dependencies: {  }
+id: draft_review
+label: 'Draft Review'
+weight: 21
+is_admin: null
+permissions:
+  - 'view all drafts'
+  - 'view all unpublished content'
+  - 'view moderation history'
+  - 'view moderation messages'

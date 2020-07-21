@@ -1,0 +1,28 @@
+uuid: 654228a9-03d9-4204-8d54-75876be045e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.degree.field_degree_advising
+    - field.field.node.degree.field_degree_format
+    - field.field.node.degree.field_degree_tax
+    - field.field.node.degree.field_link
+    - node.type.degree
+  module:
+    - user
+id: node.degree.blank
+targetEntityType: node
+bundle: degree
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_degree_advising: true
+  field_degree_format: true
+  field_degree_tax: true
+  field_link: true

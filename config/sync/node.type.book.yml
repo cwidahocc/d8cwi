@@ -5,12 +5,19 @@ dependencies:
   enforced:
     module:
       - book
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
 _core:
   default_config_hash: 2gWGA-X4ERc4McStS7cMEG3ZBpDEqfNRDPTjB1v674Y
-name: 'Book page'
+name: 'Policies and Handbooks'
 type: book
-description: '<em>Books</em> have a built-in hierarchical navigation. Use for handbooks or tutorials.'
+description: '<em>Policies and Handbooks</em> have a built-in hierarchical navigation much like a physical book. Use for handbooks, policies and tutorials.'
 help: ''
 new_revision: true
 preview_mode: 1
-display_submitted: true
+display_submitted: false

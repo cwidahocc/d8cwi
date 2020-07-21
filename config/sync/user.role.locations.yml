@@ -1,0 +1,49 @@
+uuid: 27d5dae9-cba1-43e2-b5ed-d618b01e72be
+langcode: en
+status: true
+dependencies: {  }
+id: locations
+label: Locations
+weight: 3
+is_admin: null
+permissions:
+  - 'access administration pages'
+  - 'access ckeditor link'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access own webform results'
+  - 'access own webform submissions'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access workbench'
+  - 'access workbench access by role'
+  - 'add media from remote sources'
+  - 'administer panelizer node page choice'
+  - 'administer panelizer node page content'
+  - 'can change your own password'
+  - 'create location content'
+  - 'create page content'
+  - 'delete terms in 14'
+  - 'edit any location content'
+  - 'edit any page content'
+  - 'edit own location content'
+  - 'edit own page content'
+  - 'edit terms in 14'
+  - 'enter location revision log entry'
+  - 'enter page revision log entry'
+  - 'moderate content from draft to needs_review'
+  - 'moderate content from needs_review to draft'
+  - 'override location revision option'
+  - 'override page revision option'
+  - 'use advanced search'
+  - 'use manualcrop'
+  - 'use text format full_html'
+  - 'use workbench_moderation my drafts tab'
+  - 'view advanced help index'
+  - 'view advanced help popup'
+  - 'view advanced help topic'
+  - 'view all unpublished content'
+  - 'view moderation history'
+  - 'view moderation messages'
+  - 'view revisions'
+  - 'view the administration theme'

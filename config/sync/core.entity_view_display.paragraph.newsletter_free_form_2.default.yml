@@ -1,0 +1,31 @@
+uuid: 23e6806d-77db-4787-a1e1-eb0d31e85544
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.newsletter_free_form_2.field_newsletter_free_form_text2
+    - field.field.paragraph.newsletter_free_form_2.field_newsletter_free_form_title
+    - paragraphs.paragraphs_type.newsletter_free_form_2
+  module:
+    - text
+id: paragraph.newsletter_free_form_2.default
+targetEntityType: paragraph
+bundle: newsletter_free_form_2
+mode: default
+content:
+  field_newsletter_free_form_text2:
+    label: hidden
+    weight: 1
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_newsletter_free_form_title:
+    label: hidden
+    weight: 0
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden: {  }

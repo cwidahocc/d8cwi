@@ -1,0 +1,21 @@
+uuid: 256fb75b-1fe9-4de2-83a1-4ebf4ba38462
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_secondary_section_body
+    - paragraphs.paragraphs_type.page_secondary_sections
+  module:
+    - text
+id: paragraph.page_secondary_sections.field_secondary_section_body
+field_name: field_secondary_section_body
+entity_type: paragraph
+bundle: page_secondary_sections
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

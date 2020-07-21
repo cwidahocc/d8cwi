@@ -1,0 +1,23 @@
+uuid: b2b83cae-dd85-47a2-9c3c-e0b30544e3c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_type
+    - node.type.hero
+  module:
+    - options
+id: node.hero.field_hero_type
+field_name: field_hero_type
+entity_type: node
+bundle: hero
+label: 'Hero Type'
+description: 'Choose the type of Hero element you would like.'
+required: true
+translatable: false
+default_value:
+  -
+    value: video
+default_value_callback: ''
+settings: {  }
+field_type: list_string

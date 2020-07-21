@@ -1,0 +1,8 @@
+uuid: 525ee2e2-fa49-49f5-98cf-81f6557f2ffa
+langcode: en
+status: true
+dependencies: {  }
+name: 'Person - Department'
+vid: departments
+description: 'Related to Feature Links and how they are filtered to related pages.'
+weight: 0

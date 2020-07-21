@@ -1,0 +1,8 @@
+uuid: 1a4533d2-1281-4975-ac46-ca7f9a5a3b99
+langcode: en
+status: true
+dependencies: {  }
+name: 'Program - Format Available'
+vid: degree_format
+description: 'Used with programs to determine if the degree is online'
+weight: 0

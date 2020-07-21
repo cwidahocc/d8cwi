@@ -1,0 +1,27 @@
+uuid: 5e68e79e-fa29-4abf-ac10-ca13efe9875e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_video
+    - paragraphs.paragraphs_type.video
+  module:
+    - file
+id: paragraph.video.field_paragraph_video
+field_name: field_paragraph_video
+entity_type: paragraph
+bundle: video
+label: Video
+description: 'Press <strong>Select</strong> -- Then check the Library Tab if it''s an existing video or provide the YouTube URL for a new one.  <ul><li>If you would like to create a video please contact the CWI Marketing Team for some assistance.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: para/video
+  file_extensions: mp4
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

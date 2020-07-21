@@ -1,0 +1,28 @@
+uuid: 3fe3c4fd-cae3-4840-b582-af0ad71777ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.webform.body
+    - field.field.node.webform.field_page_section_group
+    - field.field.node.webform.field_page_term_sitesection
+    - field.field.node.webform.field_topic
+    - node.type.webform
+  module:
+    - user
+id: node.webform.blank
+targetEntityType: node
+bundle: webform
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_page_section_group: true
+  field_page_term_sitesection: true
+  field_topic: true

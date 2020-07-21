@@ -1,0 +1,10 @@
+uuid: c2595532-2da9-4d20-845e-51b23ac17c61
+langcode: en
+status: true
+dependencies: {  }
+id: node_content
+label: node_content
+description: ''
+source_type: null
+module: null
+shared_configuration: null

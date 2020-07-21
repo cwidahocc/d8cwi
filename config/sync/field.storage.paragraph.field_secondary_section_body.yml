@@ -1,0 +1,19 @@
+uuid: bd552f47-105e-4f51-98c0-afbb42f31075
+langcode: und
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_secondary_section_body
+field_name: field_secondary_section_body
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

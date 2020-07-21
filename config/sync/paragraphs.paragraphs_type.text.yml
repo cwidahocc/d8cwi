@@ -1,0 +1,10 @@
+uuid: f595649b-93a0-4231-bef1-d01ddfe4e607
+langcode: en
+status: true
+dependencies: {  }
+id: text
+label: Text
+icon_uuid: null
+icon_default: null
+description: 'Migrated from paragraph bundle Text'
+behavior_plugins: {  }

@@ -1,0 +1,23 @@
+uuid: 80fe26d3-fadc-4dcf-8b58-a2aa61aa25ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_announcement_url
+    - node.type.announcement
+  module:
+    - link
+id: node.announcement.field_announcement_url
+field_name: field_announcement_url
+entity_type: node
+bundle: announcement
+label: 'Web Link'
+description: 'The URL will be used when image is clicked for this Web displays of this announcement.<br/> TV''s will not display a URL.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 17
+field_type: link

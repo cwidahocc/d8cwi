@@ -1,0 +1,10 @@
+uuid: d8b78ae3-4caf-468f-be41-d67971c1e3f5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.node_compare
+label: node_compare
+targetEntityType: node
+cache: true

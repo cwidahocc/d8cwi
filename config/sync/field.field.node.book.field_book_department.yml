@@ -1,0 +1,26 @@
+uuid: 9aca2bab-6afa-4a40-a75a-3b049f195e72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_book_department
+    - node.type.book
+    - taxonomy.vocabulary.book_responsible_department
+id: node.book.field_book_department
+field_name: field_book_department
+entity_type: node
+bundle: book
+label: Department
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      book_responsible_department: book_responsible_department
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

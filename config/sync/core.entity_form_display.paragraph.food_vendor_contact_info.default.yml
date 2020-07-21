@@ -1,0 +1,32 @@
+uuid: 2f60db41-0011-404d-927d-6c74487747ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.food_vendor_contact_info.field_facility_food_vendor_name
+    - field.field.paragraph.food_vendor_contact_info.field_facility_foodvendor_email
+    - paragraphs.paragraphs_type.food_vendor_contact_info
+id: paragraph.food_vendor_contact_info.default
+targetEntityType: paragraph
+bundle: food_vendor_contact_info
+mode: default
+content:
+  field_facility_food_vendor_name:
+    weight: 1
+    type: string_textfield
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_facility_foodvendor_email:
+    weight: 3
+    type: email_default
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true

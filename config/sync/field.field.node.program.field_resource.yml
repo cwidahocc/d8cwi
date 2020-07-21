@@ -1,0 +1,91 @@
+uuid: de22e1dc-9182-4747-899d-00cc8611eeb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_resource
+    - node.type.program
+    - paragraphs.paragraphs_type.resource
+  module:
+    - entity_reference_revisions
+id: node.program.field_resource
+field_name: field_resource
+entity_type: node
+bundle: program
+label: Resources
+description: 'Add Resource links these will be displayed with the link to this resource. Fill one group out per resource.<ul><li><strong>Add Another Item</strong> Button: - To add additional statements</li><li><strong>Reorder:</strong> Click and Drag the four way arrows to reorder your statements, its best to have the most important at the top.</li><li><strong>Remove</strong> Button: - Deletes only that resource.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    negate: 0
+    target_bundles:
+      resource: resource
+    target_bundles_drag_drop:
+      attachmentgroup:
+        enabled: false
+        weight: 2
+      column_1:
+        enabled: false
+        weight: 3
+      column_2:
+        enabled: false
+        weight: 4
+      contact:
+        enabled: false
+        weight: 5
+      food_vendor_contact_info:
+        enabled: false
+        weight: 6
+      image:
+        enabled: false
+        weight: 7
+      kground:
+        enabled: false
+        weight: 8
+      link:
+        enabled: false
+        weight: 9
+      newsletter_free_form:
+        enabled: false
+        weight: 10
+      newsletter_free_form_2:
+        enabled: false
+        weight: 11
+      newsletter_quick_links:
+        enabled: false
+        weight: 12
+      page_secondary_sections:
+        enabled: false
+        weight: 13
+      page_section_group:
+        enabled: false
+        weight: 14
+      page_slideshow_collection:
+        enabled: false
+        weight: 15
+      related_link_collection:
+        enabled: false
+        weight: 16
+      resource:
+        enabled: true
+        weight: 1
+      rollover:
+        enabled: false
+        weight: 17
+      testimonial:
+        enabled: false
+        weight: 18
+      text:
+        enabled: false
+        weight: 19
+      video:
+        enabled: false
+        weight: 20
+      view:
+        enabled: false
+        weight: 21
+  handler: 'default:paragraph'
+field_type: entity_reference_revisions

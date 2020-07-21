@@ -1,0 +1,91 @@
+uuid: fdc0a69b-9043-410f-8e4b-15a3ff5d3460
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_newsletter_free_form
+    - node.type.cwi_newsletter
+    - paragraphs.paragraphs_type.newsletter_free_form
+  module:
+    - entity_reference_revisions
+id: node.cwi_newsletter.field_newsletter_free_form
+field_name: field_newsletter_free_form
+entity_type: node
+bundle: cwi_newsletter
+label: 'Free Form Top'
+description: 'This section will appear in the top portion of the newsletter right above news articles. Typically used for "CWI In The New" and "Rave Reviews".'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    negate: 0
+    target_bundles:
+      newsletter_free_form: newsletter_free_form
+    target_bundles_drag_drop:
+      attachmentgroup:
+        enabled: false
+        weight: 2
+      column_1:
+        enabled: false
+        weight: 3
+      column_2:
+        enabled: false
+        weight: 4
+      contact:
+        enabled: false
+        weight: 5
+      food_vendor_contact_info:
+        enabled: false
+        weight: 6
+      image:
+        enabled: false
+        weight: 7
+      kground:
+        enabled: false
+        weight: 8
+      link:
+        enabled: false
+        weight: 9
+      newsletter_free_form:
+        enabled: true
+        weight: 1
+      newsletter_free_form_2:
+        enabled: false
+        weight: 10
+      newsletter_quick_links:
+        enabled: false
+        weight: 11
+      page_secondary_sections:
+        enabled: false
+        weight: 12
+      page_section_group:
+        enabled: false
+        weight: 13
+      page_slideshow_collection:
+        enabled: false
+        weight: 14
+      related_link_collection:
+        enabled: false
+        weight: 15
+      resource:
+        enabled: false
+        weight: 16
+      rollover:
+        enabled: false
+        weight: 17
+      testimonial:
+        enabled: false
+        weight: 18
+      text:
+        enabled: false
+        weight: 19
+      video:
+        enabled: false
+        weight: 20
+      view:
+        enabled: false
+        weight: 21
+  handler: 'default:paragraph'
+field_type: entity_reference_revisions

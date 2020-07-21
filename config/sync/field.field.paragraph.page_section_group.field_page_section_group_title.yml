@@ -1,0 +1,19 @@
+uuid: 442cbdd2-285e-485d-bf1b-41e9b9f726aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_page_section_group_title
+    - paragraphs.paragraphs_type.page_section_group
+id: paragraph.page_section_group.field_page_section_group_title
+field_name: field_page_section_group_title
+entity_type: paragraph
+bundle: page_section_group
+label: Header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,38 @@
+uuid: 14197b4f-898e-44e8-887d-d426787ac8e3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_eb_image
+    - paragraphs.paragraphs_type.kground
+  module:
+    - image
+id: paragraph.kground.field_eb_image
+field_name: field_eb_image
+entity_type: paragraph
+bundle: kground
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_extensions: 'png gif jpg jpeg'
+  file_directory: ''
+  max_filesize: ''
+  alt_field: false
+  title_field: false
+  max_resolution: ''
+  min_resolution: ''
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  alt_field_required: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

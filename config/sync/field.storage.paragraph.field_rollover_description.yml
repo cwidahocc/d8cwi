@@ -1,0 +1,19 @@
+uuid: cb97507a-483d-4003-a5ef-a1e1e1160445
+langcode: und
+status: true
+dependencies:
+  module:
+    - paragraphs
+    - text
+id: paragraph.field_rollover_description
+field_name: field_rollover_description
+entity_type: paragraph
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

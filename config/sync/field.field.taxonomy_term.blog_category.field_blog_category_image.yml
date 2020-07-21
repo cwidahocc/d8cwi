@@ -1,0 +1,38 @@
+uuid: 333afc8b-6196-478b-9c99-8b4c78db8a0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_blog_category_image
+    - taxonomy.vocabulary.blog_category
+  module:
+    - image
+id: taxonomy_term.blog_category.field_blog_category_image
+field_name: field_blog_category_image
+entity_type: taxonomy_term
+bundle: blog_category
+label: 'Default Image'
+description: 'Will be displayed when no image exists for the Blog Category.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: false
+  alt_field_required: false
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: blog_tax/image
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

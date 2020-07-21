@@ -1,0 +1,26 @@
+uuid: 9f6ec7fa-a695-4e10-a96f-7e9d0563c5d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_division
+    - node.type.program
+    - taxonomy.vocabulary.program_division
+id: node.program.field_division
+field_name: field_division
+entity_type: node
+bundle: program
+label: Division
+description: '<strong>Select One</strong> Select the division the program is apart of, this will control a search filter and may change the display of the program page for that division standard.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      program_division: program_division
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

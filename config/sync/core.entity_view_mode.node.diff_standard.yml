@@ -1,0 +1,10 @@
+uuid: 5bfe1c07-17ea-4e20-ae8c-e2844e288785
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.diff_standard
+label: diff_standard
+targetEntityType: node
+cache: true

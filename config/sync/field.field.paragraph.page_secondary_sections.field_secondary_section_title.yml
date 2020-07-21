@@ -1,0 +1,19 @@
+uuid: f8aff7c4-a47d-4065-9d85-f221f7c03e5c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_secondary_section_title
+    - paragraphs.paragraphs_type.page_secondary_sections
+id: paragraph.page_secondary_sections.field_secondary_section_title
+field_name: field_secondary_section_title
+entity_type: paragraph
+bundle: page_secondary_sections
+label: Header
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

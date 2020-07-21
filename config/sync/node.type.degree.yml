@@ -1,0 +1,16 @@
+uuid: f9085316-3e35-4b5f-9a13-a6070969e305
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'main-menu:0:'
+name: 'Program - Degree'
+type: degree
+description: '<strong><em>NOTE: Do Not Add </em></strong> new degrees through this method, they will not show up anywhere.<br /> Locate the Program you want first in your <a href="/admin/workbench">Workbench</a> then edit or visit the Program page and click the edit tab and then add dates through the Degree Tab.'
+help: 'Enter a name for this degree.  This will be shown when ever this degree is referenced on the site.  <br /><strong>Example Name:</strong> Associate of Science in Drupal Contribution'
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,100 @@
+uuid: 12d5d4ab-a905-4c50-830d-fcd86b4de09a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.spotlight.body
+    - field.field.node.spotlight.field_file_file
+    - field.field.node.spotlight.field_headline
+    - field.field.node.spotlight.field_image_gallery
+    - field.field.node.spotlight.field_link
+    - field.field.node.spotlight.field_news_date
+    - field.field.node.spotlight.field_news_hero
+    - field.field.node.spotlight.field_video
+    - node.type.spotlight
+  module:
+    - colorbox
+    - file
+    - image
+    - link
+    - text
+    - user
+id: node.spotlight.default
+targetEntityType: node
+bundle: spotlight
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_file_file:
+    label: hidden
+    weight: 6
+    type: file_default
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    region: content
+  field_headline:
+    label: hidden
+    weight: 0
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_image_gallery:
+    label: hidden
+    weight: 5
+    type: colorbox
+    settings:
+      colorbox_caption: title
+      colorbox_caption_custom: ''
+      colorbox_gallery: post
+      colorbox_gallery_custom: ''
+      colorbox_image_style: ''
+      colorbox_node_style: news_image_gallery_thumbnail
+      colorbox_node_style_first: ''
+    third_party_settings: {  }
+    region: content
+  field_link:
+    label: hidden
+    weight: 3
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_news_hero:
+    label: hidden
+    weight: 1
+    type: image
+    settings:
+      image_link: ''
+      image_style: spotlight
+    third_party_settings: {  }
+    region: content
+  field_video:
+    label: hidden
+    weight: 4
+    type: entity_reference_entity_view
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_news_date: true

@@ -1,0 +1,23 @@
+uuid: 6067cd5a-6699-452e-a469-515382894074
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_aid
+    - node.type.program
+id: node.program.field_program_aid
+field_name: field_program_aid
+entity_type: node
+bundle: program
+label: 'Financial Aid available'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Yes'
+  off_label: 'No'
+field_type: boolean

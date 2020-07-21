@@ -1,0 +1,30 @@
+uuid: 283d67fd-4b54-4099-82e2-1c70dcc83184
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_club_type
+    - node.type.club
+    - taxonomy.vocabulary.club_type
+id: node.club.field_club_type
+field_name: field_club_type
+entity_type: node
+bundle: club
+label: 'Club Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 1
+    sort:
+      field: _none
+      direction: ASC
+    target_bundles:
+      club_type: club_type
+field_type: entity_reference

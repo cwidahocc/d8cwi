@@ -1,0 +1,14 @@
+uuid: 5d2fd496-a170-427f-8d9b-be57d0c0e689
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.imce_pdf_contributor
+  module:
+    - user
+id: user_add_role_action.imce_pdf_contributor
+label: 'Add the Imce PDF Contributor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: imce_pdf_contributor

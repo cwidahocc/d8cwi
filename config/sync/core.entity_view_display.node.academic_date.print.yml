@@ -1,0 +1,57 @@
+uuid: 99c6470e-0f14-4b3c-bc64-b379cd74b16c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.print
+    - field.field.node.academic_date.body
+    - field.field.node.academic_date.field_academic_date
+    - field.field.node.academic_date.field_academic_date_name
+    - field.field.node.academic_date.field_academic_date_tax
+    - field.field.node.academic_date.field_link
+    - node.type.academic_date
+  module:
+    - datetime
+    - link
+    - user
+id: node.academic_date.print
+targetEntityType: node
+bundle: academic_date
+mode: print
+content:
+  field_academic_date:
+    label: hidden
+    weight: 1
+    type: datetime_default
+    settings:
+      format_type: long
+      timezone_override: ''
+    third_party_settings: {  }
+    region: content
+  field_academic_date_name:
+    label: hidden
+    weight: 0
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_link:
+    label: hidden
+    weight: 2
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_academic_date_tax: true

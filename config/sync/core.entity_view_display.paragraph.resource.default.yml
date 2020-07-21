@@ -1,0 +1,29 @@
+uuid: 6e666fe5-0d96-4fc9-a26a-9777d401d9b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.resource.field_link
+    - field.field.paragraph.resource.field_resource_desc
+    - paragraphs.paragraphs_type.resource
+  module:
+    - link
+id: paragraph.resource.default
+targetEntityType: paragraph
+bundle: resource
+mode: default
+content:
+  field_link:
+    label: hidden
+    weight: 0
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_resource_desc: true

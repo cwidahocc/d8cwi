@@ -1,0 +1,10 @@
+uuid: 6df36130-12f4-4af7-8985-f0d31826e503
+langcode: en
+status: true
+dependencies: {  }
+id: related_link_collection
+label: 'Related link collection'
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_related_link_collection'
+behavior_plugins: {  }

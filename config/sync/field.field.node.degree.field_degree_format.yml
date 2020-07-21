@@ -1,0 +1,26 @@
+uuid: 57521bf8-0e5e-4d4e-bee5-a053854ec77d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_degree_format
+    - node.type.degree
+    - taxonomy.vocabulary.degree_format
+id: node.degree.field_degree_format
+field_name: field_degree_format
+entity_type: node
+bundle: degree
+label: 'Delivery Formats Available'
+description: 'Select each option that could applies. If available as a "Hybrid" its probably also an "On Campus" option available as well.  <ul><li>Degree Fully Online: This indicates that all classes for the degree are offered completely online through our online campus.</li><li>This information will be used primarily during searching for the program.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      degree_format: degree_format
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

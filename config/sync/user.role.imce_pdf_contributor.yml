@@ -1,0 +1,9 @@
+uuid: 115046db-107d-4546-a290-e0e8605529fa
+langcode: en
+status: true
+dependencies: {  }
+id: imce_pdf_contributor
+label: 'Imce PDF Contributor'
+weight: 20
+is_admin: null
+permissions: {  }

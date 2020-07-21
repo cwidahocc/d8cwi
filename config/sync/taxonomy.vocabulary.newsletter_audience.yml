@@ -1,0 +1,8 @@
+uuid: dc9f8067-000d-4d90-99f1-27bfc28f1317
+langcode: en
+status: true
+dependencies: {  }
+name: 'Newsletter Audience'
+vid: newsletter_audience
+description: ''
+weight: 0

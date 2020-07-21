@@ -1,0 +1,23 @@
+uuid: 3bc46474-5edb-49d2-80d5-15458cea9abf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.academic_date
+  module:
+    - text
+id: node.academic_date.body
+field_name: body
+entity_type: node
+bundle: academic_date
+label: Description
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

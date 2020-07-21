@@ -1,0 +1,16 @@
+uuid: 2e4a93ac-11b0-4e38-beb9-6280a8a48eb5
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    parent: 'menu-community-connections:0:'
+name: Blog
+type: blog
+description: 'Creates Blogs entries these will be shown on our Blog Spot, Linked Authors, Organizations and Department pages around the site, they may also be shown in our CWI News Room.<br/>This content type is categorized by two taxonomy Vocabularies titled <strong>"Blog"</strong> and <strong>"News Tags."</strong>'
+help: 'Be sure to add a Main Image and choose the proper Category, References and a Publish Date.'
+new_revision: true
+preview_mode: 1
+display_submitted: false

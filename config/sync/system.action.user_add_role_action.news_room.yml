@@ -1,0 +1,14 @@
+uuid: 8b1987e1-2a12-4789-b0dd-d1f0ab48406e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.news_room
+  module:
+    - user
+id: user_add_role_action.news_room
+label: 'Add the News Room role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: news_room

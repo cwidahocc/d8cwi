@@ -1,0 +1,21 @@
+uuid: ac5e9630-a92b-4151-87c2-6961ba447060
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_social_type
+    - node.type.social
+  module:
+    - options
+id: node.social.field_social_type
+field_name: field_social_type
+entity_type: node
+bundle: social
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

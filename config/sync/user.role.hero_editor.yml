@@ -1,0 +1,16 @@
+uuid: 3a10fc6e-8cb1-4681-9926-933c1012c5fb
+langcode: en
+status: true
+dependencies: {  }
+id: hero_editor
+label: 'Hero Editor'
+weight: 12
+is_admin: null
+permissions:
+  - 'create hero content'
+  - 'delete any hero content'
+  - 'delete own hero content'
+  - 'edit any hero content'
+  - 'edit own hero content'
+  - 'override hero authored on option'
+  - 'override hero published option'

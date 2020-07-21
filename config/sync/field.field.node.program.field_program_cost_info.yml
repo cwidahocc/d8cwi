@@ -1,0 +1,21 @@
+uuid: e0632720-aec6-4d74-a5c8-cf2a62732679
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_cost_info
+    - node.type.program
+  module:
+    - text
+id: node.program.field_program_cost_info
+field_name: field_program_cost_info
+entity_type: node
+bundle: program
+label: 'WD Cost Information'
+description: 'Specific additional cost information associated with this program, it will be displayed underneath the standard cost statement. Used with Workforce Development Programs.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,8 @@
+uuid: 7cf2e74b-2479-4801-a2cf-1b9301df6138
+langcode: en
+status: true
+dependencies: {  }
+name: Scholarship
+vid: scholarship
+description: 'types of scholarships'
+weight: 5

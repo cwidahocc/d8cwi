@@ -1,0 +1,62 @@
+uuid: ffbbff3f-d634-4568-bd03-01564aa5525f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.person.field_person_department
+    - field.field.node.person.field_person_email
+    - field.field.node.person.field_person_namefirst
+    - field.field.node.person.field_person_namelast
+    - field.field.node.person.field_person_phone
+    - field.field.node.person.field_person_prefix
+    - field.field.node.person.field_person_title
+    - field.field.node.person.field_type_of_person
+    - node.type.person
+  module:
+    - user
+id: node.person.default
+targetEntityType: node
+bundle: person
+mode: default
+content:
+  field_person_department:
+    label: hidden
+    weight: 4
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_person_email:
+    label: hidden
+    weight: 7
+    type: email_mailto
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_person_phone:
+    label: hidden
+    weight: 6
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_person_title:
+    label: hidden
+    weight: 2
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_person_namefirst: true
+  field_person_namelast: true
+  field_person_prefix: true
+  field_type_of_person: true

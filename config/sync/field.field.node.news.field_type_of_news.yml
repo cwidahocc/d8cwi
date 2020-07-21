@@ -1,0 +1,26 @@
+uuid: 21cccbc6-51ce-4a9a-b90b-75695c6f1de7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_of_news
+    - node.type.news
+    - taxonomy.vocabulary.news
+id: node.news.field_type_of_news
+field_name: field_type_of_news
+entity_type: node
+bundle: news
+label: 'Type of News'
+description: 'Select what type of news. By selecting the type of news you will indicating what News Room you would like feed this content through.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      news: news
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

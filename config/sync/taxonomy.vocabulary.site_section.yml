@@ -1,0 +1,8 @@
+uuid: efeb616a-a244-4828-9307-25345349e2dc
+langcode: en
+status: true
+dependencies: {  }
+name: 'Site Section'
+vid: site_section
+description: 'Used for workbench access control'
+weight: -1

@@ -1,0 +1,41 @@
+uuid: e34b2774-d42d-4aaa-9e52-1645d8389b71
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.attachmentgroup.field_file_file
+    - field.field.paragraph.attachmentgroup.field_groupname
+    - field.field.paragraph.attachmentgroup.field_grp_desc
+    - paragraphs.paragraphs_type.attachmentgroup
+  module:
+    - file
+    - text
+id: paragraph.attachmentgroup.default
+targetEntityType: paragraph
+bundle: attachmentgroup
+mode: default
+content:
+  field_file_file:
+    label: hidden
+    weight: 2
+    type: file_default
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    region: content
+  field_groupname:
+    label: hidden
+    weight: 0
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_grp_desc:
+    label: hidden
+    weight: 1
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

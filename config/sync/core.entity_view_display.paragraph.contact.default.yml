@@ -1,0 +1,68 @@
+uuid: a9ea0632-cd2f-4e78-9752-0145ecb16240
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.contact.field_person_email
+    - field.field.paragraph.contact.field_person_headshot
+    - field.field.paragraph.contact.field_person_namefirst
+    - field.field.paragraph.contact.field_person_namelast
+    - field.field.paragraph.contact.field_person_phone
+    - field.field.paragraph.contact.field_person_title
+    - paragraphs.paragraphs_type.contact
+  module:
+    - image
+id: paragraph.contact.default
+targetEntityType: paragraph
+bundle: contact
+mode: default
+content:
+  field_person_email:
+    label: hidden
+    weight: 4
+    type: email_mailto
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_person_headshot:
+    label: hidden
+    weight: 0
+    type: image
+    settings:
+      image_link: ''
+      image_style: headshot_125x125
+    third_party_settings: {  }
+    region: content
+  field_person_namefirst:
+    label: hidden
+    weight: 1
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_person_namelast:
+    label: hidden
+    weight: 2
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_person_phone:
+    label: hidden
+    weight: 5
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_person_title:
+    label: hidden
+    weight: 3
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden: {  }

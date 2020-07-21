@@ -1,0 +1,21 @@
+uuid: 1b50b455-3100-49a2-99dd-051484859828
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_upcoming_dates
+    - node.type.cwi_newsletter
+id: node.cwi_newsletter.field_upcoming_dates
+field_name: field_upcoming_dates
+entity_type: node
+bundle: cwi_newsletter
+label: 'Upcoming Dates'
+description: 'Can''t make any longer, Use Multiple Lines'
+required: false
+translatable: false
+default_value:
+  -
+    value: 'Dates Due - Jan. 1.'
+default_value_callback: ''
+settings: {  }
+field_type: string

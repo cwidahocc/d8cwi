@@ -1,0 +1,21 @@
+uuid: 38206c75-2702-4425-a3eb-a7bc402e179c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_program_career_info
+    - node.type.program
+  module:
+    - text
+id: node.program.field_program_career_info
+field_name: field_program_career_info
+entity_type: node
+bundle: program
+label: 'Career Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

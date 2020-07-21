@@ -1,0 +1,32 @@
+uuid: 47d6b3f6-f971-4bcf-b979-ff8ce3fab34c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location_er
+    - node.type.program
+id: node.program.field_location_er
+field_name: field_location_er
+entity_type: node
+bundle: program
+label: Locations
+description: 'Select each of the location that offered this program.<ul><li>These locations selections should focus on the Program specific classroom location not General Education classrooms a student might take.</li><li>You will only be able to link to locations that already exist on our site. This relationship will build dynamic links between the Location and the Program.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    view:
+      args: {  }
+      display_name: entityreference_locations
+      view_name: program_entity_reference
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

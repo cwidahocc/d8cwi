@@ -1,0 +1,21 @@
+uuid: a3606d15-b182-4dcd-9841-433760352a04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.eb_selection
+    - paragraphs.paragraphs_type.kground
+  module:
+    - options
+id: paragraph.kground.eb_selection
+field_name: eb_selection
+entity_type: paragraph
+bundle: kground
+label: Selection
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

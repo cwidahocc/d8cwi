@@ -1,0 +1,23 @@
+uuid: 85b905aa-ca86-4c3d-a507-2d33fcb8b79d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_academic_dates_show
+    - node.type.program
+id: node.program.field_academic_dates_show
+field_name: field_academic_dates_show
+entity_type: node
+bundle: program
+label: 'Display All General Important Dates'
+description: 'Used to enable the <strong>Standard</strong> college academic dates when any Dates are displayed for this program.<ul><li>These will be displayed along with any Actionable Dates you may have entered below.</li></ul>'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: 'Display All General Important Dates'
+  off_label: 'Only show dates listed for this Program'
+field_type: boolean

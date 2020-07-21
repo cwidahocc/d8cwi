@@ -1,0 +1,14 @@
+uuid: d473147a-8c04-48d8-ab8b-fa072afc2051
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.program_editor
+  module:
+    - user
+id: user_remove_role_action.program_editor
+label: 'Remove the Program Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: program_editor

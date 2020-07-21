@@ -31,20 +31,42 @@ function migration_boilerplate_help($route_name, RouteMatchInterface $route_matc
  * Implements hook_migrate_prepare_row().
  */
 function migration_boilerplate_migrate_prepare_row(Row $row, MigrateSourceInterface $source, MigrationInterface $migration) {
-
+  $t = 1; /** Debug Test **/
   // Content Types we are not importing / skipping.
   $skip_types = [
     // Put stuff here.
+    "homepage_slide_collection", //Skip the homepage slide content type
+    "upgrade_ad", //skip upgrade ads
+    //"page", //exclusion of PAGE and resolve all other errors
+    //"user" //Testing if it will remove ldap errors while reverting  "Attempt to create a configurable field of non-configurable field storage ldap_user_prov_entries."
   ];
 
   // Fields to skip for now
   $skip_fields = [
     // Put stuff here.
+    "field_radioactivity", //Can forget about not migration radioactivity
+    "field_faq_multi_search_computed", //TODO need to check on computed field
+    "field_program_tag_computed", //TODO need to check on computed field
+    "field_degree_length", //TODO need to check on interval field
+    "field_eb_color", //TODO need to check on entity background mapping
+    "field_paragraph_view", //TODO need to check on paragraph view mapping
+    "field_search_keywords", //Removing Search Keywords field as it should not have data causing issues in field formatter settings migration
+    'ldap_user_puid_sid', //Stopping LDAP fields from processing, LDAP migration is broken
+    'ldap_user_puid', //Stopping LDAP fields from processing, LDAP migration is broken
+    'ldap_user_puid_property', //Stopping LDAP fields from processing, LDAP migration is broken
+    'ldap_user_current_dn', //Stopping LDAP fields from processing, LDAP migration is broken
+    'ldap_user_prov_entries', //Stopping LDAP fields from processing, LDAP migration is broken
+    'ldap_user_last_checked', //Stopping LDAP fields from processing, LDAP migration is broken
+    'ldap_user_ldap_exclude' //Stopping LDAP fields from processing, LDAP migration is broken
   ];
 
   // Entity types to skip for now.
   $entity_skip = [
     // Put stuff here.
+    "flagging",
+    "entityform"//, //TODO should rebuild in webforms, giving form, others
+    //"field_collection_item", //TODO need to write mapping to paragraphs
+    //"paragraphs_type"
   ];
 
   // Vocab Skip
@@ -133,6 +155,7 @@ function migration_boilerplate_migrate_prepare_row(Row $row, MigrateSourceInterf
       }
 
       if ($migration->id() === 'upgrade_d7_field_formatter_settings') {
+        $t = 1;
         // Some typical legacy formatter type conversions.
         $formatter = $row->getSourceProperty('formatter');
         switch ($formatter['type']) {
@@ -160,6 +183,10 @@ function migration_boilerplate_migrate_prepare_row(Row $row, MigrateSourceInterf
             $formatter['type'] = 'file_rss_enclosure';
             $row->setSourceProperty('formatter', $formatter);
             break;
+          case 'blank':
+            // Remove BlankT his makes it so we don't need to reprocess the row.
+            //throw new MigrateSkipRowException('', TRUE);
+            break;
         }
       }
 
@@ -170,6 +197,10 @@ function migration_boilerplate_migrate_prepare_row(Row $row, MigrateSourceInterf
           case 'inline_entity_form':
             $widget['type'] = 'inline_entity_form_simple';
             $row->setSourceProperty('widget', $widget);
+            break;
+          case 'taxonomy_tag_order_autocomplete': //No Longer a Module, should map to D8 Option
+            //$widget['type'] = 'entity_reference_autocomplete';
+            //$row->setSourceProperty('widget', $widget);
             break;
         }
       }

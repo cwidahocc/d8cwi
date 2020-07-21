@@ -1,0 +1,32 @@
+uuid: f7e805bd-6cb2-4b93-817b-4e67e9de4610
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_faq_questions
+    - node.type.page
+id: node.page.field_page_faq_questions
+field_name: field_page_faq_questions
+entity_type: node
+bundle: page
+label: 'FAQ Questions'
+description: "<ul>\r\n<li>Link to individual FAQ Questions by typing the name of the FAQ and seleting from the dropdown</li>\r\n<li>If a category is selected above, no individual questions will be included from \"FAQ Questions\".</li>\r\n<li>To add to your page insdie customize display use the \"FAQ by Questions\" pane found in the CWI panes area</li>\r\n<li><strong>Auto Completes:</strong>\r\n<ul><li>Begin typing the name of a question</li><li><strong>Wait</strong> allowing the auto complete results to display</li>\r\n<li>Select one of the results and your done</li>\r\n</ul></li>\r\n<li><strong>Add Another Item:</strong> Press the button to add additional line items</li>\r\n<li><strong>Reorder:</strong> Click and Drag the four way arrows to reorder, its best to have the most important at the top.</li>\r\n<li><strong>Remove:</strong> Erase the entire line or just add a different item in its place</li>\r\n</ul>"
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    behaviors:
+      views-select-list:
+        status: 0
+    view:
+      args: {  }
+      display_name: entityreference_faq
+      view_name: faq_entity_reference
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+field_type: entity_reference

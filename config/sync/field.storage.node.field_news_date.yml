@@ -1,0 +1,20 @@
+uuid: 763ac4c7-d0ea-431a-b773-aa331c01f0e2
+langcode: und
+status: true
+dependencies:
+  module:
+    - datetime
+    - node
+id: node.field_news_date
+field_name: field_news_date
+entity_type: node
+type: datetime
+settings:
+  datetime_type: datetime
+module: datetime
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

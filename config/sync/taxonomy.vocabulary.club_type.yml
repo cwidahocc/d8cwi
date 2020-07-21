@@ -1,0 +1,8 @@
+uuid: ea79cd0f-24c6-4e1e-97e7-3b4509da85d7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Club Type'
+vid: club_type
+description: ''
+weight: 0

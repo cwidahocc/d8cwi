@@ -1,0 +1,10 @@
+uuid: ea7c9d82-ecb7-47b0-9038-a1a7d894c167
+langcode: en
+status: true
+dependencies: {  }
+id: paragraphs
+label: paragraphs
+description: ''
+source_type: null
+module: null
+shared_configuration: null

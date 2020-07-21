@@ -1,0 +1,10 @@
+uuid: fa05df4e-7b6d-4fc5-b674-cc55d051e32b
+langcode: en
+status: true
+dependencies: {  }
+id: page_slideshow_collection
+label: 'Page slideshow collection'
+icon_uuid: null
+icon_default: null
+description: 'Migrated from field_collection field_page_slideshow_collection'
+behavior_plugins: {  }

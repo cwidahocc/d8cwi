@@ -1,0 +1,38 @@
+uuid: ae1bfb6e-2cdc-4207-afb8-3d2e6d3c51bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_headerimg
+    - node.type.program
+  module:
+    - image
+id: node.program.field_page_headerimg
+field_name: field_page_headerimg
+entity_type: node
+bundle: program
+label: 'Header image - Not Used'
+description: 'This image will appear behind the page title and will get cropped as the browser window resizes.<ul><li>Images must be exactly 880x200 pixels</li><li><strong>Locate Images with Portfolio:</strong> <ul><li>Copy this Password now = 4Marketingneedsmine</li><li>Don''t enter a Username when prompted.</li><li>Search for "Page Header" to find all presized images</li><li>Click <a href="http://10.15.15.27/res/sites/cwi-images" target="_blank">http://10.15.15.27/res/sites/cwi-images</a> to get started</li></ul></li><li>If you would like help with finding images for your program review the our image Portfolio or contact the CWI Marketing Team for some assistance.</li></ul>'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: true
+  alt_field_required: true
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: program_ct/header
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: 880x200
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

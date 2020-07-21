@@ -1,0 +1,369 @@
+uuid: c28b40fe-0b42-4fcc-8f96-aa0ac8362fec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.program.body
+    - field.field.node.program.field_academic_dates_er
+    - field.field.node.program.field_academic_dates_show
+    - field.field.node.program.field_board_member_name
+    - field.field.node.program.field_clubs_er
+    - field.field.node.program.field_degree_ref
+    - field.field.node.program.field_department_er
+    - field.field.node.program.field_division
+    - field.field.node.program.field_location_er
+    - field.field.node.program.field_page_contact_person
+    - field.field.node.program.field_page_headerimg
+    - field.field.node.program.field_page_icon
+    - field.field.node.program.field_program_advising
+    - field.field.node.program.field_program_age
+    - field.field.node.program.field_program_aid
+    - field.field.node.program.field_program_announcements
+    - field.field.node.program.field_program_career_info
+    - field.field.node.program.field_program_career_tax
+    - field.field.node.program.field_program_coming_cta
+    - field.field.node.program.field_program_coming_soon
+    - field.field.node.program.field_program_cost_info
+    - field.field.node.program.field_program_faq_category
+    - field.field.node.program.field_program_faq_questions
+    - field.field.node.program.field_program_flyer
+    - field.field.node.program.field_program_image_slide
+    - field.field.node.program.field_program_learntodo_tax
+    - field.field.node.program.field_program_mission
+    - field.field.node.program.field_program_new
+    - field.field.node.program.field_program_next_step
+    - field.field.node.program.field_program_opportunities
+    - field.field.node.program.field_program_redirect
+    - field.field.node.program.field_program_skills_tax
+    - field.field.node.program.field_program_transfer_info
+    - field.field.node.program.field_program_transferable
+    - field.field.node.program.field_program_why
+    - field.field.node.program.field_related_programs
+    - field.field.node.program.field_request_more_emails
+    - field.field.node.program.field_resource
+    - field.field.node.program.field_testimonial
+    - field.field.node.program.field_video
+    - node.type.program
+  module:
+    - entity_reference_revisions
+    - file
+    - image
+    - link
+    - options
+    - text
+    - user
+id: node.program.default
+targetEntityType: node
+bundle: program
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_academic_dates_er:
+    label: above
+    weight: 38
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_academic_dates_show:
+    label: above
+    weight: 29
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_board_member_name:
+    label: above
+    weight: 35
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_clubs_er:
+    label: above
+    weight: 34
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_degree_ref:
+    label: above
+    weight: 40
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_department_er:
+    label: above
+    weight: 32
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_division:
+    label: above
+    weight: 48
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_location_er:
+    label: above
+    weight: 33
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_page_contact_person:
+    label: above
+    weight: 36
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_page_icon:
+    label: above
+    weight: 39
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_program_advising:
+    label: above
+    weight: 12
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_age:
+    label: above
+    weight: 7
+    type: number_integer
+    settings:
+      prefix_suffix: true
+      thousand_separator: ''
+    third_party_settings: {  }
+    region: content
+  field_program_aid:
+    label: above
+    weight: 1
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_announcements:
+    label: above
+    weight: 23
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_career_info:
+    label: above
+    weight: 14
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_career_tax:
+    label: above
+    weight: 24
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_program_coming_cta:
+    label: above
+    weight: 56
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_coming_soon:
+    label: above
+    weight: 55
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_cost_info:
+    label: above
+    weight: 47
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_faq_category:
+    label: above
+    weight: 53
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_program_faq_questions:
+    label: above
+    weight: 54
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_program_flyer:
+    label: above
+    weight: 49
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_program_image_slide:
+    label: above
+    weight: 21
+    type: image
+    settings:
+      image_link: ''
+      image_style: page_slideshow_slide_no_text
+    third_party_settings: {  }
+    region: content
+  field_program_learntodo_tax:
+    label: above
+    weight: 26
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_program_mission:
+    label: above
+    weight: 9
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_new:
+    label: above
+    weight: 52
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_next_step:
+    label: above
+    weight: 43
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_program_opportunities:
+    label: above
+    weight: 11
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_skills_tax:
+    label: above
+    weight: 25
+    type: entity_reference_label
+    settings:
+      link: true
+    third_party_settings: {  }
+    region: content
+  field_program_transfer_info:
+    label: above
+    weight: 13
+    type: text_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_transferable:
+    label: above
+    weight: 3
+    type: list_default
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_program_why:
+    label: above
+    weight: 10
+    type: basic_string
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_related_programs:
+    label: above
+    weight: 45
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_request_more_emails:
+    label: above
+    weight: 50
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_resource:
+    label: above
+    weight: 31
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_testimonial:
+    label: above
+    weight: 27
+    type: entity_reference_revisions_entity_view
+    settings:
+      view_mode: full
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_video:
+    label: above
+    weight: 5
+    type: file_default
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_page_headerimg: true
+  field_program_redirect: true

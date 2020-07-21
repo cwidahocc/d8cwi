@@ -1,0 +1,89 @@
+uuid: 12ab05ee-1c76-476a-88fa-f15a174af259
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.person_bio.body
+    - field.field.node.person_bio.field_person_bio_additional
+    - field.field.node.person_bio.field_person_bio_headshot
+    - field.field.node.person_bio.field_person_bio_location_ref
+    - field.field.node.person_bio.field_person_bio_reference
+    - field.field.node.person_bio.field_person_bio_room
+    - field.field.node.person_bio.field_person_bio_url
+    - node.type.person_bio
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.person_bio.default
+targetEntityType: node
+bundle: person_bio
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_person_bio_additional:
+    label: above
+    weight: 3
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_person_bio_headshot:
+    label: above
+    weight: 2
+    type: image
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_person_bio_location_ref:
+    label: above
+    weight: 5
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_person_bio_reference:
+    label: above
+    weight: 1
+    type: entity_reference_label
+    settings:
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_person_bio_room:
+    label: above
+    weight: 6
+    type: string
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_person_bio_url:
+    label: above
+    weight: 4
+    type: link
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,24 @@
+uuid: cc3c18b4-9638-4c32-a859-f71cfc898dc1
+langcode: en
+status: true
+dependencies: {  }
+id: blog_editor
+label: 'Blog Editor'
+weight: 11
+is_admin: null
+permissions:
+  - 'access google analytics reports'
+  - 'create blog content'
+  - 'diff view changes'
+  - 'edit any blog content'
+  - 'edit own blog content'
+  - 'moderate content from draft to needs_review'
+  - 'moderate content from needs_review to draft'
+  - 'moderate content from needs_review to published'
+  - 'override blog promote to front page option'
+  - 'revert revisions'
+  - 'use workbench_moderation my drafts tab'
+  - 'use workbench_moderation needs review tab'
+  - 'view all unpublished content'
+  - 'view moderation history'
+  - 'view moderation messages'

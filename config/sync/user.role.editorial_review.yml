@@ -1,0 +1,22 @@
+uuid: d75f5985-80b0-44e6-bd86-9c0db3b54e56
+langcode: en
+status: true
+dependencies: {  }
+id: editorial_review
+label: 'Editorial Review'
+weight: 15
+is_admin: null
+permissions:
+  - 'moderate content from draft to editorial_review'
+  - 'moderate content from draft to needs_review'
+  - 'moderate content from draft to published'
+  - 'moderate content from editorial_review to draft'
+  - 'moderate content from editorial_review to needs_review'
+  - 'moderate content from editorial_review to published'
+  - 'moderate content from needs_review to draft'
+  - 'moderate content from needs_review to editorial_review'
+  - 'moderate content from needs_review to published'
+  - 'use workbench_moderation my drafts tab'
+  - 'use workbench_moderation needs review tab'
+  - 'view moderation history'
+  - 'view moderation messages'

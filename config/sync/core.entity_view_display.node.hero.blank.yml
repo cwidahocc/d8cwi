@@ -1,0 +1,38 @@
+uuid: afb981df-c5ac-4917-b1d4-d68602865801
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.blank
+    - field.field.node.hero.body
+    - field.field.node.hero.field_hero_display
+    - field.field.node.hero.field_hero_image
+    - field.field.node.hero.field_hero_layout
+    - field.field.node.hero.field_hero_link
+    - field.field.node.hero.field_hero_title
+    - field.field.node.hero.field_hero_type
+    - field.field.node.hero.field_hero_video
+    - field.field.node.hero.field_hero_video_placeholder
+    - node.type.hero
+  module:
+    - user
+id: node.hero.blank
+targetEntityType: node
+bundle: hero
+mode: blank
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  field_hero_display: true
+  field_hero_image: true
+  field_hero_layout: true
+  field_hero_link: true
+  field_hero_title: true
+  field_hero_type: true
+  field_hero_video: true
+  field_hero_video_placeholder: true

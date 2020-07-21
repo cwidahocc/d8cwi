@@ -1,0 +1,8 @@
+uuid: 7ef35a11-8aae-4f03-9be6-cd0ff54404d6
+langcode: en
+status: true
+dependencies: {  }
+name: 'Editorial Departments'
+vid: departments_editorial
+description: 'Areas of editorial responsibilites'
+weight: 4

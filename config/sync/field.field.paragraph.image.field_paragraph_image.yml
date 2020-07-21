@@ -1,0 +1,38 @@
+uuid: 7a71f918-320b-43c7-8ea4-7efff53226fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_paragraph_image
+    - paragraphs.paragraphs_type.image
+  module:
+    - image
+id: paragraph.image.field_paragraph_image
+field_name: field_paragraph_image
+entity_type: paragraph
+bundle: image
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  alt_field: true
+  alt_field_required: true
+  default_image:
+    alt: ''
+    title: ''
+    width: null
+    height: null
+    uuid: ''
+  file_directory: para/image
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  title_field: false
+  title_field_required: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

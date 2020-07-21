@@ -1,0 +1,27 @@
+uuid: 21ff7a56-6bc5-4c86-9108-637be0683a0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_video
+    - node.type.faq
+  module:
+    - file
+id: node.faq.field_video
+field_name: field_video
+entity_type: node
+bundle: faq
+label: Video
+description: 'Add a video to this FAQ'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  description_field: false
+  file_directory: ''
+  file_extensions: mp4
+  max_filesize: ''
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

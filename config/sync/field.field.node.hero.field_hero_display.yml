@@ -1,0 +1,26 @@
+uuid: 8bf158e8-0f3e-4e60-92a1-31a21bd738ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_hero_display
+    - node.type.hero
+    - taxonomy.vocabulary.hero_display
+id: node.hero.field_hero_display
+field_name: field_hero_display
+entity_type: node
+bundle: hero
+label: 'Hero Display'
+description: 'Choose which page this should be displayed on. The Emergency banner will show at the top of every page on the site.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler_settings:
+    sort:
+      field: _none
+    target_bundles:
+      hero_display: hero_display
+  handler: 'default:taxonomy_term'
+field_type: entity_reference

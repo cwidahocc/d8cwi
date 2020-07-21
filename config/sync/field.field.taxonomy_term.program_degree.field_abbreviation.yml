@@ -1,0 +1,19 @@
+uuid: d73ed776-b3f6-4554-920d-7e408003b43b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_abbreviation
+    - taxonomy.vocabulary.program_degree
+id: taxonomy_term.program_degree.field_abbreviation
+field_name: field_abbreviation
+entity_type: taxonomy_term
+bundle: program_degree
+label: Abbreviation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

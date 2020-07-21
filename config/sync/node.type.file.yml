@@ -1,0 +1,18 @@
+uuid: d6b66626-4b12-4fd7-ab92-a658f8650e4b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main-menu
+    parent: 'main-menu:0:'
+name: File
+type: file
+description: 'This "File" content type is most typically used in the "Forms and Publications" page. <br/>Creates a standalone file node with file attached to it. <br/>This content type is categorized by the Vocabularies titled <strong>"Document Type"</strong> and <strong>"File Group."</strong><br/><br/> <strong><em>NOTE:</em></strong> This is different than a group of "attachments" that can be featured on a page.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

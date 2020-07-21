@@ -1,0 +1,14 @@
+uuid: 827d925a-3431-44a2-b24b-e6aa5b164f7f
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.draft_review
+  module:
+    - user
+id: user_add_role_action.draft_review
+label: 'Add the Draft Review role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: draft_review

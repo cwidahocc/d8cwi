@@ -1,0 +1,73 @@
+uuid: bd5c6e6f-4b30-4010-9577-c66d6431a545
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.rollover.eb_background
+    - field.field.paragraph.rollover.field_link
+    - field.field.paragraph.rollover.field_rollover
+    - field.field.paragraph.rollover.field_rollover_description
+    - field.field.paragraph.rollover.field_rollover_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.rollover
+  module:
+    - image
+    - link
+    - paragraphs
+    - text
+id: paragraph.rollover.default
+targetEntityType: paragraph
+bundle: rollover
+mode: default
+content:
+  eb_background:
+    weight: 1
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_link:
+    weight: 0
+    type: link_default
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    region: content
+  field_rollover:
+    weight: 2
+    type: entity_reference_paragraphs
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+  field_rollover_description:
+    weight: 2
+    type: text_textarea
+    settings:
+      rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_rollover_image:
+    weight: 1
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  status: true
